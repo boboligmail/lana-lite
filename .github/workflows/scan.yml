@@ -1,0 +1,30 @@
+name: Lana Scan
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install requests schedule python-dotenv
+      - name: Run scan
+        env:
+          TELEGRAM_BOT_TOKEN: $ secrets.TELEGRAM_BOT_TOKEN 
+          TELEGRAM_CHAT_ID: $ secrets.TELEGRAM_CHAT_ID 
+          COINGECKO_API_KEY: $ secrets.COINGECKO_API_KEY 
+        run: |
+          python -c "from lana_lite import run_once, refresh_exchange_info; refresh_exchange_info(); run_once()"
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add latest_snapshot.json
+          git diff --staged --quiet || git commit -m "snapshot $(date -u +%Y-%m-%dT%H:%M)"
+          git push
