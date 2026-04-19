@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-04-19T17:16:22.601808",
+  "timestamp": "2026-04-19T17:21:53.691885",
   "version": "v0.1.6",
   "top_heat": [
     {
       "symbol": "GWEIUSDT",
       "base": "GWEI",
-      "price_change_24h": 56.13,
+      "price_change_24h": 50.08,
       "score": 6,
       "listing_days": 80
     },
@@ -94,6 +94,13 @@
       "listing_days": 534
     },
     {
+      "symbol": "LIGHTUSDT",
+      "base": "LIGHT",
+      "price_change_24h": -36.45,
+      "score": 4,
+      "listing_days": 203
+    },
+    {
       "symbol": "ALPHAUSDT",
       "base": "ALPHA",
       "price_change_24h": 36.41,
@@ -106,13 +113,6 @@
       "price_change_24h": -36.06,
       "score": 4,
       "listing_days": 521
-    },
-    {
-      "symbol": "LIGHTUSDT",
-      "base": "LIGHT",
-      "price_change_24h": -35.94,
-      "score": 4,
-      "listing_days": 203
     },
     {
       "symbol": "TANSSIUSDT",
@@ -143,5 +143,43 @@
       "listing_days": 1117
     }
   ],
-  "oi_anomaly": []
+  "oi_anomaly": [
+    {
+      "symbol": "PROMUSDT",
+      "base": "PROM",
+      "price_change_24h": 27.71,
+      "score": 4,
+      "listing_days": 458,
+      "spot_price": 0,
+      "tf": {
+        "1h": {
+          "oi_pct": 8.45,
+          "price_pct": 1.92,
+          "ratio": 4.39
+        },
+        "4h": {
+          "oi_pct": 18.04,
+          "price_pct": 4.36,
+          "ratio": 4.13
+        },
+        "12h": {
+          "oi_pct": 12.08,
+          "price_pct": -9.73,
+          "ratio": 1.24
+        },
+        "1d": {
+          "oi_pct": 90.25,
+          "price_pct": 24.25,
+          "ratio": 3.72
+        }
+      },
+      "tags": {
+        "1h": "⚪ 观望",
+        "4h": "⚪ 观望",
+        "12h": "⚪ 观望",
+        "1d": "⚪ 观望"
+      },
+      "aggregate": "⚪ 信号冲突-观望"
+    }
+  ]
 }
