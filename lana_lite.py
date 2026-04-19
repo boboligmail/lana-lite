@@ -1,7 +1,8 @@
 """
 拉哪 Lite - 舆情热度 + 多时间框架 OI 监控
-版本: v0.1.6
+版本: v0.1.7 (CoinGecko API Key + GitHub Actions 部署就绪)
 新增:
+  - CoinGecko demo key 支持 (避免限流)
   - 实时价格 (fetch_spot_price)
   - 上线天数 (via exchangeInfo)
   - 多时间框架 OI (1h/4h/12h/1d)
@@ -35,6 +36,7 @@ FAPI = "https://fapi.binance.com"
 CG   = "https://api.coingecko.com/api/v3"
 
 _exchange_info_cache = {}
+CG_API_KEY = os.getenv("COINGECKO_API_KEY", "")  # 可选 demo key
 
 
 # ========== 工具函数 ==========
@@ -58,7 +60,8 @@ def log(msg: str):
 # ========== 数据源 ==========
 def fetch_coingecko_trending() -> set:
     try:
-        r = requests.get(CG + "/search/trending", timeout=10).json()
+        headers = {"x-cg-demo-api-key": CG_API_KEY} if CG_API_KEY else {}
+        r = requests.get(CG + "/search/trending", headers=headers, timeout=10).json()
         return {c["item"]["symbol"].upper() for c in r.get("coins", [])} - STABLECOINS
     except Exception as e:
         log(f"CoinGecko 失败: {e}")
@@ -238,7 +241,7 @@ def save_snapshot(heat, anomalies):
     with open("latest_snapshot.json", "w", encoding="utf-8") as f:
         json.dump({
             "timestamp": datetime.now().isoformat(),
-            "version": "v0.1.6",
+            "version": "v0.1.7",
             "top_heat": heat[:20],
             "oi_anomaly": anomalies,
         }, f, ensure_ascii=False, indent=2)
@@ -271,9 +274,9 @@ def run_once():
 
 
 if __name__ == "__main__":
-    log("拉哪 Lite v0.1.6 启动")
+    log("拉哪 Lite v0.1.7 启动")
     refresh_exchange_info()
-    tg_send("✅ 拉哪 Lite v0.1.6 已启动\n新功能:实时价+上线天数+多时间框架共振+动态死币识别")
+    tg_send("✅ 拉哪 Lite v0.1.7 已启动\n新功能: CoinGecko Key + GitHub Actions 部署就绪")
     run_once()
     schedule.every(5).minutes.do(run_once)
     schedule.every(24).hours.do(refresh_exchange_info)
