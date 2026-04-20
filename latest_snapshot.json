@@ -1,6 +1,147 @@
 {
-  "timestamp": "2026-04-20T04:28:30.068662",
+  "timestamp": "2026-04-20T14:57:36.857669",
   "version": "v0.1.7",
-  "top_heat": [],
+  "top_heat": [
+    {
+      "symbol": "PIEVERSEUSDT",
+      "base": "PIEVERSE",
+      "price_change_24h": 83.56,
+      "score": 6,
+      "listing_days": 156
+    },
+    {
+      "symbol": "GUAUSDT",
+      "base": "GUA",
+      "price_change_24h": 20.92,
+      "score": 6,
+      "listing_days": 119
+    },
+    {
+      "symbol": "ALPACAUSDT",
+      "base": "ALPACA",
+      "price_change_24h": 391.23,
+      "score": 4,
+      "listing_days": 605
+    },
+    {
+      "symbol": "A2ZUSDT",
+      "base": "A2Z",
+      "price_change_24h": 110.45,
+      "score": 4,
+      "listing_days": 263
+    },
+    {
+      "symbol": "PORT3USDT",
+      "base": "PORT3",
+      "price_change_24h": -68.31,
+      "score": 4,
+      "listing_days": 319
+    },
+    {
+      "symbol": "BNXUSDT",
+      "base": "BNX",
+      "price_change_24h": 66.38,
+      "score": 4,
+      "listing_days": 1152
+    },
+    {
+      "symbol": "RVVUSDT",
+      "base": "RVV",
+      "price_change_24h": -61.55,
+      "score": 4,
+      "listing_days": 183
+    },
+    {
+      "symbol": "BSWUSDT",
+      "base": "BSW",
+      "price_change_24h": -55.16,
+      "score": 4,
+      "listing_days": 592
+    },
+    {
+      "symbol": "SKATEUSDT",
+      "base": "SKATE",
+      "price_change_24h": -52.59,
+      "score": 4,
+      "listing_days": 314
+    },
+    {
+      "symbol": "YALAUSDT",
+      "base": "YALA",
+      "price_change_24h": 50.72,
+      "score": 4,
+      "listing_days": 255
+    },
+    {
+      "symbol": "NEIROETHUSDT",
+      "base": "NEIROETH",
+      "price_change_24h": -47.28,
+      "score": 4,
+      "listing_days": 590
+    },
+    {
+      "symbol": "1000WHYUSDT",
+      "base": "1000WHY",
+      "price_change_24h": -45.0,
+      "score": 4,
+      "listing_days": 510
+    },
+    {
+      "symbol": "VIDTUSDT",
+      "base": "VIDT",
+      "price_change_24h": -42.44,
+      "score": 4,
+      "listing_days": 604
+    },
+    {
+      "symbol": "TROYUSDT",
+      "base": "TROY",
+      "price_change_24h": -41.2,
+      "score": 4,
+      "listing_days": 535
+    },
+    {
+      "symbol": "GUNUSDT",
+      "base": "GUN",
+      "price_change_24h": 37.99,
+      "score": 4,
+      "listing_days": 384
+    },
+    {
+      "symbol": "ALPHAUSDT",
+      "base": "ALPHA",
+      "price_change_24h": 36.41,
+      "score": 4,
+      "listing_days": 2398
+    },
+    {
+      "symbol": "HIPPOUSDT",
+      "base": "HIPPO",
+      "price_change_24h": -36.06,
+      "score": 4,
+      "listing_days": 522
+    },
+    {
+      "symbol": "TANSSIUSDT",
+      "base": "TANSSI",
+      "price_change_24h": 35.26,
+      "score": 4,
+      "listing_days": 284
+    },
+    {
+      "symbol": "BULLAUSDT",
+      "base": "BULLA",
+      "price_change_24h": 34.91,
+      "score": 4,
+      "listing_days": 289
+    },
+    {
+      "symbol": "EPTUSDT",
+      "base": "EPT",
+      "price_change_24h": 34.54,
+      "score": 4,
+      "listing_days": 363
+    }
+  ],
   "oi_anomaly": []
 }
