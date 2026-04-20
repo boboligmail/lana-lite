@@ -1,13 +1,6 @@
 import streamlit as st
 import json
 import pandas as pd
-from datetime import datetime
-
-cat > dashboard.py << 'EOF'
-import streamlit as st
-import json
-import pandas as pd
-from datetime import datetime
 
 st.set_page_config(page_title="拉哪 Lite Dashboard", page_icon="🦞", layout="wide")
 st.title("🦞 拉哪 Lite 监控面板")
