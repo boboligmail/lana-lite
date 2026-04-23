@@ -1,166 +1,166 @@
 {
-  "timestamp": "2026-04-24T05:56:53.126488",
+  "timestamp": "2026-04-24T06:59:18.286541",
   "version": "v0.1.12",
   "top_heat": [
     {
-      "symbol": "MOVRUSDT",
-      "base": "MOVR",
-      "price_change_24h": 56.87,
+      "symbol": "KATUSDT",
+      "base": "KAT",
+      "price_change_24h": 45.27,
       "score": 6,
-      "listing_days": 849,
-      "price": 2.662
+      "listing_days": 52,
+      "price": 0.01383
     },
     {
       "symbol": "SPKUSDT",
       "base": "SPK",
-      "price_change_24h": 14.62,
-      "score": 5,
+      "price_change_24h": 29.48,
+      "score": 6,
       "listing_days": 310,
-      "price": 0.04985
+      "price": 0.05178
     },
     {
-      "symbol": "OPGUSDT",
-      "base": "OPG",
-      "price_change_24h": -14.59,
-      "score": 5,
-      "listing_days": 1,
-      "price": 0.3307
-    },
-    {
-      "symbol": "KATUSDT",
-      "base": "KAT",
-      "price_change_24h": 43.86,
+      "symbol": "MOVRUSDT",
+      "base": "MOVR",
+      "price_change_24h": 57.63,
       "score": 4,
-      "listing_days": 52,
-      "price": 0.01371
+      "listing_days": 849,
+      "price": 2.645
     },
     {
       "symbol": "BASUSDT",
       "base": "BAS",
-      "price_change_24h": 35.33,
+      "price_change_24h": 41.46,
       "score": 4,
       "listing_days": 240,
-      "price": 0.01792
-    },
-    {
-      "symbol": "UBUSDT",
-      "base": "UB",
-      "price_change_24h": -33.06,
-      "score": 4,
-      "listing_days": 223,
-      "price": 0.05198
-    },
-    {
-      "symbol": "DAMUSDT",
-      "base": "DAM",
-      "price_change_24h": -28.26,
-      "score": 4,
-      "listing_days": 248,
-      "price": 0.02513
+      "price": 0.018155
     },
     {
       "symbol": "SKYAIUSDT",
       "base": "SKYAI",
-      "price_change_24h": 27.6,
+      "price_change_24h": 31.96,
       "score": 4,
       "listing_days": 345,
-      "price": 0.21813
+      "price": 0.22357
+    },
+    {
+      "symbol": "DAMUSDT",
+      "base": "DAM",
+      "price_change_24h": -31.86,
+      "score": 4,
+      "listing_days": 248,
+      "price": 0.02359
+    },
+    {
+      "symbol": "UBUSDT",
+      "base": "UB",
+      "price_change_24h": -29.37,
+      "score": 4,
+      "listing_days": 223,
+      "price": 0.05243
     },
     {
       "symbol": "IRUSDT",
       "base": "IR",
-      "price_change_24h": -26.59,
+      "price_change_24h": -27.23,
       "score": 4,
       "listing_days": 123,
-      "price": 0.04094
-    },
-    {
-      "symbol": "INTCUSDT",
-      "base": "INTC",
-      "price_change_24h": 22.91,
-      "score": 4,
-      "listing_days": 80,
-      "price": 80.43
-    },
-    {
-      "symbol": "QUSDT",
-      "base": "Q",
-      "price_change_24h": -22.27,
-      "score": 4,
-      "listing_days": 233,
-      "price": 0.010152
-    },
-    {
-      "symbol": "LABUSDT",
-      "base": "LAB",
-      "price_change_24h": 21.68,
-      "score": 4,
-      "listing_days": 188,
-      "price": 0.6982
+      "price": 0.04046
     },
     {
       "symbol": "AKEUSDT",
       "base": "AKE",
-      "price_change_24h": -20.55,
+      "price_change_24h": -22.97,
       "score": 4,
       "listing_days": 209,
-      "price": 0.0003955
+      "price": 0.0003843
     },
     {
-      "symbol": "SENTUSDT",
-      "base": "SENT",
-      "price_change_24h": 20.15,
+      "symbol": "LABUSDT",
+      "base": "LAB",
+      "price_change_24h": 22.52,
       "score": 4,
-      "listing_days": 160,
-      "price": 0.02111
-    },
-    {
-      "symbol": "BULLAUSDT",
-      "base": "BULLA",
-      "price_change_24h": 19.83,
-      "score": 4,
-      "listing_days": 293,
-      "price": 0.01119
+      "listing_days": 188,
+      "price": 0.7133
     },
     {
       "symbol": "TAKEUSDT",
       "base": "TAKE",
-      "price_change_24h": 19.5,
+      "price_change_24h": 21.42,
       "score": 4,
       "listing_days": 232,
-      "price": 0.0326
-    },
-    {
-      "symbol": "MEGAUSDT",
-      "base": "MEGA",
-      "price_change_24h": -18.96,
-      "score": 4,
-      "listing_days": 83,
-      "price": 0.15947
-    },
-    {
-      "symbol": "ZKJUSDT",
-      "base": "ZKJ",
-      "price_change_24h": -18.52,
-      "score": 4,
-      "listing_days": 345,
-      "price": 0.01562
-    },
-    {
-      "symbol": "STABLEUSDT",
-      "base": "STABLE",
-      "price_change_24h": 18.03,
-      "score": 4,
-      "listing_days": 168,
-      "price": 0.03097
+      "price": 0.03328
     },
     {
       "symbol": "AGTUSDT",
       "base": "AGT",
-      "price_change_24h": -17.91,
+      "price_change_24h": -18.58,
       "score": 4,
       "listing_days": 338,
-      "price": 0.01281
+      "price": 0.013056
+    },
+    {
+      "symbol": "ZKJUSDT",
+      "base": "ZKJ",
+      "price_change_24h": -18.34,
+      "score": 4,
+      "listing_days": 345,
+      "price": 0.0155
+    },
+    {
+      "symbol": "INTCUSDT",
+      "base": "INTC",
+      "price_change_24h": 18.21,
+      "score": 4,
+      "listing_days": 80,
+      "price": 79.52
+    },
+    {
+      "symbol": "BULLAUSDT",
+      "base": "BULLA",
+      "price_change_24h": 18.0,
+      "score": 4,
+      "listing_days": 293,
+      "price": 0.011042
+    },
+    {
+      "symbol": "TACUSDT",
+      "base": "TAC",
+      "price_change_24h": 17.89,
+      "score": 4,
+      "listing_days": 282,
+      "price": 0.008271
+    },
+    {
+      "symbol": "SENTUSDT",
+      "base": "SENT",
+      "price_change_24h": 17.38,
+      "score": 4,
+      "listing_days": 160,
+      "price": 0.02053
+    },
+    {
+      "symbol": "STABLEUSDT",
+      "base": "STABLE",
+      "price_change_24h": 17.24,
+      "score": 4,
+      "listing_days": 168,
+      "price": 0.03074
+    },
+    {
+      "symbol": "QUSDT",
+      "base": "Q",
+      "price_change_24h": -17.11,
+      "score": 4,
+      "listing_days": 233,
+      "price": 0.010108
+    },
+    {
+      "symbol": "MEGAUSDT",
+      "base": "MEGA",
+      "price_change_24h": -16.95,
+      "score": 4,
+      "listing_days": 83,
+      "price": 0.16469
     }
   ],
   "oi_anomaly": []
