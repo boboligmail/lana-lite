@@ -238,13 +238,19 @@ def scan_anomalies(heat_board: list) -> list:
 
 
 def save_snapshot(heat, anomalies):
+    ts = datetime.now().isoformat()
     with open("latest_snapshot.json", "w", encoding="utf-8") as f:
         json.dump({
-            "timestamp": datetime.now().isoformat(),
-            "version": "v0.1.7",
+            "timestamp": ts,
+            "version": "v0.1.10",
             "top_heat": heat[:20],
             "oi_anomaly": anomalies,
         }, f, ensure_ascii=False, indent=2)
+    if anomalies:
+        with open("signals_log.jsonl", "a", encoding="utf-8") as f:
+            for a in anomalies:
+                f.write(json.dumps({"timestamp": ts, **a}, ensure_ascii=False) + "
+")
 
 
 def run_once():
