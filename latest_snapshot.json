@@ -1,167 +1,206 @@
 {
-  "timestamp": "2026-04-23T21:57:30.024995",
+  "timestamp": "2026-04-23T22:59:54.720603",
   "version": "v0.1.12",
   "top_heat": [
     {
-      "symbol": "SPKUSDT",
-      "base": "SPK",
-      "price_change_24h": 54.38,
-      "score": 6,
-      "listing_days": 310,
-      "price": 0.05204
-    },
-    {
-      "symbol": "KATUSDT",
-      "base": "KAT",
-      "price_change_24h": 30.59,
-      "score": 6,
-      "listing_days": 52,
-      "price": 0.01268
-    },
-    {
-      "symbol": "OPGUSDT",
-      "base": "OPG",
-      "price_change_24h": -24.32,
-      "score": 6,
-      "listing_days": 0,
-      "price": 0.3965
-    },
-    {
       "symbol": "MOVRUSDT",
       "base": "MOVR",
-      "price_change_24h": 47.94,
-      "score": 4,
+      "price_change_24h": 79.01,
+      "score": 6,
       "listing_days": 849,
-      "price": 2.515
+      "price": 3.079
+    },
+    {
+      "symbol": "SPKUSDT",
+      "base": "SPK",
+      "price_change_24h": 57.36,
+      "score": 6,
+      "listing_days": 310,
+      "price": 0.05358
     },
     {
       "symbol": "BSBUSDT",
       "base": "BSB",
-      "price_change_24h": 46.57,
-      "score": 4,
+      "price_change_24h": 33.19,
+      "score": 6,
       "listing_days": 29,
-      "price": 0.43693
+      "price": 0.41725
+    },
+    {
+      "symbol": "OPGUSDT",
+      "base": "OPG",
+      "price_change_24h": -27.68,
+      "score": 6,
+      "listing_days": 0,
+      "price": 0.3789
+    },
+    {
+      "symbol": "CHIPUSDT",
+      "base": "CHIP",
+      "price_change_24h": -9.64,
+      "score": 5,
+      "listing_days": 7,
+      "price": 0.10039
     },
     {
       "symbol": "TACUSDT",
       "base": "TAC",
-      "price_change_24h": 36.58,
+      "price_change_24h": 37.56,
       "score": 4,
       "listing_days": 282,
-      "price": 0.008849
+      "price": 0.008889
     },
     {
       "symbol": "MAGMAUSDT",
       "base": "MAGMA",
-      "price_change_24h": 36.16,
+      "price_change_24h": 37.47,
       "score": 4,
       "listing_days": 113,
-      "price": 0.1952
-    },
-    {
-      "symbol": "BASUSDT",
-      "base": "BAS",
-      "price_change_24h": 26.93,
-      "score": 4,
-      "listing_days": 240,
-      "price": 0.015561
-    },
-    {
-      "symbol": "DEXEUSDT",
-      "base": "DEXE",
-      "price_change_24h": 26.17,
-      "score": 4,
-      "listing_days": 485,
-      "price": 14.787
-    },
-    {
-      "symbol": "LABUSDT",
-      "base": "LAB",
-      "price_change_24h": 21.7,
-      "score": 4,
-      "listing_days": 187,
-      "price": 0.6718
-    },
-    {
-      "symbol": "GENIUSUSDT",
-      "base": "GENIUS",
-      "price_change_24h": 20.42,
-      "score": 4,
-      "listing_days": 7,
-      "price": 0.7217
+      "price": 0.19269
     },
     {
       "symbol": "QUSDT",
       "base": "Q",
-      "price_change_24h": -19.73,
+      "price_change_24h": -28.73,
       "score": 4,
       "listing_days": 233,
-      "price": 0.008806
+      "price": 0.007895
     },
     {
-      "symbol": "TRADOORUSDT",
-      "base": "TRADOOR",
-      "price_change_24h": -19.58,
+      "symbol": "LABUSDT",
+      "base": "LAB",
+      "price_change_24h": 27.91,
       "score": 4,
-      "listing_days": 216,
-      "price": 7.628
+      "listing_days": 188,
+      "price": 0.7008
+    },
+    {
+      "symbol": "KATUSDT",
+      "base": "KAT",
+      "price_change_24h": 27.72,
+      "score": 4,
+      "listing_days": 52,
+      "price": 0.01258
+    },
+    {
+      "symbol": "BULLAUSDT",
+      "base": "BULLA",
+      "price_change_24h": 22.94,
+      "score": 4,
+      "listing_days": 293,
+      "price": 0.011506
     },
     {
       "symbol": "AKEUSDT",
       "base": "AKE",
-      "price_change_24h": -18.53,
+      "price_change_24h": -21.1,
       "score": 4,
       "listing_days": 209,
-      "price": 0.0004013
-    },
-    {
-      "symbol": "BBUSDT",
-      "base": "BB",
-      "price_change_24h": 18.37,
-      "score": 4,
-      "listing_days": 710,
-      "price": 0.02983
-    },
-    {
-      "symbol": "HUMAUSDT",
-      "base": "HUMA",
-      "price_change_24h": 17.86,
-      "score": 4,
-      "listing_days": 332,
-      "price": 0.026481
+      "price": 0.0003975
     },
     {
       "symbol": "TAKEUSDT",
       "base": "TAKE",
-      "price_change_24h": 17.17,
+      "price_change_24h": 20.89,
       "score": 4,
       "listing_days": 232,
-      "price": 0.03235
+      "price": 0.03316
     },
     {
-      "symbol": "HUSDT",
-      "base": "H",
-      "price_change_24h": 15.75,
+      "symbol": "GENIUSUSDT",
+      "base": "GENIUS",
+      "price_change_24h": 20.72,
       "score": 4,
-      "listing_days": 302,
-      "price": 0.1367
+      "listing_days": 7,
+      "price": 0.7253
     },
     {
       "symbol": "PRLUSDT",
       "base": "PRL",
-      "price_change_24h": -15.11,
+      "price_change_24h": -19.05,
       "score": 4,
       "listing_days": 22,
-      "price": 0.2113
+      "price": 0.2104
+    },
+    {
+      "symbol": "BASUSDT",
+      "base": "BAS",
+      "price_change_24h": 18.5,
+      "score": 4,
+      "listing_days": 240,
+      "price": 0.015171
     },
     {
       "symbol": "BASEDUSDT",
       "base": "BASED",
-      "price_change_24h": 15.05,
+      "price_change_24h": 18.18,
       "score": 4,
       "listing_days": 24,
-      "price": 0.13649
+      "price": 0.1407
+    },
+    {
+      "symbol": "BBUSDT",
+      "base": "BB",
+      "price_change_24h": 16.86,
+      "score": 4,
+      "listing_days": 710,
+      "price": 0.02974
+    },
+    {
+      "symbol": "PLAYUSDT",
+      "base": "PLAY",
+      "price_change_24h": 15.01,
+      "score": 4,
+      "listing_days": 266,
+      "price": 0.13548
+    },
+    {
+      "symbol": "LYNUSDT",
+      "base": "LYN",
+      "price_change_24h": 13.91,
+      "score": 3,
+      "listing_days": 199,
+      "price": 0.06149
     }
   ],
-  "oi_anomaly": []
+  "oi_anomaly": [
+    {
+      "symbol": "BSBUSDT",
+      "base": "BSB",
+      "price_change_24h": 33.19,
+      "score": 6,
+      "listing_days": 29,
+      "price": 0.41725,
+      "spot_price": 0.41793,
+      "tf": {
+        "1h": {
+          "oi_pct": -12.21,
+          "price_pct": -1.56,
+          "ratio": 7.83
+        },
+        "4h": {
+          "oi_pct": 16.72,
+          "price_pct": 20.78,
+          "ratio": 0.8
+        },
+        "12h": {
+          "oi_pct": 26.8,
+          "price_pct": 30.61,
+          "ratio": 0.88
+        },
+        "1d": {
+          "oi_pct": 37.99,
+          "price_pct": 56.37,
+          "ratio": 0.67
+        }
+      },
+      "tags": {
+        "1h": "⚪ 观望",
+        "4h": "⚪ 观望",
+        "12h": "⚪ 观望",
+        "1d": "⚪ 观望"
+      },
+      "aggregate": "⚪ 信号冲突-观望"
+    }
+  ]
 }
