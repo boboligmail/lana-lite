@@ -1,6 +1,6 @@
 """
 拉哪 Lite - 舆情热度 + 多时间框架 OI 监控
-版本: v0.1.11 (CoinGecko API Key + GitHub Actions 部署就绪)
+版本: v0.1.12 (CoinGecko API Key + GitHub Actions 部署就绪)
 新增:
   - CoinGecko demo key 支持 (避免限流)
   - 实时价格 (fetch_spot_price)
@@ -230,7 +230,7 @@ def scan_anomalies(heat_board: list) -> list:
                   for tf, d in tf_all.items()}
         anomalies.append({
             **item,
-            "spot_price": price,
+            "spot_price": price or item.get("price", 0),  # v0.1.12: 现货无数据时用 top_heat 的 perp lastPrice 兜底
             "tf": tf_all,
             "tags": tags,
             "aggregate": aggregate_signal(tags),
@@ -243,7 +243,7 @@ def save_snapshot(heat, anomalies):
     with open("latest_snapshot.json", "w", encoding="utf-8") as f:
         json.dump({
             "timestamp": ts,
-            "version": "v0.1.11",
+            "version": "v0.1.12",
             "top_heat": heat[:20],
             "oi_anomaly": anomalies,
         }, f, ensure_ascii=False, indent=2)
@@ -262,7 +262,7 @@ def run_once():
     if not anomalies:
         log("无异动")
         return
-    lines = ["🔥 *OI 异动提醒 v0.1.11*", ""]
+    lines = ["🔥 *OI 异动提醒 v0.1.12*", ""]
     for a in anomalies[:5]:
         lines.append(f"*{a['symbol']}*  `${a['spot_price']}`")
         lines.append(f"上线 {a['listing_days']}天 | 24h {a['price_change_24h']:+.1f}% | 热度 {a['score']}")
@@ -280,9 +280,9 @@ def run_once():
 
 
 if __name__ == "__main__":
-    log("拉哪 Lite v0.1.11 启动")
+    log("拉哪 Lite v0.1.12 启动")
     refresh_exchange_info()
-    tg_send("✅ 拉哪 Lite v0.1.11 已启动\n新功能: CoinGecko Key + GitHub Actions 部署就绪")
+    tg_send("✅ 拉哪 Lite v0.1.12 已启动\n新功能: CoinGecko Key + GitHub Actions 部署就绪")
     run_once()
     schedule.every(5).minutes.do(run_once)
     schedule.every(24).hours.do(refresh_exchange_info)
