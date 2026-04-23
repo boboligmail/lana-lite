@@ -1,146 +1,146 @@
 {
-  "timestamp": "2026-04-23T10:39:42.388637",
+  "timestamp": "2026-04-23T10:55:17.338058",
   "version": "v0.1.7",
   "top_heat": [
     {
       "symbol": "CHIPUSDT",
       "base": "CHIP",
-      "price_change_24h": 96.99,
+      "price_change_24h": 98.62,
       "score": 6,
       "listing_days": 6
     },
     {
       "symbol": "SPKUSDT",
       "base": "SPK",
-      "price_change_24h": 52.44,
+      "price_change_24h": 50.83,
       "score": 6,
       "listing_days": 309
     },
     {
       "symbol": "OPGUSDT",
       "base": "OPG",
-      "price_change_24h": -36.82,
+      "price_change_24h": -38.08,
       "score": 6,
       "listing_days": 0
     },
     {
       "symbol": "GENIUSUSDT",
       "base": "GENIUS",
-      "price_change_24h": 17.27,
+      "price_change_24h": 18.39,
       "score": 6,
       "listing_days": 6
     },
     {
       "symbol": "BIOUSDT",
       "base": "BIO",
-      "price_change_24h": 15.39,
+      "price_change_24h": 15.38,
       "score": 6,
       "listing_days": 474
     },
     {
+      "symbol": "UBUSDT",
+      "base": "UB",
+      "price_change_24h": 39.66,
+      "score": 4,
+      "listing_days": 222
+    },
+    {
       "symbol": "MAGMAUSDT",
       "base": "MAGMA",
-      "price_change_24h": 34.33,
+      "price_change_24h": 31.26,
       "score": 4,
       "listing_days": 112
     },
     {
       "symbol": "币安人生USDT",
       "base": "币安人生",
-      "price_change_24h": -31.27,
+      "price_change_24h": -27.86,
       "score": 4,
       "listing_days": 184
     },
     {
-      "symbol": "UBUSDT",
-      "base": "UB",
-      "price_change_24h": 29.78,
-      "score": 4,
-      "listing_days": 222
-    },
-    {
       "symbol": "TACUSDT",
       "base": "TAC",
-      "price_change_24h": 27.29,
+      "price_change_24h": 27.41,
       "score": 4,
       "listing_days": 281
     },
     {
+      "symbol": "XNYUSDT",
+      "base": "XNY",
+      "price_change_24h": 24.45,
+      "score": 4,
+      "listing_days": 252
+    },
+    {
+      "symbol": "ZEREBROUSDT",
+      "base": "ZEREBRO",
+      "price_change_24h": -20.7,
+      "score": 4,
+      "listing_days": 475
+    },
+    {
       "symbol": "BASUSDT",
       "base": "BAS",
-      "price_change_24h": -21.86,
+      "price_change_24h": -17.62,
       "score": 4,
       "listing_days": 239
     },
     {
       "symbol": "UAIUSDT",
       "base": "UAI",
-      "price_change_24h": -20.3,
+      "price_change_24h": -16.93,
       "score": 4,
       "listing_days": 167
     },
     {
-      "symbol": "ZEREBROUSDT",
-      "base": "ZEREBRO",
-      "price_change_24h": -18.91,
-      "score": 4,
-      "listing_days": 475
-    },
-    {
       "symbol": "GUNUSDT",
       "base": "GUN",
-      "price_change_24h": -18.19,
+      "price_change_24h": -16.68,
       "score": 4,
       "listing_days": 387
     },
     {
-      "symbol": "XNYUSDT",
-      "base": "XNY",
-      "price_change_24h": 17.82,
-      "score": 4,
-      "listing_days": 252
-    },
-    {
       "symbol": "HIGHUSDT",
       "base": "HIGH",
-      "price_change_24h": -16.77,
+      "price_change_24h": -16.25,
       "score": 4,
       "listing_days": 1174
     },
     {
-      "symbol": "HUMAUSDT",
-      "base": "HUMA",
-      "price_change_24h": 16.42,
-      "score": 4,
-      "listing_days": 331
-    },
-    {
-      "symbol": "ACUUSDT",
-      "base": "ACU",
-      "price_change_24h": -15.84,
-      "score": 4,
-      "listing_days": 91
-    },
-    {
       "symbol": "HUSDT",
       "base": "H",
-      "price_change_24h": 15.1,
+      "price_change_24h": 15.66,
       "score": 4,
       "listing_days": 301
     },
     {
-      "symbol": "QUSDT",
-      "base": "Q",
-      "price_change_24h": 15.05,
+      "symbol": "ACUUSDT",
+      "base": "ACU",
+      "price_change_24h": -15.48,
       "score": 4,
-      "listing_days": 232
+      "listing_days": 91
     },
     {
-      "symbol": "EDUUSDT",
-      "base": "EDU",
-      "price_change_24h": -13.19,
+      "symbol": "HUMAUSDT",
+      "base": "HUMA",
+      "price_change_24h": 15.41,
+      "score": 4,
+      "listing_days": 331
+    },
+    {
+      "symbol": "STRKUSDT",
+      "base": "STRK",
+      "price_change_24h": 14.85,
       "score": 3,
-      "listing_days": 1091
+      "listing_days": 792
+    },
+    {
+      "symbol": "MEGAUSDT",
+      "base": "MEGA",
+      "price_change_24h": 14.0,
+      "score": 3,
+      "listing_days": 82
     }
   ],
   "oi_anomaly": []
