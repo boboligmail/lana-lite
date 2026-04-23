@@ -249,8 +249,7 @@ def save_snapshot(heat, anomalies):
     if anomalies:
         with open("signals_log.jsonl", "a", encoding="utf-8") as f:
             for a in anomalies:
-                f.write(json.dumps({"timestamp": ts, **a}, ensure_ascii=False) + "
-")
+                f.write(json.dumps({"timestamp": ts, **a}, ensure_ascii=False) + "\n")
 
 
 def run_once():
