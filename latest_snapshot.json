@@ -1,147 +1,185 @@
 {
-  "timestamp": "2026-04-20T14:57:36.857669",
+  "timestamp": "2026-04-23T10:34:29.626984",
   "version": "v0.1.7",
   "top_heat": [
     {
-      "symbol": "PIEVERSEUSDT",
-      "base": "PIEVERSE",
-      "price_change_24h": 83.56,
+      "symbol": "CHIPUSDT",
+      "base": "CHIP",
+      "price_change_24h": 100.44,
       "score": 6,
-      "listing_days": 156
+      "listing_days": 6
     },
     {
-      "symbol": "GUAUSDT",
-      "base": "GUA",
-      "price_change_24h": 20.92,
+      "symbol": "SPKUSDT",
+      "base": "SPK",
+      "price_change_24h": 48.99,
       "score": 6,
-      "listing_days": 119
+      "listing_days": 309
     },
     {
-      "symbol": "ALPACAUSDT",
-      "base": "ALPACA",
-      "price_change_24h": 391.23,
-      "score": 4,
-      "listing_days": 605
+      "symbol": "OPGUSDT",
+      "base": "OPG",
+      "price_change_24h": -37.28,
+      "score": 6,
+      "listing_days": 0
     },
     {
-      "symbol": "A2ZUSDT",
-      "base": "A2Z",
-      "price_change_24h": 110.45,
-      "score": 4,
-      "listing_days": 263
+      "symbol": "BIOUSDT",
+      "base": "BIO",
+      "price_change_24h": 16.31,
+      "score": 6,
+      "listing_days": 474
     },
     {
-      "symbol": "PORT3USDT",
-      "base": "PORT3",
-      "price_change_24h": -68.31,
+      "symbol": "MAGMAUSDT",
+      "base": "MAGMA",
+      "price_change_24h": 34.79,
       "score": 4,
-      "listing_days": 319
+      "listing_days": 112
     },
     {
-      "symbol": "BNXUSDT",
-      "base": "BNX",
-      "price_change_24h": 66.38,
+      "symbol": "UBUSDT",
+      "base": "UB",
+      "price_change_24h": 34.67,
       "score": 4,
-      "listing_days": 1152
+      "listing_days": 222
     },
     {
-      "symbol": "RVVUSDT",
-      "base": "RVV",
-      "price_change_24h": -61.55,
+      "symbol": "币安人生USDT",
+      "base": "币安人生",
+      "price_change_24h": -31.5,
       "score": 4,
-      "listing_days": 183
+      "listing_days": 184
     },
     {
-      "symbol": "BSWUSDT",
-      "base": "BSW",
-      "price_change_24h": -55.16,
+      "symbol": "TACUSDT",
+      "base": "TAC",
+      "price_change_24h": 25.14,
       "score": 4,
-      "listing_days": 592
+      "listing_days": 281
     },
     {
-      "symbol": "SKATEUSDT",
-      "base": "SKATE",
-      "price_change_24h": -52.59,
+      "symbol": "UAIUSDT",
+      "base": "UAI",
+      "price_change_24h": -21.14,
       "score": 4,
-      "listing_days": 314
+      "listing_days": 167
     },
     {
-      "symbol": "YALAUSDT",
-      "base": "YALA",
-      "price_change_24h": 50.72,
+      "symbol": "BASUSDT",
+      "base": "BAS",
+      "price_change_24h": -20.53,
       "score": 4,
-      "listing_days": 255
+      "listing_days": 239
     },
     {
-      "symbol": "NEIROETHUSDT",
-      "base": "NEIROETH",
-      "price_change_24h": -47.28,
+      "symbol": "ZEREBROUSDT",
+      "base": "ZEREBRO",
+      "price_change_24h": -19.29,
       "score": 4,
-      "listing_days": 590
+      "listing_days": 475
     },
     {
-      "symbol": "1000WHYUSDT",
-      "base": "1000WHY",
-      "price_change_24h": -45.0,
+      "symbol": "ACUUSDT",
+      "base": "ACU",
+      "price_change_24h": -19.04,
       "score": 4,
-      "listing_days": 510
+      "listing_days": 91
     },
     {
-      "symbol": "VIDTUSDT",
-      "base": "VIDT",
-      "price_change_24h": -42.44,
+      "symbol": "GENIUSUSDT",
+      "base": "GENIUS",
+      "price_change_24h": 17.43,
       "score": 4,
-      "listing_days": 604
+      "listing_days": 6
     },
     {
-      "symbol": "TROYUSDT",
-      "base": "TROY",
-      "price_change_24h": -41.2,
+      "symbol": "HIGHUSDT",
+      "base": "HIGH",
+      "price_change_24h": -16.86,
       "score": 4,
-      "listing_days": 535
+      "listing_days": 1174
     },
     {
       "symbol": "GUNUSDT",
       "base": "GUN",
-      "price_change_24h": 37.99,
+      "price_change_24h": -16.84,
       "score": 4,
-      "listing_days": 384
+      "listing_days": 387
     },
     {
-      "symbol": "ALPHAUSDT",
-      "base": "ALPHA",
-      "price_change_24h": 36.41,
+      "symbol": "HUMAUSDT",
+      "base": "HUMA",
+      "price_change_24h": 15.62,
       "score": 4,
-      "listing_days": 2398
+      "listing_days": 331
     },
     {
-      "symbol": "HIPPOUSDT",
-      "base": "HIPPO",
-      "price_change_24h": -36.06,
+      "symbol": "XNYUSDT",
+      "base": "XNY",
+      "price_change_24h": 15.25,
       "score": 4,
-      "listing_days": 522
+      "listing_days": 252
     },
     {
-      "symbol": "TANSSIUSDT",
-      "base": "TANSSI",
-      "price_change_24h": 35.26,
-      "score": 4,
-      "listing_days": 284
+      "symbol": "HUSDT",
+      "base": "H",
+      "price_change_24h": 14.43,
+      "score": 3,
+      "listing_days": 301
     },
     {
-      "symbol": "BULLAUSDT",
-      "base": "BULLA",
-      "price_change_24h": 34.91,
-      "score": 4,
-      "listing_days": 289
+      "symbol": "QUSDT",
+      "base": "Q",
+      "price_change_24h": 13.9,
+      "score": 3,
+      "listing_days": 232
     },
     {
-      "symbol": "EPTUSDT",
-      "base": "EPT",
-      "price_change_24h": 34.54,
-      "score": 4,
-      "listing_days": 363
+      "symbol": "MEGAUSDT",
+      "base": "MEGA",
+      "price_change_24h": 13.83,
+      "score": 3,
+      "listing_days": 82
     }
   ],
-  "oi_anomaly": []
+  "oi_anomaly": [
+    {
+      "symbol": "SOONUSDT",
+      "base": "SOON",
+      "price_change_24h": 11.72,
+      "score": 3,
+      "listing_days": 334,
+      "spot_price": 0.1839,
+      "tf": {
+        "1h": {
+          "oi_pct": 8.27,
+          "price_pct": 2.14,
+          "ratio": 3.86
+        },
+        "4h": {
+          "oi_pct": 14.54,
+          "price_pct": 3.75,
+          "ratio": 3.88
+        },
+        "12h": {
+          "oi_pct": 3.03,
+          "price_pct": 6.17,
+          "ratio": 0.49
+        },
+        "1d": {
+          "oi_pct": 13.96,
+          "price_pct": 15.77,
+          "ratio": 0.89
+        }
+      },
+      "tags": {
+        "1h": "⚪ 观望",
+        "4h": "⚪ 观望",
+        "12h": "⚪ 观望",
+        "1d": "⚪ 观望"
+      },
+      "aggregate": "⚪ 信号冲突-观望"
+    }
+  ]
 }
