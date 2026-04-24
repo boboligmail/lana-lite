@@ -1,166 +1,166 @@
 {
-  "timestamp": "2026-04-24T19:56:23.971767",
+  "timestamp": "2026-04-24T20:58:55.399260",
   "version": "v0.1.12",
   "top_heat": [
     {
       "symbol": "KATUSDT",
       "base": "KAT",
-      "price_change_24h": 82.81,
+      "price_change_24h": 71.43,
       "score": 6,
       "listing_days": 53,
-      "price": 0.02137
+      "price": 0.021
     },
     {
       "symbol": "SKRUSDT",
       "base": "SKR",
-      "price_change_24h": 42.66,
+      "price_change_24h": 34.74,
       "score": 6,
       "listing_days": 92,
-      "price": 0.02096
-    },
-    {
-      "symbol": "BSBUSDT",
-      "base": "BSB",
-      "price_change_24h": 22.7,
-      "score": 6,
-      "listing_days": 30,
-      "price": 0.48871
-    },
-    {
-      "symbol": "CHIPUSDT",
-      "base": "CHIP",
-      "price_change_24h": -15.17,
-      "score": 6,
-      "listing_days": 8,
-      "price": 0.09039
-    },
-    {
-      "symbol": "IRUSDT",
-      "base": "IR",
-      "price_change_24h": -38.34,
-      "score": 4,
-      "listing_days": 124,
-      "price": 0.03564
-    },
-    {
-      "symbol": "DAMUSDT",
-      "base": "DAM",
-      "price_change_24h": -32.47,
-      "score": 4,
-      "listing_days": 248,
-      "price": 0.02404
-    },
-    {
-      "symbol": "SPORTFUNUSDT",
-      "base": "SPORTFUN",
-      "price_change_24h": 30.97,
-      "score": 4,
-      "listing_days": 97,
-      "price": 0.04868
-    },
-    {
-      "symbol": "ZEREBROUSDT",
-      "base": "ZEREBRO",
-      "price_change_24h": 28.89,
-      "score": 4,
-      "listing_days": 476,
-      "price": 0.018951
-    },
-    {
-      "symbol": "INTCUSDT",
-      "base": "INTC",
-      "price_change_24h": 28.29,
-      "score": 4,
-      "listing_days": 80,
-      "price": 85.26
-    },
-    {
-      "symbol": "STOUSDT",
-      "base": "STO",
-      "price_change_24h": 28.16,
-      "score": 4,
-      "listing_days": 376,
-      "price": 0.10953
-    },
-    {
-      "symbol": "MOVRUSDT",
-      "base": "MOVR",
-      "price_change_24h": 27.38,
-      "score": 4,
-      "listing_days": 849,
-      "price": 2.303
-    },
-    {
-      "symbol": "ENJUSDT",
-      "base": "ENJ",
-      "price_change_24h": 27.34,
-      "score": 4,
-      "listing_days": 2403,
-      "price": 0.07275
-    },
-    {
-      "symbol": "GRIFFAINUSDT",
-      "base": "GRIFFAIN",
-      "price_change_24h": 26.0,
-      "score": 4,
-      "listing_days": 476,
-      "price": 0.0206
-    },
-    {
-      "symbol": "ZKPUSDT",
-      "base": "ZKP",
-      "price_change_24h": 23.76,
-      "score": 4,
-      "listing_days": 124,
-      "price": 0.08606
+      "price": 0.019811
     },
     {
       "symbol": "OPGUSDT",
       "base": "OPG",
-      "price_change_24h": -22.79,
-      "score": 4,
+      "price_change_24h": -25.01,
+      "score": 6,
       "listing_days": 1,
-      "price": 0.2843
+      "price": 0.2791
     },
     {
-      "symbol": "SPKUSDT",
-      "base": "SPK",
-      "price_change_24h": -22.29,
-      "score": 4,
-      "listing_days": 311,
-      "price": 0.04479
+      "symbol": "BSBUSDT",
+      "base": "BSB",
+      "price_change_24h": 24.93,
+      "score": 6,
+      "listing_days": 30,
+      "price": 0.4836
     },
     {
-      "symbol": "DYDXUSDT",
-      "base": "DYDX",
-      "price_change_24h": 19.8,
+      "symbol": "ENJUSDT",
+      "base": "ENJ",
+      "price_change_24h": 16.57,
+      "score": 6,
+      "listing_days": 2403,
+      "price": 0.06692
+    },
+    {
+      "symbol": "PUMPBTCUSDT",
+      "base": "PUMPBTC",
+      "price_change_24h": 47.48,
       "score": 4,
-      "listing_days": 1688,
-      "price": 0.1573
+      "listing_days": 315,
+      "price": 0.03336
+    },
+    {
+      "symbol": "IRUSDT",
+      "base": "IR",
+      "price_change_24h": -38.79,
+      "score": 4,
+      "listing_days": 124,
+      "price": 0.03558
+    },
+    {
+      "symbol": "DAMUSDT",
+      "base": "DAM",
+      "price_change_24h": -34.52,
+      "score": 4,
+      "listing_days": 249,
+      "price": 0.02331
+    },
+    {
+      "symbol": "INXUSDT",
+      "base": "INX",
+      "price_change_24h": 28.83,
+      "score": 4,
+      "listing_days": 83,
+      "price": 0.011185
+    },
+    {
+      "symbol": "INTCUSDT",
+      "base": "INTC",
+      "price_change_24h": 27.66,
+      "score": 4,
+      "listing_days": 80,
+      "price": 84.05
+    },
+    {
+      "symbol": "SPORTFUNUSDT",
+      "base": "SPORTFUN",
+      "price_change_24h": 27.57,
+      "score": 4,
+      "listing_days": 97,
+      "price": 0.0471
+    },
+    {
+      "symbol": "GRIFFAINUSDT",
+      "base": "GRIFFAIN",
+      "price_change_24h": 26.88,
+      "score": 4,
+      "listing_days": 476,
+      "price": 0.020611
+    },
+    {
+      "symbol": "STOUSDT",
+      "base": "STO",
+      "price_change_24h": 24.88,
+      "score": 4,
+      "listing_days": 376,
+      "price": 0.10562
+    },
+    {
+      "symbol": "ZEREBROUSDT",
+      "base": "ZEREBRO",
+      "price_change_24h": 23.36,
+      "score": 4,
+      "listing_days": 476,
+      "price": 0.0179
+    },
+    {
+      "symbol": "MOVRUSDT",
+      "base": "MOVR",
+      "price_change_24h": 21.16,
+      "score": 4,
+      "listing_days": 850,
+      "price": 2.25
     },
     {
       "symbol": "ZKJUSDT",
       "base": "ZKJ",
-      "price_change_24h": -19.29,
+      "price_change_24h": -20.48,
       "score": 4,
       "listing_days": 346,
-      "price": 0.01452
+      "price": 0.01429
     },
     {
-      "symbol": "ESPUSDT",
-      "base": "ESP",
-      "price_change_24h": 18.3,
+      "symbol": "FHEUSDT",
+      "base": "FHE",
+      "price_change_24h": 20.39,
       "score": 4,
-      "listing_days": 73,
-      "price": 0.08409
+      "listing_days": 376,
+      "price": 0.02102
     },
     {
       "symbol": "ROBOUSDT",
       "base": "ROBO",
-      "price_change_24h": 17.49,
+      "price_change_24h": 19.87,
       "score": 4,
       "listing_days": 56,
-      "price": 0.02318
+      "price": 0.02395
+    },
+    {
+      "symbol": "TAKEUSDT",
+      "base": "TAKE",
+      "price_change_24h": -17.71,
+      "score": 4,
+      "listing_days": 233,
+      "price": 0.02965
+    },
+    {
+      "symbol": "DYDXUSDT",
+      "base": "DYDX",
+      "price_change_24h": 16.97,
+      "score": 4,
+      "listing_days": 1688,
+      "price": 0.1544
     }
   ],
   "oi_anomaly": []
