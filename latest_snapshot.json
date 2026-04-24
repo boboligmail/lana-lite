@@ -1,167 +1,206 @@
 {
-  "timestamp": "2026-04-24T20:58:55.399260",
+  "timestamp": "2026-04-24T21:56:25.697284",
   "version": "v0.1.12",
   "top_heat": [
     {
       "symbol": "KATUSDT",
       "base": "KAT",
-      "price_change_24h": 71.43,
+      "price_change_24h": 76.75,
       "score": 6,
       "listing_days": 53,
-      "price": 0.021
-    },
-    {
-      "symbol": "SKRUSDT",
-      "base": "SKR",
-      "price_change_24h": 34.74,
-      "score": 6,
-      "listing_days": 92,
-      "price": 0.019811
+      "price": 0.0222
     },
     {
       "symbol": "OPGUSDT",
       "base": "OPG",
-      "price_change_24h": -25.01,
+      "price_change_24h": -30.05,
       "score": 6,
       "listing_days": 1,
-      "price": 0.2791
+      "price": 0.2807
     },
     {
-      "symbol": "BSBUSDT",
-      "base": "BSB",
-      "price_change_24h": 24.93,
-      "score": 6,
-      "listing_days": 30,
-      "price": 0.4836
-    },
-    {
-      "symbol": "ENJUSDT",
-      "base": "ENJ",
-      "price_change_24h": 16.57,
-      "score": 6,
-      "listing_days": 2403,
-      "price": 0.06692
+      "symbol": "SPKUSDT",
+      "base": "SPK",
+      "price_change_24h": -14.84,
+      "score": 5,
+      "listing_days": 311,
+      "price": 0.04425
     },
     {
       "symbol": "PUMPBTCUSDT",
       "base": "PUMPBTC",
-      "price_change_24h": 47.48,
+      "price_change_24h": 42.75,
       "score": 4,
       "listing_days": 315,
-      "price": 0.03336
+      "price": 0.03239
     },
     {
       "symbol": "IRUSDT",
       "base": "IR",
-      "price_change_24h": -38.79,
+      "price_change_24h": -39.48,
       "score": 4,
       "listing_days": 124,
-      "price": 0.03558
+      "price": 0.03524
+    },
+    {
+      "symbol": "SKRUSDT",
+      "base": "SKR",
+      "price_change_24h": 33.11,
+      "score": 4,
+      "listing_days": 92,
+      "price": 0.01963
     },
     {
       "symbol": "DAMUSDT",
       "base": "DAM",
-      "price_change_24h": -34.52,
+      "price_change_24h": -32.46,
       "score": 4,
       "listing_days": 249,
-      "price": 0.02331
-    },
-    {
-      "symbol": "INXUSDT",
-      "base": "INX",
-      "price_change_24h": 28.83,
-      "score": 4,
-      "listing_days": 83,
-      "price": 0.011185
-    },
-    {
-      "symbol": "INTCUSDT",
-      "base": "INTC",
-      "price_change_24h": 27.66,
-      "score": 4,
-      "listing_days": 80,
-      "price": 84.05
+      "price": 0.02407
     },
     {
       "symbol": "SPORTFUNUSDT",
       "base": "SPORTFUN",
-      "price_change_24h": 27.57,
+      "price_change_24h": 27.23,
       "score": 4,
-      "listing_days": 97,
-      "price": 0.0471
+      "listing_days": 98,
+      "price": 0.04616
     },
     {
       "symbol": "GRIFFAINUSDT",
       "base": "GRIFFAIN",
-      "price_change_24h": 26.88,
+      "price_change_24h": 25.48,
       "score": 4,
-      "listing_days": 476,
-      "price": 0.020611
+      "listing_days": 477,
+      "price": 0.020433
+    },
+    {
+      "symbol": "INXUSDT",
+      "base": "INX",
+      "price_change_24h": 23.78,
+      "score": 4,
+      "listing_days": 83,
+      "price": 0.010676
+    },
+    {
+      "symbol": "TREEUSDT",
+      "base": "TREE",
+      "price_change_24h": 23.47,
+      "score": 4,
+      "listing_days": 268,
+      "price": 0.08202
     },
     {
       "symbol": "STOUSDT",
       "base": "STO",
-      "price_change_24h": 24.88,
+      "price_change_24h": 21.91,
       "score": 4,
       "listing_days": 376,
-      "price": 0.10562
+      "price": 0.10593
     },
     {
-      "symbol": "ZEREBROUSDT",
-      "base": "ZEREBRO",
-      "price_change_24h": 23.36,
+      "symbol": "INTCUSDT",
+      "base": "INTC",
+      "price_change_24h": 21.46,
       "score": 4,
-      "listing_days": 476,
-      "price": 0.0179
-    },
-    {
-      "symbol": "MOVRUSDT",
-      "base": "MOVR",
-      "price_change_24h": 21.16,
-      "score": 4,
-      "listing_days": 850,
-      "price": 2.25
+      "listing_days": 80,
+      "price": 80.99
     },
     {
       "symbol": "ZKJUSDT",
       "base": "ZKJ",
-      "price_change_24h": -20.48,
+      "price_change_24h": -20.94,
       "score": 4,
       "listing_days": 346,
-      "price": 0.01429
+      "price": 0.01416
     },
     {
-      "symbol": "FHEUSDT",
-      "base": "FHE",
-      "price_change_24h": 20.39,
+      "symbol": "ZEREBROUSDT",
+      "base": "ZEREBRO",
+      "price_change_24h": 20.51,
       "score": 4,
-      "listing_days": 376,
-      "price": 0.02102
+      "listing_days": 476,
+      "price": 0.017554
+    },
+    {
+      "symbol": "FOLKSUSDT",
+      "base": "FOLKS",
+      "price_change_24h": 19.81,
+      "score": 4,
+      "listing_days": 169,
+      "price": 1.609
+    },
+    {
+      "symbol": "QUSDT",
+      "base": "Q",
+      "price_change_24h": 19.47,
+      "score": 4,
+      "listing_days": 234,
+      "price": 0.010498
+    },
+    {
+      "symbol": "MAGMAUSDT",
+      "base": "MAGMA",
+      "price_change_24h": 18.95,
+      "score": 4,
+      "listing_days": 114,
+      "price": 0.23229
+    },
+    {
+      "symbol": "VINEUSDT",
+      "base": "VINE",
+      "price_change_24h": -18.26,
+      "score": 4,
+      "listing_days": 455,
+      "price": 0.01549
     },
     {
       "symbol": "ROBOUSDT",
       "base": "ROBO",
-      "price_change_24h": 19.87,
+      "price_change_24h": 17.75,
       "score": 4,
       "listing_days": 56,
-      "price": 0.02395
-    },
-    {
-      "symbol": "TAKEUSDT",
-      "base": "TAKE",
-      "price_change_24h": -17.71,
-      "score": 4,
-      "listing_days": 233,
-      "price": 0.02965
-    },
-    {
-      "symbol": "DYDXUSDT",
-      "base": "DYDX",
-      "price_change_24h": 16.97,
-      "score": 4,
-      "listing_days": 1688,
-      "price": 0.1544
+      "price": 0.02362
     }
   ],
-  "oi_anomaly": []
+  "oi_anomaly": [
+    {
+      "symbol": "ZAMAUSDT",
+      "base": "ZAMA",
+      "price_change_24h": 13.47,
+      "score": 3,
+      "listing_days": 105,
+      "price": 0.03083,
+      "spot_price": 0.03084,
+      "tf": {
+        "1h": {
+          "oi_pct": 8.62,
+          "price_pct": -2.36,
+          "ratio": 3.65
+        },
+        "4h": {
+          "oi_pct": 6.49,
+          "price_pct": 5.6,
+          "ratio": 1.16
+        },
+        "12h": {
+          "oi_pct": 1.68,
+          "price_pct": 10.7,
+          "ratio": 0.16
+        },
+        "1d": {
+          "oi_pct": -5.56,
+          "price_pct": 9.34,
+          "ratio": 0.6
+        }
+      },
+      "tags": {
+        "1h": "⚪ 观望",
+        "4h": "⚪ 观望",
+        "12h": "⚪ 观望",
+        "1d": "⚪ 观望"
+      },
+      "aggregate": "⚪ 信号冲突-观望"
+    }
+  ]
 }
