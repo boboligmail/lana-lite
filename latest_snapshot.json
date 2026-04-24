@@ -1,206 +1,167 @@
 {
-  "timestamp": "2026-04-25T02:59:09.165823",
+  "timestamp": "2026-04-25T03:56:28.052191",
   "version": "v0.1.12",
   "top_heat": [
     {
-      "symbol": "KATUSDT",
-      "base": "KAT",
-      "price_change_24h": 72.66,
-      "score": 6,
-      "listing_days": 53,
-      "price": 0.02236
-    },
-    {
       "symbol": "APEUSDT",
       "base": "APE",
-      "price_change_24h": 63.28,
+      "price_change_24h": 102.89,
       "score": 6,
       "listing_days": 1499,
-      "price": 0.1641
+      "price": 0.2037
+    },
+    {
+      "symbol": "KATUSDT",
+      "base": "KAT",
+      "price_change_24h": 71.29,
+      "score": 6,
+      "listing_days": 53,
+      "price": 0.02184
     },
     {
       "symbol": "TRADOORUSDT",
       "base": "TRADOOR",
-      "price_change_24h": -54.36,
+      "price_change_24h": -67.11,
       "score": 6,
       "listing_days": 217,
-      "price": 3.181
-    },
-    {
-      "symbol": "ESPORTSUSDT",
-      "base": "ESPORTS",
-      "price_change_24h": 38.01,
-      "score": 4,
-      "listing_days": 269,
-      "price": 0.484
+      "price": 2.573
     },
     {
       "symbol": "MAGMAUSDT",
       "base": "MAGMA",
-      "price_change_24h": 35.23,
+      "price_change_24h": 42.12,
       "score": 4,
       "listing_days": 114,
-      "price": 0.26369
+      "price": 0.27491
+    },
+    {
+      "symbol": "ESPORTSUSDT",
+      "base": "ESPORTS",
+      "price_change_24h": 36.81,
+      "score": 4,
+      "listing_days": 269,
+      "price": 0.4768
     },
     {
       "symbol": "SKRUSDT",
       "base": "SKR",
-      "price_change_24h": 34.43,
+      "price_change_24h": 35.35,
       "score": 4,
       "listing_days": 92,
-      "price": 0.019831
-    },
-    {
-      "symbol": "SPORTFUNUSDT",
-      "base": "SPORTFUN",
-      "price_change_24h": 27.51,
-      "score": 4,
-      "listing_days": 98,
-      "price": 0.04668
-    },
-    {
-      "symbol": "IRUSDT",
-      "base": "IR",
-      "price_change_24h": -27.17,
-      "score": 4,
-      "listing_days": 124,
-      "price": 0.03069
-    },
-    {
-      "symbol": "DUSDT",
-      "base": "D",
-      "price_change_24h": 25.45,
-      "score": 4,
-      "listing_days": 470,
-      "price": 0.011312
+      "price": 0.020306
     },
     {
       "symbol": "ZBTUSDT",
       "base": "ZBT",
-      "price_change_24h": 24.97,
+      "price_change_24h": 33.79,
       "score": 4,
       "listing_days": 189,
-      "price": 0.13835
+      "price": 0.14762
     },
     {
-      "symbol": "OPNUSDT",
-      "base": "OPN",
-      "price_change_24h": 21.15,
+      "symbol": "IRUSDT",
+      "base": "IR",
+      "price_change_24h": -27.68,
       "score": 4,
-      "listing_days": 62,
-      "price": 0.2091
+      "listing_days": 124,
+      "price": 0.03039
+    },
+    {
+      "symbol": "DUSDT",
+      "base": "D",
+      "price_change_24h": 26.67,
+      "score": 4,
+      "listing_days": 470,
+      "price": 0.011469
+    },
+    {
+      "symbol": "SPORTFUNUSDT",
+      "base": "SPORTFUN",
+      "price_change_24h": 25.26,
+      "score": 4,
+      "listing_days": 98,
+      "price": 0.04671
     },
     {
       "symbol": "INTCUSDT",
       "base": "INTC",
-      "price_change_24h": 20.61,
+      "price_change_24h": 23.36,
       "score": 4,
       "listing_days": 81,
-      "price": 80.93
+      "price": 82.23
+    },
+    {
+      "symbol": "OPNUSDT",
+      "base": "OPN",
+      "price_change_24h": 23.21,
+      "score": 4,
+      "listing_days": 62,
+      "price": 0.2139
     },
     {
       "symbol": "ROBOUSDT",
       "base": "ROBO",
-      "price_change_24h": 19.67,
+      "price_change_24h": 20.64,
       "score": 4,
       "listing_days": 56,
-      "price": 0.02403
-    },
-    {
-      "symbol": "OPGUSDT",
-      "base": "OPG",
-      "price_change_24h": -19.43,
-      "score": 4,
-      "listing_days": 2,
-      "price": 0.2741
+      "price": 0.02414
     },
     {
       "symbol": "GRIFFAINUSDT",
       "base": "GRIFFAIN",
-      "price_change_24h": 19.26,
+      "price_change_24h": 20.48,
       "score": 4,
       "listing_days": 477,
-      "price": 0.021017
+      "price": 0.021083
     },
     {
       "symbol": "TREEUSDT",
       "base": "TREE",
-      "price_change_24h": 18.97,
+      "price_change_24h": 20.21,
       "score": 4,
       "listing_days": 269,
-      "price": 0.07863
+      "price": 0.07923
     },
     {
-      "symbol": "PUMPBTCUSDT",
-      "base": "PUMPBTC",
-      "price_change_24h": 17.95,
+      "symbol": "OPGUSDT",
+      "base": "OPG",
+      "price_change_24h": -19.1,
       "score": 4,
-      "listing_days": 315,
-      "price": 0.02582
+      "listing_days": 2,
+      "price": 0.2723
     },
     {
       "symbol": "STABLEUSDT",
       "base": "STABLE",
-      "price_change_24h": 17.29,
+      "price_change_24h": 18.7,
       "score": 4,
       "listing_days": 169,
-      "price": 0.0348
-    },
-    {
-      "symbol": "MOVRUSDT",
-      "base": "MOVR",
-      "price_change_24h": -16.45,
-      "score": 4,
-      "listing_days": 850,
-      "price": 2.26
+      "price": 0.0353
     },
     {
       "symbol": "DYDXUSDT",
       "base": "DYDX",
-      "price_change_24h": 16.04,
+      "price_change_24h": 18.64,
       "score": 4,
       "listing_days": 1688,
-      "price": 0.1584
-    }
-  ],
-  "oi_anomaly": [
+      "price": 0.1629
+    },
     {
       "symbol": "PUMPBTCUSDT",
       "base": "PUMPBTC",
-      "price_change_24h": 17.95,
+      "price_change_24h": 16.97,
       "score": 4,
       "listing_days": 315,
-      "price": 0.02582,
-      "spot_price": 0.02583,
-      "tf": {
-        "1h": {
-          "oi_pct": 26.65,
-          "price_pct": -0.27,
-          "ratio": 97.54
-        },
-        "4h": {
-          "oi_pct": 23.83,
-          "price_pct": -11.59,
-          "ratio": 2.06
-        },
-        "12h": {
-          "oi_pct": 58.3,
-          "price_pct": 19.19,
-          "ratio": 3.04
-        },
-        "1d": {
-          "oi_pct": 55.02,
-          "price_pct": 14.24,
-          "ratio": 3.86
-        }
-      },
-      "tags": {
-        "1h": "⚪ 观望",
-        "4h": "⚪ 观望",
-        "12h": "⚪ 观望",
-        "1d": "⚪ 观望"
-      },
-      "aggregate": "⚪ 信号冲突-观望"
+      "price": 0.02578
+    },
+    {
+      "symbol": "RAREUSDT",
+      "base": "RARE",
+      "price_change_24h": -16.04,
+      "score": 4,
+      "listing_days": 617,
+      "price": 0.01738
     }
-  ]
+  ],
+  "oi_anomaly": []
 }
