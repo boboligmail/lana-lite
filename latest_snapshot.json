@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-25T20:55:53.779223",
+  "timestamp": "2026-04-25T21:58:59.666262",
   "version": "v0.1.13",
   "top_heat": [
     {
@@ -7,237 +7,237 @@
       "base": "HYPER",
       "price_change_24h": 53.54,
       "score": 6,
-      "listing_days": 367,
-      "price": 0.14941
+      "listing_days": 368,
+      "price": 0.15131
     },
     {
       "symbol": "APEUSDT",
       "base": "APE",
-      "price_change_24h": 42.47,
+      "price_change_24h": 40.84,
       "score": 6,
       "listing_days": 1500,
-      "price": 0.1607
+      "price": 0.1576
     },
     {
       "symbol": "AXSUSDT",
       "base": "AXS",
-      "price_change_24h": 38.41,
+      "price_change_24h": 36.97,
       "score": 6,
       "listing_days": 2404,
-      "price": 1.535
+      "price": 1.519
     },
     {
       "symbol": "CHIPUSDT",
       "base": "CHIP",
-      "price_change_24h": -20.89,
+      "price_change_24h": -18.49,
       "score": 6,
       "listing_days": 9,
-      "price": 0.0726
-    },
-    {
-      "symbol": "KATUSDT",
-      "base": "KAT",
-      "price_change_24h": -19.04,
-      "score": 6,
-      "listing_days": 54,
-      "price": 0.01675
-    },
-    {
-      "symbol": "GRASSUSDT",
-      "base": "GRASS",
-      "price_change_24h": -14.66,
-      "score": 5,
-      "listing_days": 532,
-      "price": 0.3637
-    },
-    {
-      "symbol": "SLPUSDT",
-      "base": "SLP",
-      "price_change_24h": 12.55,
-      "score": 5,
-      "listing_days": 276,
-      "price": 0.0007562
+      "price": 0.07282
     },
     {
       "symbol": "TRADOORUSDT",
       "base": "TRADOOR",
-      "price_change_24h": -88.24,
+      "price_change_24h": -88.54,
       "score": 4,
       "listing_days": 218,
-      "price": 1.018
+      "price": 0.993
     },
     {
       "symbol": "DUSDT",
       "base": "D",
-      "price_change_24h": 30.2,
+      "price_change_24h": 43.64,
       "score": 4,
       "listing_days": 471,
-      "price": 0.013116
-    },
-    {
-      "symbol": "PUMPBTCUSDT",
-      "base": "PUMPBTC",
-      "price_change_24h": -24.64,
-      "score": 4,
-      "listing_days": 316,
-      "price": 0.02599
+      "price": 0.014006
     },
     {
       "symbol": "BULLAUSDT",
       "base": "BULLA",
-      "price_change_24h": -24.28,
+      "price_change_24h": -26.32,
       "score": 4,
       "listing_days": 295,
-      "price": 0.008291
+      "price": 0.008128
+    },
+    {
+      "symbol": "BSBUSDT",
+      "base": "BSB",
+      "price_change_24h": 25.74,
+      "score": 4,
+      "listing_days": 31,
+      "price": 0.60263
+    },
+    {
+      "symbol": "ORCAUSDT",
+      "base": "ORCA",
+      "price_change_24h": 22.78,
+      "score": 4,
+      "listing_days": 504,
+      "price": 1.148
     },
     {
       "symbol": "COLLECTUSDT",
       "base": "COLLECT",
-      "price_change_24h": -22.6,
+      "price_change_24h": -22.26,
       "score": 4,
-      "listing_days": 114,
-      "price": 0.03352
+      "listing_days": 115,
+      "price": 0.03275
     },
     {
-      "symbol": "API3USDT",
-      "base": "API3",
-      "price_change_24h": 21.2,
+      "symbol": "KATUSDT",
+      "base": "KAT",
+      "price_change_24h": -21.98,
       "score": 4,
-      "listing_days": 1524,
-      "price": 0.3728
+      "listing_days": 54,
+      "price": 0.01736
     },
     {
       "symbol": "IRUSDT",
       "base": "IR",
-      "price_change_24h": -19.73,
+      "price_change_24h": -19.64,
       "score": 4,
       "listing_days": 125,
-      "price": 0.02851
+      "price": 0.02828
     },
     {
-      "symbol": "CROSSUSDT",
-      "base": "CROSS",
-      "price_change_24h": 18.67,
+      "symbol": "PUMPBTCUSDT",
+      "base": "PUMPBTC",
+      "price_change_24h": -19.6,
       "score": 4,
-      "listing_days": 289,
-      "price": 0.13066
+      "listing_days": 316,
+      "price": 0.0258
     },
     {
       "symbol": "AKEUSDT",
       "base": "AKE",
-      "price_change_24h": -18.25,
+      "price_change_24h": -19.51,
       "score": 4,
       "listing_days": 211,
-      "price": 0.0003302
+      "price": 0.0003284
+    },
+    {
+      "symbol": "CROSSUSDT",
+      "base": "CROSS",
+      "price_change_24h": 18.61,
+      "score": 4,
+      "listing_days": 289,
+      "price": 0.129
+    },
+    {
+      "symbol": "API3USDT",
+      "base": "API3",
+      "price_change_24h": 18.39,
+      "score": 4,
+      "listing_days": 1524,
+      "price": 0.3651
+    },
+    {
+      "symbol": "PIPPINUSDT",
+      "base": "PIPPIN",
+      "price_change_24h": 18.26,
+      "score": 4,
+      "listing_days": 456,
+      "price": 0.02992
     },
     {
       "symbol": "AIOTUSDT",
       "base": "AIOT",
-      "price_change_24h": 18.05,
+      "price_change_24h": 16.27,
       "score": 4,
       "listing_days": 360,
-      "price": 0.0501
+      "price": 0.04968
     },
     {
-      "symbol": "SKRUSDT",
-      "base": "SKR",
-      "price_change_24h": -17.73,
+      "symbol": "BUSDT",
+      "base": "B",
+      "price_change_24h": 15.27,
       "score": 4,
-      "listing_days": 93,
-      "price": 0.016763
+      "listing_days": 337,
+      "price": 0.114
     },
     {
-      "symbol": "SAHARAUSDT",
-      "base": "SAHARA",
-      "price_change_24h": 17.22,
-      "score": 4,
-      "listing_days": 303,
-      "price": 0.02539
-    },
-    {
-      "symbol": "CYSUSDT",
-      "base": "CYS",
-      "price_change_24h": -16.15,
-      "score": 4,
-      "listing_days": 134,
-      "price": 0.42
+      "symbol": "STOUSDT",
+      "base": "STO",
+      "price_change_24h": -14.93,
+      "score": 3,
+      "listing_days": 377,
+      "price": 0.09042
     }
   ],
   "oi_anomaly": [
     {
-      "symbol": "CROSSUSDT",
-      "base": "CROSS",
-      "price_change_24h": 18.67,
-      "score": 4,
-      "listing_days": 289,
-      "price": 0.13066,
-      "spot_price": 0.13062,
+      "symbol": "HYPERUSDT",
+      "base": "HYPER",
+      "price_change_24h": 53.54,
+      "score": 6,
+      "listing_days": 368,
+      "price": 0.15131,
+      "spot_price": 0.15119,
       "tf": {
         "1h": {
-          "oi_pct": 18.01,
-          "price_pct": 5.1,
-          "ratio": 3.53
+          "oi_pct": 24.18,
+          "price_pct": 4.33,
+          "ratio": 5.58
         },
         "4h": {
-          "oi_pct": 18.39,
-          "price_pct": 6.76,
-          "ratio": 2.72
+          "oi_pct": 426.3,
+          "price_pct": 52.31,
+          "ratio": 8.15
         },
         "12h": {
-          "oi_pct": 42.93,
-          "price_pct": 15.39,
-          "ratio": 2.79
+          "oi_pct": 361.95,
+          "price_pct": 55.34,
+          "ratio": 6.54
         },
         "1d": {
-          "oi_pct": 44.03,
-          "price_pct": 14.15,
-          "ratio": 3.11
+          "oi_pct": 116.77,
+          "price_pct": 34.51,
+          "ratio": 3.38
         }
       },
       "tags": {
-        "1h": "⚪ 观望",
-        "4h": "⚪ 观望",
-        "12h": "⚪ 观望",
+        "1h": "🟢 做多强(A)",
+        "4h": "🟢 做多强(A)",
+        "12h": "🟢 做多强(A)",
         "1d": "⚪ 观望"
       },
-      "aggregate": "⚪ 信号冲突-观望",
+      "aggregate": "🟢🟢 多时间框架共振-做多",
       "h1": {
         "level": "strong_long",
         "tag": "强做多 H1全命中",
         "margin_u": 10,
         "leverage": 5,
-        "reason": "4周期同向正 + r>=1.3 + 1d/4h=1.14",
+        "reason": "4周期同向正 + r>=1.3 + 1d/4h=0.41",
         "should_trade": true
       }
     },
     {
-      "symbol": "SAPIENUSDT",
-      "base": "SAPIEN",
-      "price_change_24h": 10.76,
-      "score": 3,
-      "listing_days": 247,
-      "price": 0.09964,
-      "spot_price": 0.09923,
+      "symbol": "BULLAUSDT",
+      "base": "BULLA",
+      "price_change_24h": -26.32,
+      "score": 4,
+      "listing_days": 295,
+      "price": 0.008128,
+      "spot_price": 0.008144,
       "tf": {
         "1h": {
-          "oi_pct": 25.89,
-          "price_pct": 0.36,
-          "ratio": 72.76
+          "oi_pct": 10.05,
+          "price_pct": -1.16,
+          "ratio": 8.65
         },
         "4h": {
-          "oi_pct": 26.36,
-          "price_pct": -0.61,
-          "ratio": 43.38
+          "oi_pct": 6.72,
+          "price_pct": -1.19,
+          "ratio": 5.66
         },
         "12h": {
-          "oi_pct": 9.77,
-          "price_pct": 9.72,
-          "ratio": 1.01
+          "oi_pct": 6.74,
+          "price_pct": -19.36,
+          "ratio": 0.35
         },
         "1d": {
-          "oi_pct": 5.96,
-          "price_pct": 12.02,
-          "ratio": 0.5
+          "oi_pct": 4.32,
+          "price_pct": -23.5,
+          "ratio": 0.18
         }
       },
       "tags": {
