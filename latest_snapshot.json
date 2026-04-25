@@ -1,166 +1,166 @@
 {
-  "timestamp": "2026-04-25T10:58:09.677874",
-  "version": "v0.1.12",
+  "timestamp": "2026-04-25T11:55:02.578932",
+  "version": "v0.1.13",
   "top_heat": [
     {
       "symbol": "APEUSDT",
       "base": "APE",
-      "price_change_24h": 101.92,
+      "price_change_24h": 90.28,
       "score": 6,
       "listing_days": 1499,
-      "price": 0.2108
-    },
-    {
-      "symbol": "KATUSDT",
-      "base": "KAT",
-      "price_change_24h": 47.84,
-      "score": 6,
-      "listing_days": 53,
-      "price": 0.02327
-    },
-    {
-      "symbol": "BSBUSDT",
-      "base": "BSB",
-      "price_change_24h": 27.05,
-      "score": 6,
-      "listing_days": 30,
-      "price": 0.50218
-    },
-    {
-      "symbol": "GRASSUSDT",
-      "base": "GRASS",
-      "price_change_24h": -20.78,
-      "score": 6,
-      "listing_days": 532,
-      "price": 0.3678
-    },
-    {
-      "symbol": "CHIPUSDT",
-      "base": "CHIP",
-      "price_change_24h": -19.68,
-      "score": 6,
-      "listing_days": 8,
-      "price": 0.07773
+      "price": 0.1977
     },
     {
       "symbol": "TRADOORUSDT",
       "base": "TRADOOR",
-      "price_change_24h": -87.19,
-      "score": 4,
+      "price_change_24h": -87.25,
+      "score": 6,
       "listing_days": 217,
-      "price": 1.079
+      "price": 1.081
     },
     {
       "symbol": "API3USDT",
       "base": "API3",
-      "price_change_24h": 52.75,
-      "score": 4,
+      "price_change_24h": 61.14,
+      "score": 6,
       "listing_days": 1523,
-      "price": 0.4688
+      "price": 0.4931
+    },
+    {
+      "symbol": "KATUSDT",
+      "base": "KAT",
+      "price_change_24h": 42.4,
+      "score": 6,
+      "listing_days": 53,
+      "price": 0.02341
+    },
+    {
+      "symbol": "CHIPUSDT",
+      "base": "CHIP",
+      "price_change_24h": -15.19,
+      "score": 6,
+      "listing_days": 8,
+      "price": 0.08031
+    },
+    {
+      "symbol": "GALAUSDT",
+      "base": "GALA",
+      "price_change_24h": 14.95,
+      "score": 5,
+      "listing_days": 1680,
+      "price": 0.00369
     },
     {
       "symbol": "DUSDT",
       "base": "D",
-      "price_change_24h": 46.38,
+      "price_change_24h": 49.97,
       "score": 4,
       "listing_days": 470,
-      "price": 0.013225
+      "price": 0.013587
     },
     {
-      "symbol": "ESPORTSUSDT",
-      "base": "ESPORTS",
-      "price_change_24h": 26.79,
+      "symbol": "BSBUSDT",
+      "base": "BSB",
+      "price_change_24h": 41.43,
       "score": 4,
-      "listing_days": 269,
-      "price": 0.4633
+      "listing_days": 30,
+      "price": 0.54745
+    },
+    {
+      "symbol": "BULLAUSDT",
+      "base": "BULLA",
+      "price_change_24h": -23.78,
+      "score": 4,
+      "listing_days": 294,
+      "price": 0.008041
     },
     {
       "symbol": "SPORTFUNUSDT",
       "base": "SPORTFUN",
-      "price_change_24h": 25.15,
+      "price_change_24h": 22.95,
       "score": 4,
       "listing_days": 98,
-      "price": 0.04707
+      "price": 0.04785
     },
     {
-      "symbol": "IRUSDT",
-      "base": "IR",
-      "price_change_24h": -23.25,
+      "symbol": "ESPORTSUSDT",
+      "base": "ESPORTS",
+      "price_change_24h": 22.36,
       "score": 4,
-      "listing_days": 124,
-      "price": 0.02878
-    },
-    {
-      "symbol": "VINEUSDT",
-      "base": "VINE",
-      "price_change_24h": -20.25,
-      "score": 4,
-      "listing_days": 455,
-      "price": 0.01567
-    },
-    {
-      "symbol": "DYMUSDT",
-      "base": "DYM",
-      "price_change_24h": 19.95,
-      "score": 4,
-      "listing_days": 807,
-      "price": 0.02165
-    },
-    {
-      "symbol": "COLLECTUSDT",
-      "base": "COLLECT",
-      "price_change_24h": -19.38,
-      "score": 4,
-      "listing_days": 114,
-      "price": 0.03332
+      "listing_days": 269,
+      "price": 0.4351
     },
     {
       "symbol": "PUMPBTCUSDT",
       "base": "PUMPBTC",
-      "price_change_24h": 19.17,
+      "price_change_24h": 21.93,
       "score": 4,
       "listing_days": 315,
-      "price": 0.02648
+      "price": 0.02735
     },
     {
       "symbol": "SOONUSDT",
       "base": "SOON",
-      "price_change_24h": 18.31,
+      "price_change_24h": 20.5,
       "score": 4,
       "listing_days": 336,
-      "price": 0.2339
+      "price": 0.2357
     },
     {
-      "symbol": "KGENUSDT",
-      "base": "KGEN",
-      "price_change_24h": 18.24,
+      "symbol": "VINEUSDT",
+      "base": "VINE",
+      "price_change_24h": -19.32,
       "score": 4,
-      "listing_days": 199,
-      "price": 0.19705
+      "listing_days": 455,
+      "price": 0.01574
     },
     {
-      "symbol": "OPNUSDT",
-      "base": "OPN",
-      "price_change_24h": 16.8,
+      "symbol": "GRASSUSDT",
+      "base": "GRASS",
+      "price_change_24h": -19.12,
       "score": 4,
-      "listing_days": 62,
-      "price": 0.2106
+      "listing_days": 532,
+      "price": 0.3726
+    },
+    {
+      "symbol": "VELVETUSDT",
+      "base": "VELVET",
+      "price_change_24h": -18.32,
+      "score": 4,
+      "listing_days": 283,
+      "price": 0.09048
+    },
+    {
+      "symbol": "IRUSDT",
+      "base": "IR",
+      "price_change_24h": -18.2,
+      "score": 4,
+      "listing_days": 124,
+      "price": 0.02903
+    },
+    {
+      "symbol": "COLLECTUSDT",
+      "base": "COLLECT",
+      "price_change_24h": -17.99,
+      "score": 4,
+      "listing_days": 114,
+      "price": 0.03497
     },
     {
       "symbol": "DYDXUSDT",
       "base": "DYDX",
-      "price_change_24h": 16.52,
+      "price_change_24h": 17.63,
       "score": 4,
       "listing_days": 1688,
-      "price": 0.1749
+      "price": 0.1748
     },
     {
-      "symbol": "AKEUSDT",
-      "base": "AKE",
-      "price_change_24h": -16.27,
+      "symbol": "DYMUSDT",
+      "base": "DYM",
+      "price_change_24h": 17.29,
       "score": 4,
-      "listing_days": 210,
-      "price": 0.0003582
+      "listing_days": 807,
+      "price": 0.0213
     }
   ],
   "oi_anomaly": []
