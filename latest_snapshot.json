@@ -1,260 +1,167 @@
 {
-  "timestamp": "2026-04-26T16:59:47.394166",
+  "timestamp": "2026-04-26T17:54:58.139913",
   "version": "v0.1.17",
   "top_heat": [
     {
       "symbol": "ORCAUSDT",
       "base": "ORCA",
-      "price_change_24h": 77.88,
+      "price_change_24h": 76.73,
       "score": 6,
       "listing_days": 505,
-      "price": 1.697
-    },
-    {
-      "symbol": "ENSOUSDT",
-      "base": "ENSO",
-      "price_change_24h": 31.27,
-      "score": 6,
-      "listing_days": 193,
-      "price": 1.0454
-    },
-    {
-      "symbol": "BSBUSDT",
-      "base": "BSB",
-      "price_change_24h": 19.99,
-      "score": 6,
-      "listing_days": 31,
-      "price": 0.64413
+      "price": 1.686
     },
     {
       "symbol": "APEUSDT",
       "base": "APE",
-      "price_change_24h": -12.77,
-      "score": 5,
+      "price_change_24h": -15.24,
+      "score": 6,
       "listing_days": 1501,
-      "price": 0.1564
+      "price": 0.1541
     },
     {
       "symbol": "CHIPUSDT",
       "base": "CHIP",
-      "price_change_24h": -12.42,
+      "price_change_24h": -11.13,
       "score": 5,
       "listing_days": 10,
-      "price": 0.06835
+      "price": 0.06943
     },
     {
       "symbol": "TRUMPUSDT",
       "base": "TRUMP",
-      "price_change_24h": -10.46,
+      "price_change_24h": -10.71,
       "score": 5,
       "listing_days": 462,
-      "price": 2.653
+      "price": 2.661
     },
     {
       "symbol": "AGTUSDT",
       "base": "AGT",
-      "price_change_24h": 55.79,
+      "price_change_24h": 54.25,
       "score": 4,
       "listing_days": 340,
-      "price": 0.017112
-    },
-    {
-      "symbol": "ZBTUSDT",
-      "base": "ZBT",
-      "price_change_24h": 48.48,
-      "score": 4,
-      "listing_days": 190,
-      "price": 0.20523
+      "price": 0.01714
     },
     {
       "symbol": "KATUSDT",
       "base": "KAT",
-      "price_change_24h": -40.46,
+      "price_change_24h": -36.91,
       "score": 4,
       "listing_days": 55,
-      "price": 0.01273
-    },
-    {
-      "symbol": "TRADOORUSDT",
-      "base": "TRADOOR",
-      "price_change_24h": -31.94,
-      "score": 4,
-      "listing_days": 218,
-      "price": 0.816
-    },
-    {
-      "symbol": "AIOTUSDT",
-      "base": "AIOT",
-      "price_change_24h": 27.25,
-      "score": 4,
-      "listing_days": 360,
-      "price": 0.05715
-    },
-    {
-      "symbol": "LABUSDT",
-      "base": "LAB",
-      "price_change_24h": 25.61,
-      "score": 4,
-      "listing_days": 190,
-      "price": 0.9324
-    },
-    {
-      "symbol": "HIGHUSDT",
-      "base": "HIGH",
-      "price_change_24h": 22.77,
-      "score": 4,
-      "listing_days": 1178,
-      "price": 0.2815
-    },
-    {
-      "symbol": "HYPERUSDT",
-      "base": "HYPER",
-      "price_change_24h": 21.86,
-      "score": 4,
-      "listing_days": 368,
-      "price": 0.12614
-    },
-    {
-      "symbol": "BUSDT",
-      "base": "B",
-      "price_change_24h": 20.57,
-      "score": 4,
-      "listing_days": 338,
-      "price": 0.1219
-    },
-    {
-      "symbol": "SAFEUSDT",
-      "base": "SAFE",
-      "price_change_24h": -18.65,
-      "score": 4,
-      "listing_days": 547,
-      "price": 0.1461
-    },
-    {
-      "symbol": "API3USDT",
-      "base": "API3",
-      "price_change_24h": -15.7,
-      "score": 4,
-      "listing_days": 1525,
-      "price": 0.3496
+      "price": 0.01287
     },
     {
       "symbol": "DAMUSDT",
       "base": "DAM",
-      "price_change_24h": 14.91,
-      "score": 3,
+      "price_change_24h": 33.18,
+      "score": 4,
       "listing_days": 250,
-      "price": 0.02489
+      "price": 0.02862
     },
     {
-      "symbol": "RAYSOLUSDT",
-      "base": "RAYSOL",
-      "price_change_24h": 13.68,
-      "score": 3,
-      "listing_days": 501,
-      "price": 0.7604
+      "symbol": "ENSOUSDT",
+      "base": "ENSO",
+      "price_change_24h": 32.57,
+      "score": 4,
+      "listing_days": 194,
+      "price": 1.06
     },
     {
-      "symbol": "ESPORTSUSDT",
-      "base": "ESPORTS",
-      "price_change_24h": -13.35,
-      "score": 3,
-      "listing_days": 270,
-      "price": 0.3434
-    }
-  ],
-  "oi_anomaly": [
+      "symbol": "ZBTUSDT",
+      "base": "ZBT",
+      "price_change_24h": 26.73,
+      "score": 4,
+      "listing_days": 190,
+      "price": 0.18004
+    },
     {
-      "symbol": "RAYSOLUSDT",
-      "base": "RAYSOL",
-      "price_change_24h": 13.68,
-      "score": 3,
-      "listing_days": 501,
-      "price": 0.7604,
-      "spot_price": 0.7583,
-      "tf": {
-        "1h": {
-          "oi_pct": 11.8,
-          "price_pct": 1.37,
-          "ratio": 8.63
-        },
-        "4h": {
-          "oi_pct": -10.47,
-          "price_pct": -6.95,
-          "ratio": 1.51
-        },
-        "12h": {
-          "oi_pct": 108.91,
-          "price_pct": 10.84,
-          "ratio": 10.04
-        },
-        "1d": {
-          "oi_pct": 131.13,
-          "price_pct": 12.55,
-          "ratio": 10.45
-        }
-      },
-      "tags": {
-        "1h": "⚪ 观望",
-        "4h": "⚪ 观望",
-        "12h": "🟢 做多强(A)",
-        "1d": "🟢 做多强(A)"
-      },
-      "aggregate": "🟢 短中期做多",
-      "h1": {
-        "level": "watch",
-        "tag": "真观望",
-        "margin_u": 0,
-        "leverage": 0,
-        "reason": "符号混乱 方向打架",
-        "should_trade": false
-      }
+      "symbol": "TRADOORUSDT",
+      "base": "TRADOOR",
+      "price_change_24h": -25.16,
+      "score": 4,
+      "listing_days": 218,
+      "price": 0.842
+    },
+    {
+      "symbol": "AIOTUSDT",
+      "base": "AIOT",
+      "price_change_24h": 24.02,
+      "score": 4,
+      "listing_days": 360,
+      "price": 0.05731
+    },
+    {
+      "symbol": "HYPERUSDT",
+      "base": "HYPER",
+      "price_change_24h": 22.48,
+      "score": 4,
+      "listing_days": 368,
+      "price": 0.12761
+    },
+    {
+      "symbol": "LABUSDT",
+      "base": "LAB",
+      "price_change_24h": 22.09,
+      "score": 4,
+      "listing_days": 190,
+      "price": 0.9552
+    },
+    {
+      "symbol": "BSBUSDT",
+      "base": "BSB",
+      "price_change_24h": 21.01,
+      "score": 4,
+      "listing_days": 31,
+      "price": 0.634
+    },
+    {
+      "symbol": "SAFEUSDT",
+      "base": "SAFE",
+      "price_change_24h": -19.92,
+      "score": 4,
+      "listing_days": 547,
+      "price": 0.1455
+    },
+    {
+      "symbol": "BUSDT",
+      "base": "B",
+      "price_change_24h": 18.66,
+      "score": 4,
+      "listing_days": 338,
+      "price": 0.1189
     },
     {
       "symbol": "DUSDT",
       "base": "D",
-      "price_change_24h": 10.73,
-      "score": 3,
+      "price_change_24h": 17.84,
+      "score": 4,
       "listing_days": 471,
-      "price": 0.014092,
-      "spot_price": 0.014082,
-      "tf": {
-        "1h": {
-          "oi_pct": -29.83,
-          "price_pct": 3.89,
-          "ratio": 7.66
-        },
-        "4h": {
-          "oi_pct": -26.99,
-          "price_pct": 16.22,
-          "ratio": 1.66
-        },
-        "12h": {
-          "oi_pct": 1.79,
-          "price_pct": 4.62,
-          "ratio": 0.39
-        },
-        "1d": {
-          "oi_pct": -8.29,
-          "price_pct": 6.45,
-          "ratio": 1.28
-        }
-      },
-      "tags": {
-        "1h": "⚪ 观望",
-        "4h": "⚪ 空头回补(D)",
-        "12h": "⚪ 观望",
-        "1d": "⚪ 观望"
-      },
-      "aggregate": "⚪ 信号冲突-观望",
-      "h1": {
-        "level": "watch",
-        "tag": "真观望",
-        "margin_u": 0,
-        "leverage": 0,
-        "reason": "符号混乱 方向打架",
-        "should_trade": false
-      }
+      "price": 0.014956
+    },
+    {
+      "symbol": "SLPUSDT",
+      "base": "SLP",
+      "price_change_24h": -17.8,
+      "score": 4,
+      "listing_days": 276,
+      "price": 0.0007198
+    },
+    {
+      "symbol": "API3USDT",
+      "base": "API3",
+      "price_change_24h": -14.12,
+      "score": 3,
+      "listing_days": 1525,
+      "price": 0.3497
+    },
+    {
+      "symbol": "RAYSOLUSDT",
+      "base": "RAYSOL",
+      "price_change_24h": 13.85,
+      "score": 3,
+      "listing_days": 501,
+      "price": 0.7604
     }
-  ]
+  ],
+  "oi_anomaly": []
 }
