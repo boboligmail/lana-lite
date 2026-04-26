@@ -1,213 +1,213 @@
 {
-  "timestamp": "2026-04-26T21:59:52.234849",
+  "timestamp": "2026-04-26T22:57:14.696050",
   "version": "v0.1.17",
   "top_heat": [
     {
       "symbol": "ORCAUSDT",
       "base": "ORCA",
-      "price_change_24h": 40.98,
+      "price_change_24h": 39.17,
       "score": 6,
       "listing_days": 505,
-      "price": 1.634
-    },
-    {
-      "symbol": "MASKUSDT",
-      "base": "MASK",
-      "price_change_24h": 20.36,
-      "score": 6,
-      "listing_days": 1745,
-      "price": 0.6161
-    },
-    {
-      "symbol": "BSBUSDT",
-      "base": "BSB",
-      "price_change_24h": 8.35,
-      "score": 5,
-      "listing_days": 32,
-      "price": 0.65795
-    },
-    {
-      "symbol": "AGTUSDT",
-      "base": "AGT",
-      "price_change_24h": 48.08,
-      "score": 4,
-      "listing_days": 341,
-      "price": 0.016329
-    },
-    {
-      "symbol": "ZBTUSDT",
-      "base": "ZBT",
-      "price_change_24h": 38.34,
-      "score": 4,
-      "listing_days": 191,
-      "price": 0.18666
-    },
-    {
-      "symbol": "AIOTUSDT",
-      "base": "AIOT",
-      "price_change_24h": 29.14,
-      "score": 4,
-      "listing_days": 361,
-      "price": 0.06412
-    },
-    {
-      "symbol": "KATUSDT",
-      "base": "KAT",
-      "price_change_24h": -26.98,
-      "score": 4,
-      "listing_days": 55,
-      "price": 0.01269
-    },
-    {
-      "symbol": "OPGUSDT",
-      "base": "OPG",
-      "price_change_24h": 25.47,
-      "score": 4,
-      "listing_days": 3,
-      "price": 0.3241
-    },
-    {
-      "symbol": "NAORISUSDT",
-      "base": "NAORIS",
-      "price_change_24h": 23.79,
-      "score": 4,
-      "listing_days": 269,
-      "price": 0.0831
+      "price": 1.549
     },
     {
       "symbol": "LABUSDT",
       "base": "LAB",
-      "price_change_24h": 20.64,
-      "score": 4,
-      "listing_days": 190,
-      "price": 0.8953
+      "price_change_24h": 22.01,
+      "score": 6,
+      "listing_days": 191,
+      "price": 0.8748
     },
     {
-      "symbol": "ENSOUSDT",
-      "base": "ENSO",
-      "price_change_24h": 19.48,
-      "score": 4,
-      "listing_days": 194,
-      "price": 0.9984
+      "symbol": "MASKUSDT",
+      "base": "MASK",
+      "price_change_24h": 15.51,
+      "score": 6,
+      "listing_days": 1745,
+      "price": 0.5959
     },
     {
-      "symbol": "TRADOORUSDT",
-      "base": "TRADOOR",
-      "price_change_24h": -19.3,
-      "score": 4,
-      "listing_days": 219,
-      "price": 0.803
+      "symbol": "LDOUSDT",
+      "base": "LDO",
+      "price_change_24h": 9.74,
+      "score": 5,
+      "listing_days": 1313,
+      "price": 0.4158
     },
     {
-      "symbol": "GWEIUSDT",
-      "base": "GWEI",
-      "price_change_24h": 17.01,
+      "symbol": "AEROUSDT",
+      "base": "AERO",
+      "price_change_24h": 7.36,
+      "score": 5,
+      "listing_days": 508,
+      "price": 0.461
+    },
+    {
+      "symbol": "AGTUSDT",
+      "base": "AGT",
+      "price_change_24h": 45.67,
       "score": 4,
-      "listing_days": 87,
-      "price": 0.11414
+      "listing_days": 341,
+      "price": 0.01605
+    },
+    {
+      "symbol": "ZBTUSDT",
+      "base": "ZBT",
+      "price_change_24h": 38.09,
+      "score": 4,
+      "listing_days": 191,
+      "price": 0.19383
     },
     {
       "symbol": "HYPERUSDT",
       "base": "HYPER",
-      "price_change_24h": -16.94,
+      "price_change_24h": -26.7,
       "score": 4,
       "listing_days": 369,
-      "price": 0.12572
+      "price": 0.12442
+    },
+    {
+      "symbol": "KATUSDT",
+      "base": "KAT",
+      "price_change_24h": -25.15,
+      "score": 4,
+      "listing_days": 55,
+      "price": 0.0128
+    },
+    {
+      "symbol": "NAORISUSDT",
+      "base": "NAORIS",
+      "price_change_24h": 23.87,
+      "score": 4,
+      "listing_days": 269,
+      "price": 0.08406
+    },
+    {
+      "symbol": "TRADOORUSDT",
+      "base": "TRADOOR",
+      "price_change_24h": -20.18,
+      "score": 4,
+      "listing_days": 219,
+      "price": 0.795
+    },
+    {
+      "symbol": "AIOTUSDT",
+      "base": "AIOT",
+      "price_change_24h": 19.87,
+      "score": 4,
+      "listing_days": 361,
+      "price": 0.06027
     },
     {
       "symbol": "AINUSDT",
       "base": "AIN",
-      "price_change_24h": 15.94,
+      "price_change_24h": 18.55,
       "score": 4,
       "listing_days": 290,
-      "price": 0.07332
+      "price": 0.07444
+    },
+    {
+      "symbol": "GWEIUSDT",
+      "base": "GWEI",
+      "price_change_24h": 17.77,
+      "score": 4,
+      "listing_days": 87,
+      "price": 0.11364
+    },
+    {
+      "symbol": "OPGUSDT",
+      "base": "OPG",
+      "price_change_24h": 17.3,
+      "score": 4,
+      "listing_days": 3,
+      "price": 0.303
+    },
+    {
+      "symbol": "ENSOUSDT",
+      "base": "ENSO",
+      "price_change_24h": 16.07,
+      "score": 4,
+      "listing_days": 194,
+      "price": 0.9749
     },
     {
       "symbol": "HIGHUSDT",
       "base": "HIGH",
-      "price_change_24h": 12.55,
+      "price_change_24h": 13.09,
       "score": 3,
       "listing_days": 1178,
-      "price": 0.2367
+      "price": 0.2376
+    },
+    {
+      "symbol": "ZEREBROUSDT",
+      "base": "ZEREBRO",
+      "price_change_24h": -12.39,
+      "score": 3,
+      "listing_days": 479,
+      "price": 0.016287
+    },
+    {
+      "symbol": "BICOUSDT",
+      "base": "BICO",
+      "price_change_24h": 12.25,
+      "score": 3,
+      "listing_days": 941,
+      "price": 0.02923
     },
     {
       "symbol": "SAFEUSDT",
       "base": "SAFE",
-      "price_change_24h": -12.12,
+      "price_change_24h": -11.86,
       "score": 3,
       "listing_days": 548,
-      "price": 0.1421
-    },
-    {
-      "symbol": "BROCCOLI714USDT",
-      "base": "BROCCOLI714",
-      "price_change_24h": 12.11,
-      "score": 3,
-      "listing_days": 401,
-      "price": 0.01629
-    },
-    {
-      "symbol": "QUSDT",
-      "base": "Q",
-      "price_change_24h": 10.96,
-      "score": 3,
-      "listing_days": 236,
-      "price": 0.010582
-    },
-    {
-      "symbol": "FIGHTUSDT",
-      "base": "FIGHT",
-      "price_change_24h": 10.96,
-      "score": 3,
-      "listing_days": 93,
-      "price": 0.003879
+      "price": 0.1419
     }
   ],
   "oi_anomaly": [
     {
-      "symbol": "BANUSDT",
-      "base": "BAN",
-      "price_change_24h": -7.33,
-      "score": 3,
-      "listing_days": 524,
-      "price": 0.08193,
-      "spot_price": 0.0819,
+      "symbol": "LDOUSDT",
+      "base": "LDO",
+      "price_change_24h": 9.74,
+      "score": 5,
+      "listing_days": 1313,
+      "price": 0.4158,
+      "spot_price": 0.4158,
       "tf": {
         "1h": {
-          "oi_pct": -14.36,
-          "price_pct": -0.62,
-          "ratio": 23.31
+          "oi_pct": 16.53,
+          "price_pct": 3.88,
+          "ratio": 4.27
         },
         "4h": {
-          "oi_pct": -17.34,
-          "price_pct": -14.74,
-          "ratio": 1.18
+          "oi_pct": 32.39,
+          "price_pct": 6.87,
+          "ratio": 4.71
         },
         "12h": {
-          "oi_pct": -5.94,
-          "price_pct": -19.22,
-          "ratio": 0.31
+          "oi_pct": 18.12,
+          "price_pct": 5.31,
+          "ratio": 3.41
         },
         "1d": {
-          "oi_pct": 3.11,
-          "price_pct": -1.33,
-          "ratio": 2.34
+          "oi_pct": 15.05,
+          "price_pct": 2.39,
+          "ratio": 6.29
         }
       },
       "tags": {
         "1h": "⚪ 观望",
-        "4h": "⚪ 多头撤退(C)",
+        "4h": "⚪ 观望",
         "12h": "⚪ 观望",
         "1d": "⚪ 观望"
       },
       "aggregate": "⚪ 信号冲突-观望",
       "h1": {
-        "level": "watch",
-        "tag": "真观望",
-        "margin_u": 0,
-        "leverage": 0,
-        "reason": "符号混乱 方向打架",
-        "should_trade": false
+        "level": "strong_long",
+        "tag": "强做多 H1全命中",
+        "margin_u": 10,
+        "leverage": 5,
+        "reason": "4周期同向正 + r>=1.3 + 1d/4h=1.34",
+        "should_trade": true
       }
     }
   ]
