@@ -1,219 +1,167 @@
 {
-  "timestamp": "2026-04-27T10:58:51.269978",
+  "timestamp": "2026-04-27T11:56:10.409107",
   "version": "v0.1.17",
   "top_heat": [
     {
-      "symbol": "BSBUSDT",
-      "base": "BSB",
-      "price_change_24h": 31.83,
-      "score": 6,
-      "listing_days": 32,
-      "price": 0.84542
-    },
-    {
-      "symbol": "PENGUUSDT",
-      "base": "PENGU",
-      "price_change_24h": 16.07,
-      "score": 6,
-      "listing_days": 495,
-      "price": 0.00996
-    },
-    {
       "symbol": "CHIPUSDT",
       "base": "CHIP",
-      "price_change_24h": 13.55,
-      "score": 5,
+      "price_change_24h": 25.87,
+      "score": 6,
       "listing_days": 10,
-      "price": 0.07719
-    },
-    {
-      "symbol": "AIOTUSDT",
-      "base": "AIOT",
-      "price_change_24h": 42.88,
-      "score": 4,
-      "listing_days": 361,
-      "price": 0.07907
-    },
-    {
-      "symbol": "AINUSDT",
-      "base": "AIN",
-      "price_change_24h": 33.28,
-      "score": 4,
-      "listing_days": 290,
-      "price": 0.0825
-    },
-    {
-      "symbol": "NAORISUSDT",
-      "base": "NAORIS",
-      "price_change_24h": 28.91,
-      "score": 4,
-      "listing_days": 269,
-      "price": 0.08743
-    },
-    {
-      "symbol": "GWEIUSDT",
-      "base": "GWEI",
-      "price_change_24h": 26.17,
-      "score": 4,
-      "listing_days": 87,
-      "price": 0.12053
+      "price": 0.08421
     },
     {
       "symbol": "LDOUSDT",
       "base": "LDO",
-      "price_change_24h": 24.21,
-      "score": 4,
+      "price_change_24h": 22.8,
+      "score": 6,
       "listing_days": 1313,
-      "price": 0.4561
+      "price": 0.4503
+    },
+    {
+      "symbol": "PENGUUSDT",
+      "base": "PENGU",
+      "price_change_24h": 14.99,
+      "score": 5,
+      "listing_days": 495,
+      "price": 0.009916
+    },
+    {
+      "symbol": "BSBUSDT",
+      "base": "BSB",
+      "price_change_24h": 48.37,
+      "score": 4,
+      "listing_days": 32,
+      "price": 0.8245
+    },
+    {
+      "symbol": "AINUSDT",
+      "base": "AIN",
+      "price_change_24h": 34.94,
+      "score": 4,
+      "listing_days": 290,
+      "price": 0.08304
+    },
+    {
+      "symbol": "NAORISUSDT",
+      "base": "NAORIS",
+      "price_change_24h": 31.42,
+      "score": 4,
+      "listing_days": 269,
+      "price": 0.09005
+    },
+    {
+      "symbol": "AIOTUSDT",
+      "base": "AIOT",
+      "price_change_24h": 25.88,
+      "score": 4,
+      "listing_days": 361,
+      "price": 0.06795
+    },
+    {
+      "symbol": "GWEIUSDT",
+      "base": "GWEI",
+      "price_change_24h": 24.68,
+      "score": 4,
+      "listing_days": 87,
+      "price": 0.12005
     },
     {
       "symbol": "1000LUNCUSDT",
       "base": "1000LUNC",
-      "price_change_24h": 20.36,
+      "price_change_24h": 19.93,
       "score": 4,
       "listing_days": 1326,
-      "price": 0.06237
+      "price": 0.06145
     },
     {
-      "symbol": "SOMIUSDT",
-      "base": "SOMI",
-      "price_change_24h": -20.12,
+      "symbol": "AGTUSDT",
+      "base": "AGT",
+      "price_change_24h": 19.76,
       "score": 4,
-      "listing_days": 244,
-      "price": 0.1786
+      "listing_days": 341,
+      "price": 0.018494
     },
     {
       "symbol": "ZBTUSDT",
       "base": "ZBT",
-      "price_change_24h": 19.49,
+      "price_change_24h": 18.34,
       "score": 4,
       "listing_days": 191,
-      "price": 0.20536
-    },
-    {
-      "symbol": "SPORTFUNUSDT",
-      "base": "SPORTFUN",
-      "price_change_24h": 19.23,
-      "score": 4,
-      "listing_days": 100,
-      "price": 0.0509
-    },
-    {
-      "symbol": "SONICUSDT",
-      "base": "SONIC",
-      "price_change_24h": 18.23,
-      "score": 4,
-      "listing_days": 473,
-      "price": 0.04604
-    },
-    {
-      "symbol": "GPSUSDT",
-      "base": "GPS",
-      "price_change_24h": -16.29,
-      "score": 4,
-      "listing_days": 433,
-      "price": 0.006994
+      "price": 0.19794
     },
     {
       "symbol": "ORCAUSDT",
       "base": "ORCA",
-      "price_change_24h": -15.88,
+      "price_change_24h": -17.93,
       "score": 4,
       "listing_days": 506,
-      "price": 1.287
+      "price": 1.277
     },
     {
       "symbol": "CROSSUSDT",
       "base": "CROSS",
-      "price_change_24h": -15.4,
+      "price_change_24h": -16.93,
       "score": 4,
       "listing_days": 290,
-      "price": 0.10459
-    },
-    {
-      "symbol": "COLLECTUSDT",
-      "base": "COLLECT",
-      "price_change_24h": -15.27,
-      "score": 4,
-      "listing_days": 116,
-      "price": 0.03019
-    },
-    {
-      "symbol": "ZEREBROUSDT",
-      "base": "ZEREBRO",
-      "price_change_24h": -14.52,
-      "score": 3,
-      "listing_days": 479,
-      "price": 0.015384
-    },
-    {
-      "symbol": "MERLUSDT",
-      "base": "MERL",
-      "price_change_24h": 13.66,
-      "score": 3,
-      "listing_days": 332,
-      "price": 0.04035
+      "price": 0.10316
     },
     {
       "symbol": "PROMUSDT",
       "base": "PROM",
-      "price_change_24h": 13.5,
-      "score": 3,
+      "price_change_24h": 15.54,
+      "score": 4,
       "listing_days": 466,
-      "price": 2.354
+      "price": 2.379
+    },
+    {
+      "symbol": "UBUSDT",
+      "base": "UB",
+      "price_change_24h": 15.39,
+      "score": 4,
+      "listing_days": 226,
+      "price": 0.04889
+    },
+    {
+      "symbol": "SOMIUSDT",
+      "base": "SOMI",
+      "price_change_24h": -15.38,
+      "score": 4,
+      "listing_days": 244,
+      "price": 0.1783
+    },
+    {
+      "symbol": "MERLUSDT",
+      "base": "MERL",
+      "price_change_24h": 15.04,
+      "score": 4,
+      "listing_days": 332,
+      "price": 0.04069
+    },
+    {
+      "symbol": "GPSUSDT",
+      "base": "GPS",
+      "price_change_24h": -14.75,
+      "score": 3,
+      "listing_days": 433,
+      "price": 0.00713
+    },
+    {
+      "symbol": "CLOUSDT",
+      "base": "CLO",
+      "price_change_24h": 14.5,
+      "score": 3,
+      "listing_days": 194,
+      "price": 0.13767
+    },
+    {
+      "symbol": "SPORTFUNUSDT",
+      "base": "SPORTFUN",
+      "price_change_24h": 14.26,
+      "score": 3,
+      "listing_days": 100,
+      "price": 0.04912
     }
   ],
-  "oi_anomaly": [
-    {
-      "symbol": "SONICUSDT",
-      "base": "SONIC",
-      "price_change_24h": 18.23,
-      "score": 4,
-      "listing_days": 473,
-      "price": 0.04604,
-      "spot_price": 0.04607,
-      "tf": {
-        "1h": {
-          "oi_pct": 11.61,
-          "price_pct": 0.09,
-          "ratio": 122.71
-        },
-        "4h": {
-          "oi_pct": 41.59,
-          "price_pct": 19.82,
-          "ratio": 2.1
-        },
-        "12h": {
-          "oi_pct": 25.62,
-          "price_pct": 21.95,
-          "ratio": 1.17
-        },
-        "1d": {
-          "oi_pct": 47.64,
-          "price_pct": 18.16,
-          "ratio": 2.62
-        }
-      },
-      "tags": {
-        "1h": "⚪ 观望",
-        "4h": "⚪ 观望",
-        "12h": "⚪ 观望",
-        "1d": "⚪ 观望"
-      },
-      "aggregate": "⚪ 信号冲突-观望",
-      "h1": {
-        "level": "watch_long",
-        "tag": "观察做多 C2失败",
-        "margin_u": 3,
-        "leverage": 3,
-        "reason": "推动力不够 某周期r<1.3",
-        "should_trade": false
-      },
-      "funding": {
-        "lastFundingRate": -0.00919514,
-        "nextFundingTime": 1777262400000,
-        "markPrice": 0.04602
-      }
-    }
-  ]
+  "oi_anomaly": []
 }
