@@ -1,6 +1,6 @@
 """
 拉哪 Lite - 舆情热度 + 多时间框架 OI 监控
-版本: v0.1.12 (CoinGecko API Key + GitHub Actions 部署就绪)
+版本: v0.1.13 (H1 主方向引擎)
 新增:
   - CoinGecko demo key 支持 (避免限流)
   - 实时价格 (fetch_spot_price)
@@ -13,9 +13,25 @@
 
 import os
 import time
+from h1_engine import h1_judge, format_tg_alert
 import json
 import requests
 import schedule
+import threading
+# REAL_MODE routing: when on, swap binance_paper -> binance_real_runner (real money)
+# Pre-load .env so REAL_MODE / API keys are visible at module-level import time
+from dotenv import load_dotenv as _ld_pre_real
+_ld_pre_real()
+import os as _os_real_mode_check
+REAL_MODE = _os_real_mode_check.environ.get("REAL_MODE", "off").lower() == "on"
+import binance_paper  # always: shadow tracker / win-rate baseline (no MAX_OPEN limit)
+from binance_real import assert_one_way_mode
+if REAL_MODE:
+    import binance_real_runner
+    print("[lana] REAL_MODE=on -> dual: paper(shadow) + binance_real_runner(REAL MONEY)", flush=True)
+else:
+    binance_real_runner = None
+    print("[lana] REAL_MODE=off -> paper only (simulation)", flush=True)
 from datetime import datetime
 from dotenv import load_dotenv
 
@@ -230,12 +246,12 @@ def scan_anomalies(heat_board: list) -> list:
                   for tf, d in tf_all.items()}
         anomalies.append({
             **item,
-            "spot_price": price or item.get("price", 0),  # v0.1.12: 现货无数据时用 top_heat 的 perp lastPrice 兜底
+            "spot_price": price or item.get("price", 0),  # v0.1.13: 现货无数据时用 top_heat 的 perp lastPrice 兜底
             "tf": tf_all,
             "tags": tags,
             "aggregate": aggregate_signal(tags),
         })
-    return anomalies
+    return [dict(a, h1=h1_judge(a)) for a in anomalies]
 
 
 def save_snapshot(heat, anomalies):
@@ -243,7 +259,7 @@ def save_snapshot(heat, anomalies):
     with open("latest_snapshot.json", "w", encoding="utf-8") as f:
         json.dump({
             "timestamp": ts,
-            "version": "v0.1.12",
+            "version": "v0.1.17",
             "top_heat": heat[:20],
             "oi_anomaly": anomalies,
         }, f, ensure_ascii=False, indent=2)
@@ -253,36 +269,110 @@ def save_snapshot(heat, anomalies):
                 f.write(json.dumps({"timestamp": ts, **a}, ensure_ascii=False) + "\n")
 
 
+def _run_paper_orders(anomalies):
+    """对 H1 should_trade=True 的异动调用 paper_open(纸面下单)。"""
+    for a in anomalies:
+        h1 = a.get("h1") or {}
+        if not h1.get("should_trade"):
+            continue
+        symbol = a.get("symbol")
+        level  = h1.get("level", "")
+        if "long" in level:
+            side = "LONG"
+        elif "short" in level:
+            side = "SHORT"
+        else:
+            log(f"[paper] 跳过 {symbol}: level={level} 无法判定方向")
+            continue
+        margin = float(h1.get("margin_u", 10))
+        lev    = float(h1.get("leverage", 5))
+        # v0.1.16: paper 永远开（影子追踪，所有信号进 paper_state.json，胜率统计无 MAX_OPEN 限制）
+        try:
+            res_paper = binance_paper.paper_open(symbol, side, margin, lev)
+        except Exception as e:
+            log(f"[paper] paper_open {symbol} {side} 异常: {e}")
+            continue
+        if res_paper.get("ok"):
+            pos = res_paper.get("position", {})
+            log(f"[paper] OPEN {side} {symbol} @ {pos.get('entry_price')} margin={margin}U lev={lev}x")
+            if not REAL_MODE:
+                # REAL_MODE=on 时 runner 发"真盘开仓" TG，paper 静默避免双发
+                try:
+                    tg_send(f"📈 *paper 开仓* `{side}` `{symbol}`\n保证金 {margin}U / 杠杆 {lev}x\n入场 ${pos.get('entry_price')}\n理由: {h1.get('reason','')}")
+                except Exception:
+                    pass
+        else:
+            log(f"[paper] {symbol} 拒单: {res_paper.get('err')}")
+        # v0.1.16: REAL_MODE=on 时额外尝试真盘；risk_gate (MAX_OPEN=1) 内部决定是否放行
+        if REAL_MODE and binance_real_runner is not None:
+            try:
+                res_real = binance_real_runner.real_open(symbol, side, margin, lev) or {}
+                if res_real.get("ok"):
+                    pos_r = res_real.get("position", {})
+                    log(f"[real] OPEN {side} {symbol} @ {pos_r.get('entry_price')} margin={margin}U lev={lev}x")
+                else:
+                    log(f"[real] {symbol} 被 risk_gate 拦截或开仓失败: {res_real.get('err')}")
+            except Exception as e:
+                log(f"[real] real_open {symbol} {side} 异常: {e}")
+
 def run_once():
     log("开始扫描...")
     heat = build_heat_board()
     log(f"热度榜 Top5: {[x['symbol'] for x in heat[:5]]}")
     anomalies = scan_anomalies(heat)
+    # v0.1.18 funding rate 采集 (P0 from 2026-04-27)
+    try:
+        import funding_rate as _fr
+        _fr_map = _fr.get_all_funding_rates()
+        for _a in anomalies:
+            _sym = _a.get('symbol')
+            if _sym and _sym in _fr_map:
+                _a['funding'] = _fr_map[_sym]
+        _hit = sum(1 for _a in anomalies if _a.get('funding'))
+        log(f'[funding] inject {_hit}/{len(anomalies)}')
+    except Exception as _e:
+        log('[funding] skip: ' + str(_e))
     save_snapshot(heat, anomalies)
     if not anomalies:
         log("无异动")
         return
-    lines = ["🔥 *OI 异动提醒 v0.1.12*", ""]
-    for a in anomalies[:5]:
-        lines.append(f"*{a['symbol']}*  `${a['spot_price']}`")
-        lines.append(f"上线 {a['listing_days']}天 | 24h {a['price_change_24h']:+.1f}% | 热度 {a['score']}")
-        for tf in ["1h","4h","12h","1d"]:
-            d = a["tf"].get(tf)
-            if not d: continue
-            emoji = a["tags"][tf].split(" ")[0]
-            lines.append(f"`{tf:>3s}` OI {d['oi_pct']:+.1f}% | P {d['price_pct']:+.1f}% | r {d['ratio']} {emoji}")
-        lines.append(f"*综合:{a['aggregate']}*")
-        lines.append("━━━━━━━━━━")
-    lines.append(f"_{datetime.now().strftime('%m-%d %H:%M')}_")
-    lines.append("⚠️ 仅信号,需人工判断")
-    tg_send("\n".join(lines))
+    # v0.1.17 静音: OI 异动 push 已完全移除
+    # 仅保留下方 H1 强信号 push (should_trade=true)
+    # v0.1.13: H1 strong signal extra push
+    for _a in anomalies:
+        if _a.get("h1", {}).get("should_trade"):
+            _msg = format_tg_alert(_a, _a["h1"])
+            if _msg:
+                tg_send(_msg)
+                log("H1 strong: " + _a["symbol"] + " " + _a["h1"]["level"])
     log(f"推送 {len(anomalies)} 条")
+    _run_paper_orders(anomalies)
 
 
 if __name__ == "__main__":
-    log("拉哪 Lite v0.1.12 启动")
+    log("拉哪 Lite v0.1.17 启动")
     refresh_exchange_info()
-    tg_send("✅ 拉哪 Lite v0.1.12 已启动\n新功能: CoinGecko Key + GitHub Actions 部署就绪")
+    if REAL_MODE:
+        try:
+            assert_one_way_mode()  # v0.1.18 P0: One-Way tripwire
+            log("[v0.1.18] assert_one_way_mode OK at boot")
+        except Exception as _e:
+            log("[FATAL] assert_one_way_mode failed at boot: " + str(_e))
+            try:
+                tg_send("v0.1.18 assert_one_way_mode boot failed, daemon sleep 5min then exit to prevent -4061 + restart storm: " + str(_e)[:200])
+            except Exception:
+                pass
+            import time as _t, sys as _s
+            _t.sleep(300)
+            _s.exit(1)
+        tg_send("🔥 拉哪 Lite v0.1.17 已启动\n💰 真盘 50U / Plan B trail 20%/act 10%\n🛡️ risk_gate (单仓 / -3U / -10U / -15U) + Hedge 自愈\n📊 paper 影子并行（胜率统计不受 MAX_OPEN 限制）")
+    else:
+        tg_send("✅ 拉哪 Lite v0.1.17 已启动\nH1 主方向引擎上线 / paper 模拟模式（胜率验证）")
+    threading.Thread(target=binance_paper.paper_check_all, daemon=True).start()
+    log("paper_check_all 守护线程已启动")
+    if REAL_MODE and binance_real_runner is not None:
+        threading.Thread(target=binance_real_runner.real_check_all, daemon=True).start()
+        log("real_check_all 守护线程已启动 (REAL MONEY)")
     run_once()
     schedule.every(5).minutes.do(run_once)
     schedule.every(24).hours.do(refresh_exchange_info)
