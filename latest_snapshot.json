@@ -1,166 +1,166 @@
 {
-  "timestamp": "2026-04-28T04:57:51.966698",
+  "timestamp": "2026-04-28T05:55:00.576079",
   "version": "v0.1.17",
   "top_heat": [
     {
-      "symbol": "DAMUSDT",
-      "base": "DAM",
-      "price_change_24h": 146.36,
-      "score": 4,
-      "listing_days": 252,
-      "price": 0.05442
-    },
-    {
       "symbol": "PRLUSDT",
       "base": "PRL",
-      "price_change_24h": 34.4,
-      "score": 4,
+      "price_change_24h": 42.29,
+      "score": 6,
       "listing_days": 26,
-      "price": 0.2977
+      "price": 0.3136
     },
     {
-      "symbol": "GWEIUSDT",
-      "base": "GWEI",
-      "price_change_24h": -24.26,
-      "score": 4,
-      "listing_days": 88,
-      "price": 0.09399
-    },
-    {
-      "symbol": "AIOTUSDT",
-      "base": "AIOT",
-      "price_change_24h": 23.73,
-      "score": 4,
-      "listing_days": 362,
-      "price": 0.08385
-    },
-    {
-      "symbol": "LUMIAUSDT",
-      "base": "LUMIA",
-      "price_change_24h": 20.58,
-      "score": 4,
-      "listing_days": 495,
-      "price": 0.17682
-    },
-    {
-      "symbol": "ZBTUSDT",
-      "base": "ZBT",
-      "price_change_24h": -20.16,
-      "score": 4,
-      "listing_days": 192,
-      "price": 0.19287
-    },
-    {
-      "symbol": "B2USDT",
-      "base": "B2",
-      "price_change_24h": -17.99,
-      "score": 4,
-      "listing_days": 356,
-      "price": 0.5294
-    },
-    {
-      "symbol": "TACUSDT",
-      "base": "TAC",
-      "price_change_24h": 17.57,
-      "score": 4,
-      "listing_days": 286,
-      "price": 0.010578
-    },
-    {
-      "symbol": "ARCUSDT",
-      "base": "ARC",
-      "price_change_24h": 17.54,
-      "score": 4,
-      "listing_days": 465,
-      "price": 0.08143
-    },
-    {
-      "symbol": "SWARMSUSDT",
-      "base": "SWARMS",
-      "price_change_24h": 16.85,
-      "score": 4,
-      "listing_days": 475,
-      "price": 0.021883
-    },
-    {
-      "symbol": "UAIUSDT",
-      "base": "UAI",
-      "price_change_24h": 16.7,
-      "score": 4,
-      "listing_days": 172,
-      "price": 0.3599
-    },
-    {
-      "symbol": "1000LUNCUSDT",
-      "base": "1000LUNC",
-      "price_change_24h": 15.79,
-      "score": 4,
-      "listing_days": 1327,
-      "price": 0.0654
+      "symbol": "PENGUUSDT",
+      "base": "PENGU",
+      "price_change_24h": 14.49,
+      "score": 5,
+      "listing_days": 496,
+      "price": 0.010108
     },
     {
       "symbol": "VELVETUSDT",
       "base": "VELVET",
-      "price_change_24h": 15.69,
+      "price_change_24h": 12.43,
+      "score": 5,
+      "listing_days": 286,
+      "price": 0.11742
+    },
+    {
+      "symbol": "DAMUSDT",
+      "base": "DAM",
+      "price_change_24h": 146.95,
+      "score": 4,
+      "listing_days": 252,
+      "price": 0.05544
+    },
+    {
+      "symbol": "GWEIUSDT",
+      "base": "GWEI",
+      "price_change_24h": -22.16,
+      "score": 4,
+      "listing_days": 88,
+      "price": 0.09371
+    },
+    {
+      "symbol": "ZBTUSDT",
+      "base": "ZBT",
+      "price_change_24h": -20.36,
+      "score": 4,
+      "listing_days": 192,
+      "price": 0.20077
+    },
+    {
+      "symbol": "AIOTUSDT",
+      "base": "AIOT",
+      "price_change_24h": 19.75,
+      "score": 4,
+      "listing_days": 362,
+      "price": 0.08611
+    },
+    {
+      "symbol": "TACUSDT",
+      "base": "TAC",
+      "price_change_24h": 18.84,
       "score": 4,
       "listing_days": 286,
-      "price": 0.12091
+      "price": 0.010669
     },
     {
-      "symbol": "我踏马来了USDT",
-      "base": "我踏马来了",
-      "price_change_24h": -15.09,
+      "symbol": "B2USDT",
+      "base": "B2",
+      "price_change_24h": -18.49,
       "score": 4,
-      "listing_days": 96,
-      "price": 0.009906
+      "listing_days": 356,
+      "price": 0.524
     },
     {
-      "symbol": "AIAUSDT",
-      "base": "AIA",
-      "price_change_24h": -14.69,
-      "score": 3,
-      "listing_days": 97,
-      "price": 0.05023
+      "symbol": "UAIUSDT",
+      "base": "UAI",
+      "price_change_24h": 18.09,
+      "score": 4,
+      "listing_days": 172,
+      "price": 0.3669
+    },
+    {
+      "symbol": "LUMIAUSDT",
+      "base": "LUMIA",
+      "price_change_24h": 17.52,
+      "score": 4,
+      "listing_days": 495,
+      "price": 0.17147
+    },
+    {
+      "symbol": "AGTUSDT",
+      "base": "AGT",
+      "price_change_24h": -16.94,
+      "score": 4,
+      "listing_days": 342,
+      "price": 0.018898
+    },
+    {
+      "symbol": "SWARMSUSDT",
+      "base": "SWARMS",
+      "price_change_24h": 16.34,
+      "score": 4,
+      "listing_days": 475,
+      "price": 0.021652
     },
     {
       "symbol": "BANUSDT",
       "base": "BAN",
-      "price_change_24h": -14.51,
-      "score": 3,
+      "price_change_24h": -15.48,
+      "score": 4,
       "listing_days": 525,
-      "price": 0.07173
+      "price": 0.07115
     },
     {
-      "symbol": "TURTLEUSDT",
-      "base": "TURTLE",
-      "price_change_24h": 14.46,
+      "symbol": "AIAUSDT",
+      "base": "AIA",
+      "price_change_24h": -15.05,
+      "score": 4,
+      "listing_days": 97,
+      "price": 0.05001
+    },
+    {
+      "symbol": "GPSUSDT",
+      "base": "GPS",
+      "price_change_24h": 14.98,
       "score": 3,
-      "listing_days": 187,
-      "price": 0.05637
+      "listing_days": 434,
+      "price": 0.008005
+    },
+    {
+      "symbol": "我踏马来了USDT",
+      "base": "我踏马来了",
+      "price_change_24h": -14.86,
+      "score": 3,
+      "listing_days": 96,
+      "price": 0.009879
+    },
+    {
+      "symbol": "PIPPINUSDT",
+      "base": "PIPPIN",
+      "price_change_24h": -14.86,
+      "score": 3,
+      "listing_days": 458,
+      "price": 0.02596
     },
     {
       "symbol": "DUSDT",
       "base": "D",
-      "price_change_24h": -14.41,
+      "price_change_24h": -14.66,
       "score": 3,
       "listing_days": 473,
-      "price": 0.012643
+      "price": 0.012426
     },
     {
-      "symbol": "龙虾USDT",
-      "base": "龙虾",
-      "price_change_24h": -14.21,
+      "symbol": "ARCUSDT",
+      "base": "ARC",
+      "price_change_24h": 14.45,
       "score": 3,
-      "listing_days": 47,
-      "price": 0.007532
-    },
-    {
-      "symbol": "AINUSDT",
-      "base": "AIN",
-      "price_change_24h": 14.07,
-      "score": 3,
-      "listing_days": 291,
-      "price": 0.08877
+      "listing_days": 465,
+      "price": 0.07856
     }
   ],
   "oi_anomaly": []
