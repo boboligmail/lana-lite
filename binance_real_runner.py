@@ -169,23 +169,46 @@ def real_open(symbol, side, margin=None, lev=None):
     actual_qty = abs(pos_real["qty"]) if pos_real["qty"] else qty
     pos = {"id": uuid.uuid4().hex[:8], "symbol": symbol, "side": side, "qty": actual_qty, "entry_price": entry, "leverage": use_lev, "margin_u": MARGIN_U, "stop_u": STOP_U, "open_ts": datetime.now().isoformat(), "peak_high": entry, "trail_active": False, "trail_stop_price": None, "status": "open", "open_order_id": order.get("orderId")}
     # v0.1.17 ALGO-STOP: place exchange-side hard stop (closePosition=true)
-    try:
-        algo_side = "SELL" if side == "LONG" else "BUY"
-        if side == "LONG":
-            stop_trigger = entry - STOP_U / actual_qty
-        else:
-            stop_trigger = entry + STOP_U / actual_qty
-        stop_trigger = br.round_price(symbol, stop_trigger)
-        algo_res = br.place_algo_stop_close(symbol, algo_side, stop_trigger)
-        pos["algo_id"] = algo_res.get("algoId")
-        pos["algo_trigger"] = stop_trigger
-        _log("[ALGO-STOP] " + symbol + " algoId=" + str(pos["algo_id"]) + " trigger=" + str(stop_trigger))
-        _tg_send("\u2705 \u786c\u6b62\u635f\u6302\u5355 " + symbol + " trigger=" + str(stop_trigger) + " algoId=" + str(pos["algo_id"]))
-    except Exception as e:
-        _log("[ALGO-FAIL] " + symbol + " place_algo_stop_close failed: " + str(e))
-        _tg_send("\u26a0 \u786c\u6b62\u635f\u6302\u5355\u5931\u8d25 " + symbol + ": " + str(e) + " (\u8f6f\u6b62\u635f\u4ecd\u5728\u7ebf)")
-        pos["algo_id"] = None
-        pos["algo_trigger"] = None
+    # v0.1.21 B: ALGO-STOP retry queue (3 attempts, 2s/4s backoff, force_close on abort)
+    algo_side = "SELL" if side == "LONG" else "BUY"
+    if side == "LONG":
+        stop_trigger = entry - STOP_U / actual_qty
+    else:
+        stop_trigger = entry + STOP_U / actual_qty
+    stop_trigger = br.round_price(symbol, stop_trigger)
+    algo_ok = False
+    last_err = None
+    for _attempt in range(1, 4):
+        try:
+            algo_res = br.place_algo_stop_close(symbol, algo_side, stop_trigger, working_type="MARK_PRICE")
+            _status = (algo_res or {}).get("algoStatus") or (algo_res or {}).get("status")
+            if _status == "NEW":
+                pos["algo_id"] = algo_res.get("algoId")
+                pos["algo_trigger"] = stop_trigger
+                _log("[ALGO-STOP] " + symbol + " algoId=" + str(pos["algo_id"]) + " trigger=" + str(stop_trigger) + " attempt=" + str(_attempt))
+                _tg_send("✅ " + symbol + " " + side + " hard stop: " + str(stop_trigger) + " algoId=" + str(pos["algo_id"]) + " (try " + str(_attempt) + ")")
+                algo_ok = True
+                break
+            else:
+                last_err = "algoStatus=" + str(_status) + " not NEW"
+                _log("[ALGO-RETRY] " + symbol + " attempt=" + str(_attempt) + " " + last_err)
+        except Exception as _ae:
+            last_err = type(_ae).__name__ + ": " + str(_ae)[:120]
+            _log("[ALGO-RETRY] " + symbol + " attempt=" + str(_attempt) + " " + last_err)
+        if _attempt < 3:
+            time.sleep(2 ** _attempt)  # 2s, 4s
+    if not algo_ok:
+        _log("[ALGO-ABORT] " + symbol + " 3 attempts failed: " + str(last_err))
+        try:
+            _close_side = "SELL" if side == "LONG" else "BUY"
+            br.place_market(symbol, _close_side, actual_qty, reduce_only=True)
+            _force_msg = "force_close OK"
+            _log("[ALGO-ABORT] " + symbol + " " + _force_msg)
+        except Exception as _ce:
+            _force_msg = "force_close FAILED: " + type(_ce).__name__ + ": " + str(_ce)[:80]
+            _log("[ALGO-ABORT] " + symbol + " " + _force_msg)
+        _tg_send("🔴 OPEN_ABORTED_NO_HARD_STOP " + symbol + " " + side + " | 3 algo retries: " + str(last_err)[:100] + " | " + _force_msg + " | state NOT written")
+        return None  # critical: do NOT append pos to state
     with _LOCK:
         st = _load_state()
         st.setdefault("positions", []).append(pos)

@@ -311,7 +311,15 @@ def _run_paper_orders(anomalies):
                     pos_r = res_real.get("position", {})
                     log(f"[real] OPEN {side} {symbol} @ {pos_r.get('entry_price')} margin={margin}U lev={lev}x")
                 else:
-                    log(f"[real] {symbol} 被 risk_gate 拦截或开仓失败: {res_real.get('err')}")
+                    # v0.1.21 R66: split conflated log into dedup / risk_gate / open_failed
+                    _err_kind = res_real.get("err") if isinstance(res_real, dict) else None
+                    _err_reason = res_real.get("reason") if isinstance(res_real, dict) else None
+                    if _err_kind in ("max_open", "dedup"):
+                        log(f"[real] dedup_skip {symbol}: MAX_OPEN reached or symbol already open ({_err_reason})")
+                    elif _err_kind in ("risk_gate", "blocked", "halt"):
+                        log(f"[real] risk_gate_blocked {symbol}: {_err_reason}")
+                    else:
+                        log(f"[real] open_failed {symbol} {side}: res_real={res_real!r} (查看 _log [BLOCKED]/[SKIP]/[ERROR]/[ALGO-ABORT])")
             except Exception as e:
                 log(f"[real] real_open {symbol} {side} 异常: {e}")
 
@@ -361,7 +369,7 @@ if __name__ == "__main__":
             except SystemExit:
                 raise
             except Exception as _e:
-                log(f"[boot_reconcile] err: type(_e).__name__: _e")
+                log(f"[boot_reconcile] err: {type(_e).__name__}: {str(_e)[:150]}")
                 tg_send(f"⚠️ boot_reconcile err str(_e)[:150], daemon 退出 5min 防 restart storm")
                 import time as _t; _t.sleep(300)
                 import sys as _s; _s.exit(1)
