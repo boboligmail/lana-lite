@@ -1,166 +1,166 @@
 {
-  "timestamp": "2026-04-27T06:55:45.846374",
+  "timestamp": "2026-04-27T07:58:12.591714",
   "version": "v0.1.17",
   "top_heat": [
     {
       "symbol": "ZBTUSDT",
       "base": "ZBT",
-      "price_change_24h": 31.72,
+      "price_change_24h": 31.43,
       "score": 6,
       "listing_days": 191,
-      "price": 0.2266
+      "price": 0.22253
     },
     {
-      "symbol": "AVNTUSDT",
-      "base": "AVNT",
-      "price_change_24h": 16.69,
-      "score": 6,
-      "listing_days": 229,
-      "price": 0.1713
+      "symbol": "AXSUSDT",
+      "base": "AXS",
+      "price_change_24h": -10.15,
+      "score": 5,
+      "listing_days": 2405,
+      "price": 1.417
     },
     {
       "symbol": "AEROUSDT",
       "base": "AERO",
-      "price_change_24h": 8.32,
+      "price_change_24h": 8.71,
       "score": 5,
       "listing_days": 508,
-      "price": 0.4584
+      "price": 0.4608
     },
     {
       "symbol": "AGTUSDT",
       "base": "AGT",
-      "price_change_24h": 64.86,
+      "price_change_24h": 66.94,
       "score": 4,
       "listing_days": 341,
-      "price": 0.026117
-    },
-    {
-      "symbol": "AINUSDT",
-      "base": "AIN",
-      "price_change_24h": 29.39,
-      "score": 4,
-      "listing_days": 290,
-      "price": 0.08137
-    },
-    {
-      "symbol": "AIOTUSDT",
-      "base": "AIOT",
-      "price_change_24h": 25.65,
-      "score": 4,
-      "listing_days": 361,
-      "price": 0.07265
-    },
-    {
-      "symbol": "NAORISUSDT",
-      "base": "NAORIS",
-      "price_change_24h": 24.08,
-      "score": 4,
-      "listing_days": 269,
-      "price": 0.0856
+      "price": 0.026918
     },
     {
       "symbol": "GWEIUSDT",
       "base": "GWEI",
-      "price_change_24h": 23.39,
+      "price_change_24h": 32.93,
       "score": 4,
       "listing_days": 87,
-      "price": 0.11869
+      "price": 0.12759
     },
     {
-      "symbol": "ORCAUSDT",
-      "base": "ORCA",
-      "price_change_24h": 22.03,
+      "symbol": "AINUSDT",
+      "base": "AIN",
+      "price_change_24h": 26.34,
       "score": 4,
-      "listing_days": 506,
-      "price": 1.368
+      "listing_days": 290,
+      "price": 0.08035
+    },
+    {
+      "symbol": "NAORISUSDT",
+      "base": "NAORIS",
+      "price_change_24h": 23.77,
+      "score": 4,
+      "listing_days": 269,
+      "price": 0.0842
+    },
+    {
+      "symbol": "AIOTUSDT",
+      "base": "AIOT",
+      "price_change_24h": 22.48,
+      "score": 4,
+      "listing_days": 361,
+      "price": 0.07351
     },
     {
       "symbol": "KATUSDT",
       "base": "KAT",
-      "price_change_24h": -21.7,
+      "price_change_24h": -21.6,
       "score": 4,
       "listing_days": 55,
-      "price": 0.01223
+      "price": 0.01216
+    },
+    {
+      "symbol": "AVNTUSDT",
+      "base": "AVNT",
+      "price_change_24h": 20.5,
+      "score": 4,
+      "listing_days": 229,
+      "price": 0.1775
+    },
+    {
+      "symbol": "ORCAUSDT",
+      "base": "ORCA",
+      "price_change_24h": 19.87,
+      "score": 4,
+      "listing_days": 506,
+      "price": 1.333
     },
     {
       "symbol": "HYPERUSDT",
       "base": "HYPER",
-      "price_change_24h": -20.98,
+      "price_change_24h": -19.68,
       "score": 4,
       "listing_days": 369,
-      "price": 0.12584
+      "price": 0.12576
     },
     {
       "symbol": "LDOUSDT",
       "base": "LDO",
-      "price_change_24h": 19.49,
+      "price_change_24h": 19.55,
       "score": 4,
       "listing_days": 1313,
-      "price": 0.4463
-    },
-    {
-      "symbol": "GPSUSDT",
-      "base": "GPS",
-      "price_change_24h": -17.59,
-      "score": 4,
-      "listing_days": 433,
-      "price": 0.00698
+      "price": 0.4476
     },
     {
       "symbol": "1000LUNCUSDT",
       "base": "1000LUNC",
-      "price_change_24h": 16.8,
+      "price_change_24h": 19.39,
       "score": 4,
       "listing_days": 1326,
-      "price": 0.05994
+      "price": 0.06163
     },
     {
-      "symbol": "FIGHTUSDT",
-      "base": "FIGHT",
-      "price_change_24h": 15.13,
+      "symbol": "GPSUSDT",
+      "base": "GPS",
+      "price_change_24h": -18.59,
       "score": 4,
-      "listing_days": 93,
-      "price": 0.004055
+      "listing_days": 433,
+      "price": 0.006833
+    },
+    {
+      "symbol": "PROMUSDT",
+      "base": "PROM",
+      "price_change_24h": 16.82,
+      "score": 4,
+      "listing_days": 466,
+      "price": 2.354
     },
     {
       "symbol": "MERLUSDT",
       "base": "MERL",
-      "price_change_24h": 15.09,
-      "score": 4,
+      "price_change_24h": 14.67,
+      "score": 3,
       "listing_days": 332,
-      "price": 0.04096
+      "price": 0.04088
     },
     {
       "symbol": "BANUSDT",
       "base": "BAN",
-      "price_change_24h": -14.73,
+      "price_change_24h": -14.33,
       "score": 3,
       "listing_days": 524,
-      "price": 0.08183
-    },
-    {
-      "symbol": "ZEREBROUSDT",
-      "base": "ZEREBRO",
-      "price_change_24h": -14.67,
-      "score": 3,
-      "listing_days": 479,
-      "price": 0.014865
-    },
-    {
-      "symbol": "OPGUSDT",
-      "base": "OPG",
-      "price_change_24h": 14.25,
-      "score": 3,
-      "listing_days": 4,
-      "price": 0.303
+      "price": 0.08244
     },
     {
       "symbol": "BICOUSDT",
       "base": "BICO",
-      "price_change_24h": 12.56,
+      "price_change_24h": 14.08,
       "score": 3,
       "listing_days": 941,
-      "price": 0.0293
+      "price": 0.02966
+    },
+    {
+      "symbol": "FIGHTUSDT",
+      "base": "FIGHT",
+      "price_change_24h": 13.86,
+      "score": 3,
+      "listing_days": 93,
+      "price": 0.004008
     }
   ],
   "oi_anomaly": []
