@@ -309,3 +309,77 @@ def paper_open(symbol, side, margin, lev):
     return {"ok": True, "position": pos}
 
 paper_check_all = real_check_all
+
+
+# ===== v0.1.19 boot_reconcile (added 2026-04-27) =====
+def boot_reconcile():
+    """VPS 重启对账: state vs ex positions vs open algos."""
+    import json, sys, os
+    from pathlib import Path
+    from datetime import datetime
+    STATE = Path("/root/lana-lite/real_state.json")
+    HALT = Path("/root/lana-lite/HALT")
+    DRY = os.environ.get("BOOT_RECONCILE_DRY_RUN") == "1"
+    def _bl(m):
+        print(f"[{datetime.now().isoformat()}] [boot_reconcile] {m}", flush=True)
+    fatal = None
+    ex_positions = []; ex_algos = []
+    try:
+        import binance_real as br
+        raw = br._req("GET", "/fapi/v2/positionRisk", {})
+        ex_positions = [p for p in raw if abs(float(p.get("positionAmt", 0))) > 0]
+        ex_algos = br.list_open_algo_orders()
+    except Exception as e:
+        fatal = f"FATAL 拉交易所失败: {type(e).__name__}: {e}"
+        _bl(fatal)
+    if fatal:
+        if DRY:
+            return {"ok": False, "issues": [fatal], "dry_run": True}
+        HALT.touch()
+        try:
+            from lana_lite import tg_send
+            tg_send(f"⚠️ boot_reconcile {fatal[:200]}, 已 HALT")
+        except Exception: pass
+        sys.exit(1)
+    st = json.loads(STATE.read_text()) if STATE.exists() else {"positions": [], "closed": []}
+    ex_pos_map = {p["symbol"]: p for p in ex_positions}
+    ex_algo_map = {}
+    for a in ex_algos:
+        ex_algo_map.setdefault(a["symbol"], []).append(a)
+    state_pos_map = {p["symbol"]: p for p in st.get("positions", [])}
+    all_syms = set(ex_pos_map) | set(state_pos_map)
+    issues = []
+    for sym in all_syms:
+        in_st = sym in state_pos_map
+        in_ex = sym in ex_pos_map
+        algos = ex_algo_map.get(sym, [])
+        if in_st and in_ex and algos:
+            sp = state_pos_map[sym]
+            sp_aid = str(sp.get("algo_id", ""))
+            aid_set = {str(a.get("algoId", "")) for a in algos}
+            if sp_aid and sp_aid not in aid_set:
+                issues.append(f"ALGO_ID_MISMATCH {sym}: state.algo_id={sp_aid} not in {aid_set}")
+            else:
+                _bl(f"OK {sym}: state+ex+algo consistent (algo_id={sp_aid})")
+            continue
+        if in_st and in_ex and not algos:
+            issues.append(f"MISSING_HARD_STOP {sym}: 持仓有但 open algo 无")
+        elif in_st and not in_ex:
+            issues.append(f"STATE_GHOST {sym}: state 有但交易所无持仓")
+        elif not in_st and in_ex:
+            amt = ex_pos_map[sym].get("positionAmt", "?")
+            ent = ex_pos_map[sym].get("entryPrice", "?")
+            issues.append(f"ORPHAN_POSITION {sym}: amt={amt} entry={ent} 但 state 无 (失控仓!)")
+    if issues:
+        rep = "; ".join(issues)
+        _bl(f"FOUND ISSUES: {rep}")
+        if DRY:
+            return {"ok": False, "issues": issues, "ex_keys": list(ex_pos_map.keys()), "state_keys": list(state_pos_map.keys()), "algo_keys": list(ex_algo_map.keys()), "dry_run": True}
+        HALT.touch()
+        try:
+            from lana_lite import tg_send
+            tg_send(f"⚠️ boot_reconcile 不一致已 HALT: {rep[:3500]}")
+        except Exception: pass
+        sys.exit(1)
+    _bl(f"OK: {len(state_pos_map)} state / {len(ex_pos_map)} ex / {sum(len(v) for v in ex_algo_map.values())} algos consistent")
+    return {"ok": True, "issues": []}

@@ -355,6 +355,16 @@ if __name__ == "__main__":
     if REAL_MODE:
         try:
             assert_one_way_mode()  # v0.1.18 P0: One-Way tripwire
+            try:
+                from binance_real_runner import boot_reconcile as _br
+                _br()
+            except SystemExit:
+                raise
+            except Exception as _e:
+                log(f"[boot_reconcile] err: type(_e).__name__: _e")
+                tg_send(f"⚠️ boot_reconcile err str(_e)[:150], daemon 退出 5min 防 restart storm")
+                import time as _t; _t.sleep(300)
+                import sys as _s; _s.exit(1)
             log("[v0.1.18] assert_one_way_mode OK at boot")
         except Exception as _e:
             log("[FATAL] assert_one_way_mode failed at boot: " + str(_e))
