@@ -76,6 +76,45 @@ def assert_one_way_mode():
     try: _tg_send("✅ 账户已自动切换到 One-Way 模式")
     except Exception: pass
 
+
+def _replace_algo_stop(pos, new_trigger, side):
+    """v0.1.20: cancel old algo + place new at new_trigger.
+    Returns True/False; on 2nd-retry fail: HALT + tg_send + clear pos algo fields.
+    """
+    import binance_real as br
+    import time as _t
+    sym = pos["symbol"]
+    old_aid = pos.get("algo_id")
+    exit_side = "SELL" if side == "long" else "BUY"
+    if old_aid:
+        try:
+            br.cancel_algo_order(sym, old_aid)
+            _log(f"[TRAIL-SYNC] {sym} cancel old aid={old_aid} OK")
+        except Exception as e:
+            _log(f"[TRAIL-SYNC] {sym} cancel aid={old_aid} err (treat OK): {type(e).__name__}: {e}")
+    for attempt in (1, 2):
+        try:
+            r = br.place_algo_stop_close(sym, exit_side, new_trigger, working_type="MARK_PRICE")
+            if r and r.get("algoStatus") == "NEW":
+                pos["algo_id"] = r.get("algoId")
+                pos["algo_trigger"] = float(new_trigger)
+                _log(f"[TRAIL-SYNC-OK] {sym} new_aid={r.get('algoId')} trigger={new_trigger} attempt={attempt}")
+                return True
+            _log(f"[TRAIL-SYNC] {sym} place attempt={attempt} non-NEW: {r}")
+        except Exception as e:
+            _log(f"[TRAIL-SYNC] {sym} place attempt={attempt} err: {type(e).__name__}: {e}")
+        if attempt == 1:
+            _t.sleep(2)
+    try: Path("HALT").touch()
+    except Exception: pass
+    try:
+        tg_send_real(f"🔴 TRAIL-SYNC FAILED {sym} target={new_trigger}\nNAKED POSITION (process soft-stop only)\nHALT 已置位, 请手工介入")
+    except Exception: pass
+    _log(f"[TRAIL-SYNC-FAIL] {sym} 2 attempts failed -> HALT + clear algo_id")
+    pos["algo_id"] = None
+    pos["algo_trigger"] = None
+    return False
+
 def real_open(symbol, side, margin=None, lev=None):
     """Open real position. side: LONG or SHORT. margin/lev args ignored (uses constants)."""
     try:
@@ -268,6 +307,16 @@ def _check_one(pos):
                 p["trail_stop_price"] = pos.get("trail_stop_price")
         _save_state(st)
     return False
+
+    # v0.1.20 trail-sync: 检测 trail_stop_price 与 algo_trigger 漂移, 同步交易所端 algo
+    if pos.get("trail_active") and pos.get("trail_stop_price") is not None:
+        cur_trig = pos.get("algo_trigger")
+        new_trig = float(pos["trail_stop_price"])
+        if cur_trig is None or abs(float(cur_trig) - new_trig) / max(abs(new_trig), 1e-9) > 0.0001:
+            try:
+                _replace_algo_stop(pos, new_trig, side)
+            except Exception as _e:
+                _log(f"[TRAIL-SYNC] outer err: {type(_e).__name__}: {_e}")
 
 def _maybe_alert_bal():
     global _alerted_bal
