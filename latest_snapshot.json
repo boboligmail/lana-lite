@@ -1,166 +1,166 @@
 {
-  "timestamp": "2026-04-28T20:56:21.867218",
+  "timestamp": "2026-04-28T21:58:48.457036",
   "version": "v0.1.23",
   "top_heat": [
     {
       "symbol": "ZKJUSDT",
       "base": "ZKJ",
-      "price_change_24h": 192.05,
+      "price_change_24h": 254.1,
       "score": 6,
       "listing_days": 350,
-      "price": 0.03417
+      "price": 0.03973
     },
     {
       "symbol": "ORCAUSDT",
       "base": "ORCA",
-      "price_change_24h": 41.42,
+      "price_change_24h": 38.72,
       "score": 6,
       "listing_days": 507,
-      "price": 1.707
-    },
-    {
-      "symbol": "PRLUSDT",
-      "base": "PRL",
-      "price_change_24h": 28.12,
-      "score": 6,
-      "listing_days": 27,
-      "price": 0.3791
-    },
-    {
-      "symbol": "MONUSDT",
-      "base": "MON",
-      "price_change_24h": -7.79,
-      "score": 5,
-      "listing_days": 200,
-      "price": 0.0291
-    },
-    {
-      "symbol": "ZBTUSDT",
-      "base": "ZBT",
-      "price_change_24h": 28.92,
-      "score": 4,
-      "listing_days": 193,
-      "price": 0.22317
-    },
-    {
-      "symbol": "TACUSDT",
-      "base": "TAC",
-      "price_change_24h": 22.05,
-      "score": 4,
-      "listing_days": 287,
-      "price": 0.012684
+      "price": 1.648
     },
     {
       "symbol": "BSBUSDT",
       "base": "BSB",
-      "price_change_24h": 21.76,
-      "score": 4,
+      "price_change_24h": 11.37,
+      "score": 5,
       "listing_days": 34,
-      "price": 0.8429
+      "price": 0.81475
+    },
+    {
+      "symbol": "PRLUSDT",
+      "base": "PRL",
+      "price_change_24h": 10.07,
+      "score": 5,
+      "listing_days": 27,
+      "price": 0.3651
+    },
+    {
+      "symbol": "MONUSDT",
+      "base": "MON",
+      "price_change_24h": -8.73,
+      "score": 5,
+      "listing_days": 200,
+      "price": 0.02887
+    },
+    {
+      "symbol": "IRUSDT",
+      "base": "IR",
+      "price_change_24h": 63.49,
+      "score": 4,
+      "listing_days": 128,
+      "price": 0.04931
     },
     {
       "symbol": "APEUSDT",
       "base": "APE",
-      "price_change_24h": 20.14,
+      "price_change_24h": 20.55,
       "score": 4,
       "listing_days": 1503,
-      "price": 0.1682
+      "price": 0.1701
     },
     {
-      "symbol": "HUSDT",
-      "base": "H",
-      "price_change_24h": 19.96,
+      "symbol": "TACUSDT",
+      "base": "TAC",
+      "price_change_24h": 19.31,
       "score": 4,
-      "listing_days": 307,
-      "price": 0.1619
+      "listing_days": 287,
+      "price": 0.012834
     },
     {
       "symbol": "ZEREBROUSDT",
       "base": "ZEREBRO",
-      "price_change_24h": 19.2,
+      "price_change_24h": 17.73,
       "score": 4,
       "listing_days": 480,
-      "price": 0.019068
-    },
-    {
-      "symbol": "ZKPUSDT",
-      "base": "ZKP",
-      "price_change_24h": 16.53,
-      "score": 4,
-      "listing_days": 128,
-      "price": 0.09439
-    },
-    {
-      "symbol": "LUMIAUSDT",
-      "base": "LUMIA",
-      "price_change_24h": 16.3,
-      "score": 4,
-      "listing_days": 496,
-      "price": 0.17738
-    },
-    {
-      "symbol": "AIOUSDT",
-      "base": "AIO",
-      "price_change_24h": 15.63,
-      "score": 4,
-      "listing_days": 258,
-      "price": 0.10067
-    },
-    {
-      "symbol": "VELODROMEUSDT",
-      "base": "VELODROME",
-      "price_change_24h": 14.13,
-      "score": 3,
-      "listing_days": 500,
-      "price": 0.01858
-    },
-    {
-      "symbol": "SIRENUSDT",
-      "base": "SIREN",
-      "price_change_24h": 14.05,
-      "score": 3,
-      "listing_days": 402,
-      "price": 0.702
+      "price": 0.019738
     },
     {
       "symbol": "BUSDT",
       "base": "B",
-      "price_change_24h": -13.99,
-      "score": 3,
+      "price_change_24h": -17.68,
+      "score": 4,
       "listing_days": 340,
-      "price": 0.1211
+      "price": 0.1178
     },
     {
-      "symbol": "GWEIUSDT",
-      "base": "GWEI",
-      "price_change_24h": -13.53,
-      "score": 3,
-      "listing_days": 89,
-      "price": 0.09151
+      "symbol": "AIOUSDT",
+      "base": "AIO",
+      "price_change_24h": 17.26,
+      "score": 4,
+      "listing_days": 258,
+      "price": 0.10319
     },
     {
-      "symbol": "TURTLEUSDT",
-      "base": "TURTLE",
-      "price_change_24h": 13.21,
-      "score": 3,
-      "listing_days": 187,
-      "price": 0.06006
+      "symbol": "ZKPUSDT",
+      "base": "ZKP",
+      "price_change_24h": 16.46,
+      "score": 4,
+      "listing_days": 128,
+      "price": 0.0946
     },
     {
-      "symbol": "AGTUSDT",
-      "base": "AGT",
-      "price_change_24h": 12.79,
+      "symbol": "SIRENUSDT",
+      "base": "SIREN",
+      "price_change_24h": 15.23,
+      "score": 4,
+      "listing_days": 402,
+      "price": 0.7022
+    },
+    {
+      "symbol": "NAORISUSDT",
+      "base": "NAORIS",
+      "price_change_24h": -14.95,
       "score": 3,
-      "listing_days": 343,
-      "price": 0.019828
+      "listing_days": 271,
+      "price": 0.08054
+    },
+    {
+      "symbol": "VELODROMEUSDT",
+      "base": "VELODROME",
+      "price_change_24h": 13.89,
+      "score": 3,
+      "listing_days": 500,
+      "price": 0.01853
+    },
+    {
+      "symbol": "HUSDT",
+      "base": "H",
+      "price_change_24h": 13.85,
+      "score": 3,
+      "listing_days": 307,
+      "price": 0.16634
+    },
+    {
+      "symbol": "VELVETUSDT",
+      "base": "VELVET",
+      "price_change_24h": -13.25,
+      "score": 3,
+      "listing_days": 287,
+      "price": 0.1152
+    },
+    {
+      "symbol": "TAGUSDT",
+      "base": "TAG",
+      "price_change_24h": -12.94,
+      "score": 3,
+      "listing_days": 277,
+      "price": 0.0006416
     },
     {
       "symbol": "MYXUSDT",
       "base": "MYX",
-      "price_change_24h": 11.7,
+      "price_change_24h": 12.91,
       "score": 3,
       "listing_days": 314,
-      "price": 0.2759
+      "price": 0.279
+    },
+    {
+      "symbol": "BBUSDT",
+      "base": "BB",
+      "price_change_24h": 11.69,
+      "score": 3,
+      "listing_days": 715,
+      "price": 0.02971
     }
   ],
   "oi_anomaly": []
