@@ -1,0 +1,382 @@
+import sys
+"""
+拉哪 Lite - 舆情热度 + 多时间框架 OI 监控
+版本: v0.1.13 (H1 主方向引擎)
+新增:
+  - CoinGecko demo key 支持 (避免限流)
+  - 实时价格 (fetch_spot_price)
+  - 上线天数 (via exchangeInfo)
+  - 多时间框架 OI (1h/4h/12h/1d)
+  - 综合方向判定 (aggregate_signal)
+  - 动态死币识别 (24h>85% 且 OI 1h<5% 自动跳过)
+  - 两阶段扫描 (先 1h 筛选,通过后再补多 TF 省 API)
+"""
+
+import os
+import time
+from h1_engine import h1_judge, format_tg_alert
+import json
+import requests
+import schedule
+import threading
+# REAL_MODE routing: when on, swap binance_paper -> binance_real_runner (real money)
+# Pre-load .env so REAL_MODE / API keys are visible at module-level import time
+from dotenv import load_dotenv as _ld_pre_real
+_ld_pre_real()
+import os as _os_real_mode_check
+REAL_MODE = _os_real_mode_check.environ.get("REAL_MODE", "off").lower() == "on"
+import binance_paper  # always: shadow tracker / win-rate baseline (no MAX_OPEN limit)
+if REAL_MODE:
+    import binance_real_runner
+from binance_real import assert_one_way_mode
+    print("[lana] REAL_MODE=on -> dual: paper(shadow) + binance_real_runner(REAL MONEY)", flush=True)
+else:
+    binance_real_runner = None
+    print("[lana] REAL_MODE=off -> paper only (simulation)", flush=True)
+from datetime import datetime
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# ========== 配置 ==========
+TG_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TG_CHAT  = os.getenv("TELEGRAM_CHAT_ID")
+
+STABLECOINS = {"USDT","USDC","BUSD","FDUSD","DAI","TUSD","USDP","USDD","PYUSD"}
+PERMANENT_BLACKLIST = {"RAVE"}  # 已归零/退市/诈骗确认的币
+
+OI_RATIO_THRESHOLD   = 3.0
+OI_CHANGE_THRESHOLD  = 0.08
+HEAT_TOP_N           = 40
+
+FAPI = "https://fapi.binance.com"
+CG   = "https://api.coingecko.com/api/v3"
+
+_exchange_info_cache = {}
+CG_API_KEY = os.getenv("COINGECKO_API_KEY", "")  # 可选 demo key
+
+
+# ========== 工具函数 ==========
+def tg_send(text: str):
+    if not TG_TOKEN or not TG_CHAT:
+        print("[WARN] Telegram 未配置,仅打印:\n", text)
+        return
+    url = "https://api.telegram.org/bot" + TG_TOKEN + "/sendMessage"
+    try:
+        requests.post(url, json={
+            "chat_id": TG_CHAT, "text": text, "parse_mode": "Markdown"
+        }, timeout=10)
+    except Exception as e:
+        print("[TG ERROR]", e)
+
+
+def log(msg: str):
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}")
+
+
+# ========== 数据源 ==========
+def fetch_coingecko_trending() -> set:
+    try:
+        headers = {"x-cg-demo-api-key": CG_API_KEY} if CG_API_KEY else {}
+        r = requests.get(CG + "/search/trending", headers=headers, timeout=10).json()
+        return {c["item"]["symbol"].upper() for c in r.get("coins", [])} - STABLECOINS
+    except Exception as e:
+        log(f"CoinGecko 失败: {e}")
+        return set()
+
+
+def fetch_binance_gainers(top_n: int = 40) -> list:
+    try:
+        r = requests.get(FAPI + "/fapi/v1/ticker/24hr", timeout=10).json()
+        pairs = [x for x in r
+                 if x["symbol"].endswith("USDT")
+                 and x["symbol"].replace("USDT","") not in STABLECOINS
+                 and x["symbol"].replace("USDT","") not in PERMANENT_BLACKLIST]
+        pairs.sort(key=lambda x: abs(float(x["priceChangePercent"])), reverse=True)
+        return pairs[:top_n]
+    except Exception as e:
+        log(f"币安涨跌榜失败: {e}")
+        return []
+
+
+def refresh_exchange_info():
+    """拉所有合约的上线时间,每 24h 刷一次"""
+    global _exchange_info_cache
+    try:
+        r = requests.get(FAPI + "/fapi/v1/exchangeInfo", timeout=10).json()
+        _exchange_info_cache = {s["symbol"]: s.get("onboardDate", 0)
+                                for s in r.get("symbols", [])}
+        log(f"exchangeInfo 已缓存 {len(_exchange_info_cache)} 个合约")
+    except Exception as e:
+        log(f"exchangeInfo 失败: {e}")
+
+
+def get_listing_age_days(symbol: str) -> int:
+    ts_ms = _exchange_info_cache.get(symbol, 0)
+    if not ts_ms:
+        return 9999
+    return int((time.time() * 1000 - ts_ms) / 86400000)
+
+
+def fetch_spot_price(symbol: str) -> float:
+    try:
+        r = requests.get(FAPI + "/fapi/v1/ticker/price",
+                         params={"symbol": symbol}, timeout=5).json()
+        return float(r.get("price", 0))
+    except Exception as e:
+        log(f"{symbol} 价格失败: {e}")
+        return 0
+
+
+def fetch_oi_at_tf(symbol: str, period: str, limit: int):
+    """拉单个时间框架的 OI 数据"""
+    try:
+        r = requests.get(FAPI + "/futures/data/openInterestHist",
+                         params={"symbol": symbol, "period": period, "limit": limit},
+                         timeout=10).json()
+        if not isinstance(r, list) or len(r) < 2:
+            return None
+        old, new = r[0], r[-1]
+        oi_old = float(old["sumOpenInterest"])
+        oi_new = float(new["sumOpenInterest"])
+        if oi_old == 0: return None
+        p_old = float(old["sumOpenInterestValue"]) / oi_old
+        p_new = float(new["sumOpenInterestValue"]) / oi_new
+        if p_old == 0: return None
+        oi_pct    = (oi_new - oi_old) / oi_old * 100
+        price_pct = (p_new - p_old) / p_old * 100
+        ratio = abs(oi_pct) / abs(price_pct) if price_pct != 0 else 999
+        return {
+            "oi_pct": round(oi_pct, 2),
+            "price_pct": round(price_pct, 2),
+            "ratio": round(ratio, 2),
+        }
+    except Exception as e:
+        log(f"{symbol} OI({period}) 失败: {e}")
+        return None
+
+
+def fetch_oi_multi(symbol: str) -> dict:
+    """拉 4h/12h/1d 三个时间框架(1h 已在主筛选拉过)"""
+    tfs = {"4h":  ("15m", 17),
+           "12h": ("1h",  13),
+           "1d":  ("2h",  13)}
+    out = {}
+    for tf, (period, limit) in tfs.items():
+        d = fetch_oi_at_tf(symbol, period, limit)
+        if d:
+            out[tf] = d
+        time.sleep(0.2)
+    return out
+
+
+# ========== 判定规则 ==========
+def is_dead_coin(pct_24h: float, oi_1h_pct: float) -> bool:
+    """动态死币识别:24h 变化 >85% 且 OI 1h 变化 <5% → 崩完了,跳过"""
+    return abs(pct_24h) > 85 and abs(oi_1h_pct) < 5
+
+
+def classify_direction(oi_p: float, pr_p: float, ra: float) -> str:
+    if oi_p >= 15 and pr_p >= 3 and ra >= 5:    return "🟢 做多强(A)"
+    if oi_p >= 15 and pr_p <= -3 and ra >= 5:   return "🔴 做空强(B)"
+    if oi_p <= -15 and pr_p <= -5:              return "⚪ 多头撤退(C)"
+    if oi_p <= -15 and pr_p >= 5:               return "⚪ 空头回补(D)"
+    return "⚪ 观望"
+
+
+def aggregate_signal(tags: dict) -> str:
+    """把 4 个时间框架方向合成综合信号"""
+    longs  = sum(1 for t in tags.values() if "做多强" in t)
+    shorts = sum(1 for t in tags.values() if "做空强" in t)
+    if longs >= 3:   return "🟢🟢 多时间框架共振-做多"
+    if shorts >= 3:  return "🔴🔴 多时间框架共振-做空"
+    if longs == 2:   return "🟢 短中期做多"
+    if shorts == 2:  return "🔴 短中期做空"
+    if longs >= 1 and shorts == 0: return "🟢 弱做多"
+    if shorts >= 1 and longs == 0: return "🔴 弱做空"
+    return "⚪ 信号冲突-观望"
+
+
+# ========== 核心逻辑 ==========
+def build_heat_board() -> list:
+    cg   = fetch_coingecko_trending()
+    rows = fetch_binance_gainers(HEAT_TOP_N)
+    scored = []
+    for g in rows:
+        sym  = g["symbol"]
+        base = sym.replace("USDT","")
+        if base in STABLECOINS or base in PERMANENT_BLACKLIST:
+            continue
+        score = 3
+        if base in cg: score += 2
+        if abs(float(g["priceChangePercent"])) > 15: score += 1
+        scored.append({
+            "symbol": sym,
+            "base": base,
+            "price_change_24h": round(float(g["priceChangePercent"]), 2),
+            "score": score,
+            "listing_days": get_listing_age_days(sym),
+            "price": float(g["lastPrice"]),
+        })
+    scored.sort(key=lambda x: x["score"], reverse=True)
+    return scored
+
+
+def scan_anomalies(heat_board: list) -> list:
+    """两阶段扫描:1h 快速筛选 → 通过后补多 TF + 价格"""
+    anomalies = []
+    for item in heat_board[:HEAT_TOP_N]:
+        oi_1h = fetch_oi_at_tf(item["symbol"], "5m", 13)
+        time.sleep(0.2)
+        if not oi_1h:
+            continue
+        if is_dead_coin(item["price_change_24h"], oi_1h["oi_pct"]):
+            log(f"跳过死币 {item['symbol']}")
+            continue
+        if abs(oi_1h["oi_pct"]) > 90:
+            continue
+        if abs(oi_1h["oi_pct"]) < OI_CHANGE_THRESHOLD * 100:
+            continue
+        if oi_1h["ratio"] < OI_RATIO_THRESHOLD:
+            continue
+        # 通过1h筛选,补多 TF + 实时价
+        multi  = fetch_oi_multi(item["symbol"])
+        price  = fetch_spot_price(item["symbol"])
+        tf_all = {"1h": oi_1h, **multi}
+        tags   = {tf: classify_direction(d["oi_pct"], d["price_pct"], d["ratio"])
+                  for tf, d in tf_all.items()}
+        anomalies.append({
+            **item,
+            "spot_price": price or item.get("price", 0),  # v0.1.13: 现货无数据时用 top_heat 的 perp lastPrice 兜底
+            "tf": tf_all,
+            "tags": tags,
+            "aggregate": aggregate_signal(tags),
+        })
+    return [dict(a, h1=h1_judge(a)) for a in anomalies]
+
+
+def save_snapshot(heat, anomalies):
+    ts = datetime.now().isoformat()
+    with open("latest_snapshot.json", "w", encoding="utf-8") as f:
+        json.dump({
+            "timestamp": ts,
+            "version": "v0.1.17",
+            "top_heat": heat[:20],
+            "oi_anomaly": anomalies,
+        }, f, ensure_ascii=False, indent=2)
+    if anomalies:
+        with open("signals_log.jsonl", "a", encoding="utf-8") as f:
+            for a in anomalies:
+                f.write(json.dumps({"timestamp": ts, **a}, ensure_ascii=False) + "\n")
+
+
+def _run_paper_orders(anomalies):
+    """对 H1 should_trade=True 的异动调用 paper_open(纸面下单)。"""
+    for a in anomalies:
+        h1 = a.get("h1") or {}
+        if not h1.get("should_trade"):
+            continue
+        symbol = a.get("symbol")
+        level  = h1.get("level", "")
+        if "long" in level:
+            side = "LONG"
+        elif "short" in level:
+            side = "SHORT"
+        else:
+            log(f"[paper] 跳过 {symbol}: level={level} 无法判定方向")
+            continue
+        margin = float(h1.get("margin_u", 10))
+        lev    = float(h1.get("leverage", 5))
+        # v0.1.16: paper 永远开（影子追踪，所有信号进 paper_state.json，胜率统计无 MAX_OPEN 限制）
+        try:
+            res_paper = binance_paper.paper_open(symbol, side, margin, lev)
+        except Exception as e:
+            log(f"[paper] paper_open {symbol} {side} 异常: {e}")
+            continue
+        if res_paper.get("ok"):
+            pos = res_paper.get("position", {})
+            log(f"[paper] OPEN {side} {symbol} @ {pos.get('entry_price')} margin={margin}U lev={lev}x")
+            if not REAL_MODE:
+                # REAL_MODE=on 时 runner 发"真盘开仓" TG，paper 静默避免双发
+                try:
+                    tg_send(f"📈 *paper 开仓* `{side}` `{symbol}`\n保证金 {margin}U / 杠杆 {lev}x\n入场 ${pos.get('entry_price')}\n理由: {h1.get('reason','')}")
+                except Exception:
+                    pass
+        else:
+            log(f"[paper] {symbol} 拒单: {res_paper.get('err')}")
+        # v0.1.16: REAL_MODE=on 时额外尝试真盘；risk_gate (MAX_OPEN=1) 内部决定是否放行
+        if REAL_MODE and binance_real_runner is not None:
+            try:
+                res_real = binance_real_runner.real_open(symbol, side, margin, lev) or {}
+                if res_real.get("ok"):
+                    pos_r = res_real.get("position", {})
+                    log(f"[real] OPEN {side} {symbol} @ {pos_r.get('entry_price')} margin={margin}U lev={lev}x")
+                else:
+                    log(f"[real] {symbol} 被 risk_gate 拦截或开仓失败: {res_real.get('err')}")
+            except Exception as e:
+                log(f"[real] real_open {symbol} {side} 异常: {e}")
+
+def run_once():
+    log("开始扫描...")
+    heat = build_heat_board()
+    log(f"热度榜 Top5: {[x['symbol'] for x in heat[:5]]}")
+    anomalies = scan_anomalies(heat)
+    # v0.1.18 funding rate 采集 (P0 from 2026-04-27)
+    try:
+        import funding_rate as _fr
+        _fr_map = _fr.get_all_funding_rates()
+        for _a in anomalies:
+            _sym = _a.get('symbol')
+            if _sym and _sym in _fr_map:
+                _a['funding'] = _fr_map[_sym]
+        _hit = sum(1 for _a in anomalies if _a.get('funding'))
+        log(f'[funding] inject {_hit}/{len(anomalies)}')
+    except Exception as _e:
+        log('[funding] skip: ' + str(_e))
+    save_snapshot(heat, anomalies)
+    if not anomalies:
+        log("无异动")
+        return
+    # v0.1.17 静音: OI 异动 push 已完全移除
+    # 仅保留下方 H1 强信号 push (should_trade=true)
+    # v0.1.13: H1 strong signal extra push
+    for _a in anomalies:
+        if _a.get("h1", {}).get("should_trade"):
+            _msg = format_tg_alert(_a, _a["h1"])
+            if _msg:
+                tg_send(_msg)
+                log("H1 strong: " + _a["symbol"] + " " + _a["h1"]["level"])
+    log(f"推送 {len(anomalies)} 条")
+    _run_paper_orders(anomalies)
+
+
+if __name__ == "__main__":
+    log("拉哪 Lite v0.1.17 启动")
+    refresh_exchange_info()
+
+    # v0.1.18 P0: assert One-Way mode at startup (Hedge -> sys.exit, avoid systemd loop)
+    if REAL_MODE:
+        try:
+            assert_one_way_mode()
+            log('[v0.1.18] assert_one_way_mode OK')
+        except Exception as _e:
+            _m = '[FATAL] assert_one_way_mode failed: ' + str(_e)
+            log(_m)
+            try: tg_send('🚨 ' + _m + ' -- daemon aborted, manual intervention')
+            except Exception: pass
+            sys.exit(1)
+    if REAL_MODE:
+        tg_send("🔥 拉哪 Lite v0.1.17 已启动\n💰 真盘 50U / Plan B trail 20%/act 10%\n🛡️ risk_gate (单仓 / -3U / -10U / -15U) + Hedge 自愈\n📊 paper 影子并行（胜率统计不受 MAX_OPEN 限制）")
+    else:
+        tg_send("✅ 拉哪 Lite v0.1.17 已启动\nH1 主方向引擎上线 / paper 模拟模式（胜率验证）")
+    threading.Thread(target=binance_paper.paper_check_all, daemon=True).start()
+    log("paper_check_all 守护线程已启动")
+    if REAL_MODE and binance_real_runner is not None:
+        threading.Thread(target=binance_real_runner.real_check_all, daemon=True).start()
+        log("real_check_all 守护线程已启动 (REAL MONEY)")
+    run_once()
+    schedule.every(5).minutes.do(run_once)
+    schedule.every(24).hours.do(refresh_exchange_info)
+    while True:
+        schedule.run_pending()
+        time.sleep(10)

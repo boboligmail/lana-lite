@@ -1,0 +1,48 @@
+============================================================
+ BINANCE FUTURES DUST TEST (real money, ~5U notional)
+============================================================
+
+[1] balance (before)
+  balance=50.0000U  available=50.0000U
+
+[2] mark price DOGEUSDT
+  mark=0.09798229
+
+[3] set leverage 5x
+  -> {'symbol': 'DOGEUSDT', 'leverage': 5, 'maxNotionalValue': '40000000'}
+
+[4] set ISOLATED
+  -> {'msg': 'already isolated'}
+
+[5] qty calc: 5.0000/0.09798229=51.0296 -> floor 51.0 (step=1.0)
+  filters: minQty=1.0 minNotional=5.0
+  bumped -> qty=52.0 (notional=5.0951U)
+
+[6] MARKET BUY 52.0 DOGEUSDT
+  -> orderId=96788983659 status=NEW avg=0.00
+
+[7] position (after open)
+  -> qty=52.0 side=LONG entry=0.09799 lev=5 margin=isolated
+
+[8] STOP_MARKET sell @ 0.088191
+  [WARN] stop_market failed: Binance POST /fapi/v1/order -> 400: {"code":-4120,"msg":"Order type not supported for this endpoint. Please use the Algo Order API endpoints instead."}
+
+[9] open orders
+  count=0
+
+[10] sleep 2s, CLOSE (reduceOnly market sell)
+  -> orderId=96788986071 status=NEW
+
+[11] cancel_all (clear leftover stop_market)
+  -> {'code': 200, 'msg': 'The operation of cancel all open order is done.'}
+
+[12] position (after close)
+  -> qty=0.0 side=FLAT
+
+[13] balance (after)
+  balance=49.9933U  delta=-0.0067U
+  expected: ~ -0.0040U (2 x taker fee)
+
+============================================================
+ [PASS] dust test OK
+============================================================

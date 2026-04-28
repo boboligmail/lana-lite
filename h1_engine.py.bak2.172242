@@ -1,0 +1,56 @@
+"""H1 main direction engine. v0.2 spec section 1.7."""
+
+
+def _skip(r):
+    return {"level": "skip", "tag": "跳过", "margin_u": 0, "leverage": 0, "reason": r, "should_trade": False}
+
+
+def _watch(r):
+    return {"level": "watch", "tag": "真观望", "margin_u": 0, "leverage": 0, "reason": r, "should_trade": False}
+
+
+def h1_judge(row):
+    listing = row.get("listing_days") or 0
+    tf = row.get("tf", {})
+    if listing < 14 or listing == 9999:
+        return _skip("new coin listing=" + str(listing))
+    try:
+        per = {k: tf[k] for k in ("1h", "4h", "12h", "1d")}
+    except KeyError:
+        return _watch("tf missing")
+    c1L = all(p["oi_pct"] > 0 and p["price_pct"] > 0 for p in per.values())
+    c2 = all(p["ratio"] >= 1.3 for p in per.values())
+    c3 = per["1d"]["ratio"] <= 2 * per["4h"]["ratio"]
+    c1S = all(p["oi_pct"] < 0 and p["price_pct"] < 0 for p in per.values())
+    c3S = abs(per["1d"]["ratio"]) <= 2 * abs(per["4h"]["ratio"])
+    r1d = per["1d"]["ratio"]
+    r4h = per["4h"]["ratio"]
+    if c1L and c2 and c3:
+        return {"level": "strong_long", "tag": "强做多 H1全命中", "margin_u": 10, "leverage": 5, "reason": "4周期同向正 + r>=1.3 + 1d/4h=%.2f" % (r1d / r4h), "should_trade": True}
+    if c1L and c2 and not c3:
+        return {"level": "weak_long", "tag": "弱做多 C3失败", "margin_u": 5, "leverage": 3, "reason": "博弈僵局 1d/4h=%.2f>2" % (r1d / r4h), "should_trade": False}
+    if c1L and not c2:
+        return {"level": "watch_long", "tag": "观察做多 C2失败", "margin_u": 3, "leverage": 3, "reason": "推动力不够 某周期r<1.3", "should_trade": False}
+    if c1S and c3S:
+        return {"level": "strong_short", "tag": "强做空 H1镜像", "margin_u": 10, "leverage": 3, "reason": "4周期同向负 + 博弈过滤通过", "should_trade": True}
+    return _watch("符号混乱 方向打架")
+
+
+def format_tg_alert(row, h1):
+    if h1["level"] not in ("strong_long", "strong_short"):
+        return None
+    sym = row["symbol"]
+    spot = row.get("spot_price") or row.get("price")
+    m = h1["margin_u"]
+    lev = h1["leverage"]
+    nominal = m * lev
+    if h1["level"] == "strong_long":
+        head = "🚀 强做多 H1"
+        action = "开多 / 保证金 %dU / 杠杆 %dx / 名义 %dU" % (m, lev, nominal)
+        sl = "止损 = 入场 x %.4f (浮亏 -10U 触发)" % (1 - 1.0 / lev)
+    else:
+        head = "🔻 强做空 H1"
+        action = "开空 / 保证金 %dU / 杠杆 %dx / 名义 %dU" % (m, lev, nominal)
+        sl = "止损 = 入场 x %.4f (浮亏 -10U 触发)" % (1 + 1.0 / lev)
+    lines = [head, "标的: %s" % sym, "现价: %s" % spot, action, sl, "止盈: 30min 内 +5%% 平 50%%, 剩余移止损到成本", "理由: %s" % h1["reason"]]
+    return "\n".join(lines)

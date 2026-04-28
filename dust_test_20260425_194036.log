@@ -1,0 +1,11 @@
+============================================================
+ BINANCE FUTURES DUST TEST (real money, ~5U notional)
+============================================================
+
+[1] balance (before)
+Traceback (most recent call last):
+  File "/root/lana-lite/dust_test_real.py", line 95, in <module>
+    main()
+  File "/root/lana-lite/dust_test_real.py", line 17, in main
+    print(f"  balance={bal0[chr(39)+chr(98)+chr(97)+chr(108)+chr(97)+chr(110)+chr(99)+chr(101)+chr(39)]:.4f}U  available={bal0[chr(39)+chr(97)+chr(118)+chr(97)+chr(105)+chr(108)+chr(97)+chr(98)+chr(108)+chr(101)+chr(39)]:.4f}U")
+KeyError: "'balance'"

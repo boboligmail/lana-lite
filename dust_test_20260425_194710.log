@@ -1,0 +1,31 @@
+============================================================
+ BINANCE FUTURES DUST TEST (real money, ~5U notional)
+============================================================
+
+[1] balance (before)
+  balance=50.0000U  available=50.0000U
+
+[2] mark price DOGEUSDT
+  mark=0.09781
+
+[3] set leverage 5x
+  -> {'symbol': 'DOGEUSDT', 'leverage': 5, 'maxNotionalValue': '40000000'}
+
+[4] set ISOLATED
+  -> {'code': 200, 'msg': 'success'}
+
+[5] qty calc: 5.0000/0.09781=51.1195 -> floor 51.0 (step=1.0)
+  filters: minQty=1.0 minNotional=5.0
+  bumped -> qty=52.0 (notional=5.0861U)
+
+[6] MARKET BUY 52.0 DOGEUSDT
+Traceback (most recent call last):
+  File "/root/lana-lite/dust_test_real.py", line 101, in <module>
+    main()
+  File "/root/lana-lite/dust_test_real.py", line 47, in main
+    o1 = br.place_market(SYMBOL, "BUY", qty)
+  File "/root/lana-lite/binance_real.py", line 118, in place_market
+    return _req("POST", "/fapi/v1/order", params)
+  File "/root/lana-lite/binance_real.py", line 44, in _req
+    raise RuntimeError(f"Binance {method} {path} -> {r.status_code}: {r.text}")
+RuntimeError: Binance POST /fapi/v1/order -> 400: {"code":-4061,"msg":"Order's position side does not match user's setting."}

@@ -17,9 +17,9 @@ MARGIN_U = 5.0
 LEV_LONG = 5
 LEV_SHORT = 3
 POLL_SEC = 60
-MAX_OPEN = 2  # v0.1.23 G: 1->2 解封 19/16h SKIP 拥堵 (handbook §11.7)
-INIT_BAL = 100.0  # v0.1.23 W: 钱包升级 50->100
-ALERT_BAL = 200.0  # v0.1.23 W: 翻倍报警同步 100->200
+MAX_OPEN = 1
+INIT_BAL = 50.0
+ALERT_BAL = 100.0
 
 _LOCK = threading.Lock()
 _alerted_bal = False
