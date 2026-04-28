@@ -1,5 +1,7 @@
 """Binance real-money runner. Plan B strategy. Process-side stop monitoring."""
-import os, json, time, threading, traceback, uuid
+import os, json
+import fcntl  # v0.1.22 cross-process lock
+import time, threading, traceback, uuid
 from datetime import datetime
 import binance_real as br
 import risk_gate as rg
@@ -33,14 +35,27 @@ def _log(msg):
 def _load_state():
     if not os.path.exists(STATE_PATH):
         return {"positions": [], "closed": []}
-    with open(STATE_PATH) as f:
-        return json.load(f)
+    with open(STATE_PATH, "r") as f:
+        fcntl.flock(f.fileno(), fcntl.LOCK_SH)  # v0.1.22
+        try:
+            return json.loads(f.read())
+        finally:
+            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
 
 def _save_state(s):
-    tmp = STATE_PATH + ".tmp"
-    with open(tmp, "w") as f:
-        json.dump(s, f, indent=2, default=str)
-    os.replace(tmp, STATE_PATH)
+    # v0.1.22: cross-process EX lock + atomic tmp+rename + fsync
+    lock_fd = os.open(STATE_PATH, os.O_WRONLY | os.O_CREAT, 0o644)
+    try:
+        fcntl.flock(lock_fd, fcntl.LOCK_EX)
+        tmp = STATE_PATH + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(s, f, indent=2, default=str)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, STATE_PATH)
+    finally:
+        fcntl.flock(lock_fd, fcntl.LOCK_UN)
+        os.close(lock_fd)
 
 def _tg_send(text):
     import requests
@@ -121,21 +136,21 @@ def real_open(symbol, side, margin=None, lev=None):
         br.assert_one_way_mode()  # v0.1.18 P0: One-Way tripwire
     except Exception as e:
         _log("[BLOCKED] assert_one_way_mode failed: " + str(e))
-        return None
+        return {"ok": False, "position": None, "err": "init", "reason": "assert_one_way_mode: " + str(e)[:200]}
     side = str(side).upper()
     if side not in ("LONG", "SHORT"):
         _log("[ERROR] real_open: invalid side " + repr(side))
-        return None
+        return {"ok": False, "position": None, "err": "validation", "reason": "invalid side: " + repr(side)}
     ok, why = rg.can_open()
     if not ok:
         _log("[BLOCKED] " + why)
         _tg_send("\u26d4 \u771f\u76d8\u5f00\u4ed3\u88ab\u98ce\u63a7\u963b\u6b62: " + why)
-        return None
+        return {"ok": False, "position": None, "err": "risk_gate", "reason": str(why)}
     st = _load_state()
     open_n = sum(1 for p in st.get("positions", []) if p.get("status") == "open")
     if open_n >= MAX_OPEN:
         _log("[SKIP] MAX_OPEN=" + str(MAX_OPEN) + " already reached, skip " + symbol)
-        return None
+        return {"ok": False, "position": None, "err": "max_open", "reason": "MAX_OPEN=" + str(MAX_OPEN) + " reached (" + str(open_n) + " open)"}
     use_lev = LEV_LONG if side == "LONG" else LEV_SHORT
     order_side = "BUY" if side == "LONG" else "SELL"
     try:
@@ -143,12 +158,12 @@ def real_open(symbol, side, margin=None, lev=None):
         br.set_isolated(symbol)
     except Exception as e:
         _log("[ERROR] setup " + symbol + ": " + str(e))
-        return None
+        return {"ok": False, "position": None, "err": "setup", "reason": "set_leverage/isolated: " + str(e)[:200]}
     try:
         mark = br.get_mark_price(symbol)
     except Exception as e:
         _log("[ERROR] get_mark " + symbol + ": " + str(e))
-        return None
+        return {"ok": False, "position": None, "err": "setup", "reason": "get_mark_price: " + str(e)[:200]}
     notional = MARGIN_U * use_lev
     qty = br.round_qty(symbol, notional / mark)
     f = br.symbol_filters(symbol)
@@ -156,13 +171,13 @@ def real_open(symbol, side, margin=None, lev=None):
         qty = br.round_qty(symbol, f["minNotional"] / mark + f["stepSize"])
     if qty <= 0:
         _log("[ERROR] qty=0 for " + symbol + " mark=" + str(mark))
-        return None
+        return {"ok": False, "position": None, "err": "validation", "reason": "qty<=0 mark=" + str(mark)}
     try:
         order = br.place_market(symbol, order_side, qty)
     except Exception as e:
         _log("[ERROR] market open failed " + symbol + " " + order_side + " " + str(qty) + ": " + str(e))
         _tg_send("\u274c \u771f\u76d8\u5f00\u4ed3\u5931\u8d25 " + symbol + ": " + str(e))
-        return None
+        return {"ok": False, "position": None, "err": "market_order", "reason": "place_market: " + str(e)[:200]}
     time.sleep(1)
     pos_real = br.get_position(symbol)
     entry = pos_real["entry_price"] if pos_real["entry_price"] else mark
@@ -208,7 +223,7 @@ def real_open(symbol, side, margin=None, lev=None):
             _force_msg = "force_close FAILED: " + type(_ce).__name__ + ": " + str(_ce)[:80]
             _log("[ALGO-ABORT] " + symbol + " " + _force_msg)
         _tg_send("🔴 OPEN_ABORTED_NO_HARD_STOP " + symbol + " " + side + " | 3 algo retries: " + str(last_err)[:100] + " | " + _force_msg + " | state NOT written")
-        return None  # critical: do NOT append pos to state
+        return {"ok": False, "position": None, "err": "algo_abort", "reason": "OPEN_ABORTED_NO_HARD_STOP: " + str(last_err)[:200]}  # v0.1.22
     with _LOCK:
         st = _load_state()
         st.setdefault("positions", []).append(pos)
@@ -216,7 +231,7 @@ def real_open(symbol, side, margin=None, lev=None):
     msg = "[OPEN] " + symbol + " " + side + " qty=" + str(actual_qty) + " entry=" + str(entry) + " margin=" + str(MARGIN_U) + "U lev=" + str(use_lev) + "x"
     _log(msg)
     _tg_send("\U0001F7E2 \u771f\u76d8\u5f00\u4ed3 " + symbol + " " + side + " qty=" + str(actual_qty) + " entry=" + str(entry) + " margin=" + str(MARGIN_U) + "U lev=" + str(use_lev) + "x")
-    return pos
+    return {"ok": True, "position": pos, "err": None, "reason": "ok"}
 
 def _close(pos, reason="manual"):
     symbol = pos["symbol"]

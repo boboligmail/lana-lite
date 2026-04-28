@@ -1,5 +1,5 @@
 """Risk gate: daily/3-day cumulative loss limits + HALT flag."""
-import os, json
+import os, json, fcntl  # v0.1.22
 from datetime import datetime, timedelta
 
 DATA_DIR = "/root/lana-lite"
@@ -7,7 +7,7 @@ STATE_PATH = os.path.join(DATA_DIR, "risk_state.json")
 HALT_PATH = os.path.join(DATA_DIR, "HALT")
 
 DAILY_LOSS_LIMIT = -10.0
-THREE_DAY_LIMIT = -15.0
+THREE_DAY_LIMIT = -25.0  # v0.1.22: upgraded for 100U/2-unit per handbook §11.7
 
 def _today():
     return datetime.now().strftime("%Y-%m-%d")
@@ -16,13 +16,26 @@ def _load():
     if not os.path.exists(STATE_PATH):
         return {"day": _today(), "daily_loss_u": 0.0, "halt_3day_until": None, "history": []}
     with open(STATE_PATH) as f:
-        return json.load(f)
+        fcntl.flock(f.fileno(), fcntl.LOCK_SH)  # v0.1.22
+        try:
+            return json.load(f)
+        finally:
+            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
 
 def _save(s):
-    tmp = STATE_PATH + ".tmp"
-    with open(tmp, "w") as f:
-        json.dump(s, f, indent=2, default=str)
-    os.replace(tmp, STATE_PATH)
+    # v0.1.22: cross-process EX lock + fsync + atomic rename
+    lock_fd = os.open(STATE_PATH, os.O_WRONLY | os.O_CREAT, 0o644)
+    try:
+        fcntl.flock(lock_fd, fcntl.LOCK_EX)
+        tmp = STATE_PATH + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(s, f, indent=2, default=str)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(tmp, STATE_PATH)
+    finally:
+        fcntl.flock(lock_fd, fcntl.LOCK_UN)
+        os.close(lock_fd)
 
 def _roll_day(s):
     today = _today()
