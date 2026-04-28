@@ -310,6 +310,7 @@ def _run_paper_orders(anomalies):
                 # REAL_MODE=on 时 runner 发"真盘开仓" TG，paper 静默避免双发
                 try:
                     tg_send(f"📈 *paper 开仓* `{side}` `{symbol}`\n保证金 {margin}U / 杠杆 {lev}x\n入场 ${pos.get('entry_price')}\n理由: {h1.get('reason','')}")
+                    tg_send(f"📈 *paper 开仓* `{side}` `{symbol}`\n保证金 {margin}U / 杠杆 {lev}x\n入场 ${pos.get('entry_price')}\n理由: {h1.get('reason','')}", channel="social")
                 except Exception:
                     pass
         else:
@@ -368,8 +369,47 @@ def run_once():
     _run_paper_orders(anomalies)
 
 
+
+# === Phase 2B v0.1.17: daily_summary 23:55 ===
+def daily_summary():
+    """每日 23:55 推送 social: PnL / 持仓 / risk_state."""
+    try:
+        import json as _json, os as _os
+        from datetime import datetime as _dt
+        rs = {}
+        try:
+            if _os.path.exists("risk_state.json"):
+                rs = _json.loads(open("risk_state.json").read())
+        except Exception:
+            pass
+        positions = []
+        try:
+            if _os.path.exists("real_positions.json"):
+                positions = list(_json.loads(open("real_positions.json").read()).values())
+        except Exception:
+            pass
+        day = rs.get("day", _dt.now().strftime("%Y-%m-%d"))
+        loss = rs.get("daily_loss_u", 0.0)
+        hist = rs.get("history", [])
+        last3 = hist[-3:] if isinstance(hist, list) else []
+        msg = [
+            "✨ daily summary " + str(day),
+            "PnL today: " + ("%+.2f" % loss) + "U",
+            "open positions: " + str(len(positions)),
+        ]
+        for p in positions[:5]:
+            msg.append("  - " + str(p.get("symbol","?")) + " " + str(p.get("side","?"))
+                + " entry=" + str(p.get("entry_price","?"))
+                + " qty=" + str(p.get("qty","?")))
+        if last3:
+            msg.append("last 3d: " + str(last3))
+        tg_send("\n".join(msg), channel="social")
+    except Exception as _e_ds:
+        log("[daily_summary] err: " + str(_e_ds))
+# === end Phase 2B daily_summary ===
+
 if __name__ == "__main__":
-    log("拉哪 Lite v0.1.17 启动")
+    log("拉哪 Lite v0.1.23 启动")
     refresh_exchange_info()
     if REAL_MODE:
         try:
@@ -394,9 +434,9 @@ if __name__ == "__main__":
             import time as _t, sys as _s
             _t.sleep(300)
             _s.exit(1)
-        tg_send("🔥 拉哪 Lite v0.1.17 已启动\n💰 真盘 50U / Plan B trail 20%/act 10%\n🛡️ risk_gate (单仓 / -3U / -10U / -15U) + Hedge 自愈\n📊 paper 影子并行（胜率统计不受 MAX_OPEN 限制）")
+        tg_send("🔥 拉哪 Lite v0.1.23 已启动\n💰 真盘 100U / MAX_OPEN=2 / Plan B trail 20%/act 10%\n🛡️ risk_gate (单仓 / -3U / -10U / -25U) + Hedge 自愈\n📊 paper 999U 影子并行（胜率统计不受 MAX_OPEN 限制）")
     else:
-        tg_send("✅ 拉哪 Lite v0.1.17 已启动\nH1 主方向引擎上线 / paper 模拟模式（胜率验证）")
+        tg_send("✅ 拉哪 Lite v0.1.23 已启动\nH1 主方向引擎上线 / paper 模拟模式（胜率验证）")
     threading.Thread(target=binance_paper.paper_check_all, daemon=True).start()
     log("paper_check_all 守护线程已启动")
     if REAL_MODE and binance_real_runner is not None:
@@ -405,6 +445,7 @@ if __name__ == "__main__":
     run_once()
     schedule.every(5).minutes.do(run_once)
     schedule.every(24).hours.do(refresh_exchange_info)
+    schedule.every().day.at("23:55").do(daily_summary)
     while True:
         schedule.run_pending()
         time.sleep(10)

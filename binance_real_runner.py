@@ -231,6 +231,11 @@ def real_open(symbol, side, margin=None, lev=None):
     msg = "[OPEN] " + symbol + " " + side + " qty=" + str(actual_qty) + " entry=" + str(entry) + " margin=" + str(MARGIN_U) + "U lev=" + str(use_lev) + "x"
     _log(msg)
     _tg_send("\U0001F7E2 \u771f\u76d8\u5f00\u4ed3 " + symbol + " " + side + " qty=" + str(actual_qty) + " entry=" + str(entry) + " margin=" + str(MARGIN_U) + "U lev=" + str(use_lev) + "x")
+    try:
+        from lana_lite import tg_send as _tg_main_open
+        _tg_main_open("\U0001F7E2 \u771f\u76d8\u5f00\u4ed3 " + symbol + " " + side + " qty=" + str(actual_qty) + " entry=" + str(entry) + " margin=" + str(MARGIN_U) + "U lev=" + str(use_lev) + "x", channel="social")
+    except Exception as _e_sm_o:
+        _log("[social-mirror open] " + str(_e_sm_o))
     return {"ok": True, "position": pos, "err": None, "reason": "ok"}
 
 def _close(pos, reason="manual"):
@@ -288,6 +293,11 @@ def _close(pos, reason="manual"):
     _log(msg)
     icon = "\U0001F534" if pnl < 0 else "\U0001F7E2"
     _tg_send(icon + " \u771f\u76d8\u5e73\u4ed3 " + symbol + " " + pos["side"] + " exit=" + str(exit_price) + " pnl=" + ("%+.4f" % pnl) + "U reason=" + reason)
+    try:
+        from lana_lite import tg_send as _tg_main_close
+        _tg_main_close(icon + " \u771f\u76d8\u5e73\u4ed3 " + symbol + " " + pos["side"] + " exit=" + str(exit_price) + " pnl=" + ("%+.4f" % pnl) + "U reason=" + reason, channel="social")
+    except Exception as _e_sm_c:
+        _log("[social-mirror close] " + str(_e_sm_c))
     return pnl
 
 def _check_one(pos):
