@@ -1,192 +1,192 @@
 {
-  "timestamp": "2026-04-28T22:56:00.734995",
+  "timestamp": "2026-04-28T23:58:45.199842",
   "version": "v0.1.23",
   "top_heat": [
     {
       "symbol": "ZKJUSDT",
       "base": "ZKJ",
-      "price_change_24h": 191.81,
+      "price_change_24h": 191.51,
       "score": 6,
       "listing_days": 350,
-      "price": 0.03315
+      "price": 0.03399
     },
     {
-      "symbol": "ORCAUSDT",
-      "base": "ORCA",
-      "price_change_24h": 11.57,
-      "score": 5,
-      "listing_days": 507,
-      "price": 1.678
+      "symbol": "BIOUSDT",
+      "base": "BIO",
+      "price_change_24h": 21.0,
+      "score": 6,
+      "listing_days": 480,
+      "price": 0.03382
     },
     {
-      "symbol": "MONUSDT",
-      "base": "MON",
-      "price_change_24h": -10.88,
-      "score": 5,
-      "listing_days": 200,
-      "price": 0.02851
-    },
-    {
-      "symbol": "GRASSUSDT",
-      "base": "GRASS",
-      "price_change_24h": -9.43,
-      "score": 5,
-      "listing_days": 535,
-      "price": 0.3381
+      "symbol": "DAMUSDT",
+      "base": "DAM",
+      "price_change_24h": -34.67,
+      "score": 4,
+      "listing_days": 253,
+      "price": 0.03563
     },
     {
       "symbol": "LYNUSDT",
       "base": "LYN",
-      "price_change_24h": 26.42,
+      "price_change_24h": 31.9,
       "score": 4,
       "listing_days": 204,
-      "price": 0.07871
+      "price": 0.08211
     },
     {
       "symbol": "IRUSDT",
       "base": "IR",
-      "price_change_24h": 25.41,
+      "price_change_24h": 25.83,
       "score": 4,
       "listing_days": 128,
-      "price": 0.03771
+      "price": 0.03629
     },
     {
       "symbol": "APEUSDT",
       "base": "APE",
-      "price_change_24h": 20.09,
+      "price_change_24h": 23.41,
       "score": 4,
       "listing_days": 1503,
-      "price": 0.168
-    },
-    {
-      "symbol": "HUSDT",
-      "base": "H",
-      "price_change_24h": 18.62,
-      "score": 4,
-      "listing_days": 307,
-      "price": 0.16739
+      "price": 0.1713
     },
     {
       "symbol": "TAGUSDT",
       "base": "TAG",
-      "price_change_24h": -18.08,
+      "price_change_24h": -20.39,
       "score": 4,
       "listing_days": 277,
-      "price": 0.0006383
+      "price": 0.0006196
     },
     {
       "symbol": "TACUSDT",
       "base": "TAC",
-      "price_change_24h": 17.46,
+      "price_change_24h": 18.37,
       "score": 4,
       "listing_days": 287,
-      "price": 0.012702
+      "price": 0.012966
     },
     {
-      "symbol": "SIRENUSDT",
-      "base": "SIREN",
-      "price_change_24h": 15.98,
+      "symbol": "BROCCOLI714USDT",
+      "base": "BROCCOLI714",
+      "price_change_24h": 17.48,
       "score": 4,
-      "listing_days": 402,
-      "price": 0.7249
+      "listing_days": 403,
+      "price": 0.01794
     },
     {
       "symbol": "AIOUSDT",
       "base": "AIO",
-      "price_change_24h": 15.57,
+      "price_change_24h": 16.36,
       "score": 4,
       "listing_days": 258,
-      "price": 0.10312
+      "price": 0.10344
     },
     {
-      "symbol": "MYXUSDT",
-      "base": "MYX",
-      "price_change_24h": 13.55,
-      "score": 3,
-      "listing_days": 314,
-      "price": 0.2824
-    },
-    {
-      "symbol": "BUSDT",
-      "base": "B",
-      "price_change_24h": -12.98,
-      "score": 3,
-      "listing_days": 340,
-      "price": 0.122
-    },
-    {
-      "symbol": "NAORISUSDT",
-      "base": "NAORIS",
-      "price_change_24h": -12.3,
-      "score": 3,
-      "listing_days": 271,
-      "price": 0.07896
-    },
-    {
-      "symbol": "MUSDT",
-      "base": "M",
-      "price_change_24h": -12.1,
-      "score": 3,
-      "listing_days": 295,
-      "price": 3.524
+      "symbol": "USUSDT",
+      "base": "US",
+      "price_change_24h": 16.33,
+      "score": 4,
+      "listing_days": 137,
+      "price": 0.004837
     },
     {
       "symbol": "ZEREBROUSDT",
       "base": "ZEREBRO",
-      "price_change_24h": 12.07,
-      "score": 3,
+      "price_change_24h": 15.91,
+      "score": 4,
       "listing_days": 481,
-      "price": 0.018823
-    },
-    {
-      "symbol": "SWARMSUSDT",
-      "base": "SWARMS",
-      "price_change_24h": -11.91,
-      "score": 3,
-      "listing_days": 476,
-      "price": 0.022453
-    },
-    {
-      "symbol": "BBUSDT",
-      "base": "BB",
-      "price_change_24h": 11.67,
-      "score": 3,
-      "listing_days": 715,
-      "price": 0.02996
+      "price": 0.019251
     },
     {
       "symbol": "ZKPUSDT",
       "base": "ZKP",
-      "price_change_24h": 11.66,
-      "score": 3,
+      "price_change_24h": 15.65,
+      "score": 4,
       "listing_days": 128,
-      "price": 0.0904
+      "price": 0.09376
+    },
+    {
+      "symbol": "SWARMSUSDT",
+      "base": "SWARMS",
+      "price_change_24h": -14.92,
+      "score": 3,
+      "listing_days": 476,
+      "price": 0.023025
+    },
+    {
+      "symbol": "HUSDT",
+      "base": "H",
+      "price_change_24h": 14.19,
+      "score": 3,
+      "listing_days": 307,
+      "price": 0.16598
+    },
+    {
+      "symbol": "AIOTUSDT",
+      "base": "AIOT",
+      "price_change_24h": 14.09,
+      "score": 3,
+      "listing_days": 363,
+      "price": 0.09854
+    },
+    {
+      "symbol": "BBUSDT",
+      "base": "BB",
+      "price_change_24h": 14.02,
+      "score": 3,
+      "listing_days": 715,
+      "price": 0.02993
+    },
+    {
+      "symbol": "MYXUSDT",
+      "base": "MYX",
+      "price_change_24h": 13.54,
+      "score": 3,
+      "listing_days": 314,
+      "price": 0.2852
+    },
+    {
+      "symbol": "UBUSDT",
+      "base": "UB",
+      "price_change_24h": 13.12,
+      "score": 3,
+      "listing_days": 228,
+      "price": 0.05373
+    },
+    {
+      "symbol": "ZBTUSDT",
+      "base": "ZBT",
+      "price_change_24h": 12.94,
+      "score": 3,
+      "listing_days": 193,
+      "price": 0.19356
     }
   ],
   "oi_anomaly": [
     {
       "symbol": "BROCCOLI714USDT",
       "base": "BROCCOLI714",
-      "price_change_24h": 9.39,
-      "score": 3,
+      "price_change_24h": 17.48,
+      "score": 4,
       "listing_days": 403,
-      "price": 0.01724,
-      "spot_price": 0.01722,
+      "price": 0.01794,
+      "spot_price": 0.01794,
       "tf": {
         "1h": {
-          "oi_pct": 10.87,
-          "price_pct": 2.71,
-          "ratio": 4.0
+          "oi_pct": 15.31,
+          "price_pct": 3.31,
+          "ratio": 4.62
         },
         "4h": {
-          "oi_pct": 16.58,
-          "price_pct": 8.59,
-          "ratio": 1.93
+          "oi_pct": 33.67,
+          "price_pct": 13.21,
+          "ratio": 2.55
         },
         "12h": {
-          "oi_pct": 4.44,
-          "price_pct": 4.98,
-          "ratio": 0.89
+          "oi_pct": 12.46,
+          "price_pct": 7.29,
+          "ratio": 1.71
         },
         "1d": {
           "oi_pct": 0.68,
@@ -210,9 +210,60 @@
         "should_trade": false
       },
       "funding": {
-        "lastFundingRate": 5e-05,
+        "lastFundingRate": 4.47e-06,
         "nextFundingTime": 1777392000000,
-        "markPrice": 0.0172294
+        "markPrice": 0.01792504
+      }
+    },
+    {
+      "symbol": "BBUSDT",
+      "base": "BB",
+      "price_change_24h": 14.02,
+      "score": 3,
+      "listing_days": 715,
+      "price": 0.02993,
+      "spot_price": 0.02994,
+      "tf": {
+        "1h": {
+          "oi_pct": 9.47,
+          "price_pct": -0.37,
+          "ratio": 25.37
+        },
+        "4h": {
+          "oi_pct": 17.41,
+          "price_pct": 5.24,
+          "ratio": 3.32
+        },
+        "12h": {
+          "oi_pct": 19.69,
+          "price_pct": 14.15,
+          "ratio": 1.39
+        },
+        "1d": {
+          "oi_pct": 15.31,
+          "price_pct": 11.65,
+          "ratio": 1.31
+        }
+      },
+      "tags": {
+        "1h": "⚪ 观望",
+        "4h": "⚪ 观望",
+        "12h": "⚪ 观望",
+        "1d": "⚪ 观望"
+      },
+      "aggregate": "⚪ 信号冲突-观望",
+      "h1": {
+        "level": "watch",
+        "tag": "真观望",
+        "margin_u": 0,
+        "leverage": 0,
+        "reason": "符号混乱 方向打架",
+        "should_trade": false
+      },
+      "funding": {
+        "lastFundingRate": -0.00100656,
+        "nextFundingTime": 1777392000000,
+        "markPrice": 0.02995888
       }
     }
   ]
