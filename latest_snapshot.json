@@ -1,219 +1,167 @@
 {
-  "timestamp": "2026-04-28T15:59:33.425996",
+  "timestamp": "2026-04-28T16:56:55.145308",
   "version": "v0.1.23",
   "top_heat": [
     {
-      "symbol": "APEUSDT",
-      "base": "APE",
-      "price_change_24h": 25.55,
-      "score": 6,
-      "listing_days": 1503,
-      "price": 0.1784
-    },
-    {
-      "symbol": "DAMUSDT",
-      "base": "DAM",
-      "price_change_24h": 137.05,
-      "score": 4,
-      "listing_days": 252,
-      "price": 0.04888
-    },
-    {
-      "symbol": "ZKJUSDT",
-      "base": "ZKJ",
-      "price_change_24h": 100.0,
-      "score": 4,
-      "listing_days": 349,
-      "price": 0.0239
-    },
-    {
-      "symbol": "ORCAUSDT",
-      "base": "ORCA",
-      "price_change_24h": 28.02,
-      "score": 4,
-      "listing_days": 507,
-      "price": 1.535
-    },
-    {
       "symbol": "PRLUSDT",
       "base": "PRL",
-      "price_change_24h": 27.68,
-      "score": 4,
+      "price_change_24h": 60.38,
+      "score": 6,
       "listing_days": 26,
-      "price": 0.3483
+      "price": 0.391
     },
     {
-      "symbol": "SWARMSUSDT",
-      "base": "SWARMS",
-      "price_change_24h": 24.83,
-      "score": 4,
-      "listing_days": 475,
-      "price": 0.026104
-    },
-    {
-      "symbol": "GWEIUSDT",
-      "base": "GWEI",
-      "price_change_24h": -23.21,
-      "score": 4,
-      "listing_days": 89,
-      "price": 0.09119
-    },
-    {
-      "symbol": "MYXUSDT",
-      "base": "MYX",
-      "price_change_24h": 20.57,
-      "score": 4,
-      "listing_days": 313,
-      "price": 0.2943
-    },
-    {
-      "symbol": "BSBUSDT",
-      "base": "BSB",
-      "price_change_24h": -18.72,
-      "score": 4,
-      "listing_days": 33,
-      "price": 0.7181
+      "symbol": "APEUSDT",
+      "base": "APE",
+      "price_change_24h": 27.04,
+      "score": 6,
+      "listing_days": 1503,
+      "price": 0.1804
     },
     {
       "symbol": "SIRENUSDT",
       "base": "SIREN",
-      "price_change_24h": 17.61,
-      "score": 4,
+      "price_change_24h": 14.59,
+      "score": 5,
       "listing_days": 401,
-      "price": 0.7221
+      "price": 0.7078
     },
     {
-      "symbol": "1000LUNCUSDT",
-      "base": "1000LUNC",
-      "price_change_24h": 17.58,
+      "symbol": "DAMUSDT",
+      "base": "DAM",
+      "price_change_24h": 126.62,
       "score": 4,
-      "listing_days": 1328,
-      "price": 0.06896
+      "listing_days": 252,
+      "price": 0.04784
     },
     {
-      "symbol": "VINEUSDT",
-      "base": "VINE",
-      "price_change_24h": 16.26,
+      "symbol": "ZKJUSDT",
+      "base": "ZKJ",
+      "price_change_24h": 90.88,
       "score": 4,
-      "listing_days": 458,
-      "price": 0.01766
+      "listing_days": 349,
+      "price": 0.02302
     },
     {
-      "symbol": "TURTLEUSDT",
-      "base": "TURTLE",
-      "price_change_24h": 16.1,
+      "symbol": "ORCAUSDT",
+      "base": "ORCA",
+      "price_change_24h": 28.37,
       "score": 4,
-      "listing_days": 187,
-      "price": 0.06013
-    },
-    {
-      "symbol": "NAORISUSDT",
-      "base": "NAORIS",
-      "price_change_24h": -15.68,
-      "score": 4,
-      "listing_days": 270,
-      "price": 0.07382
-    },
-    {
-      "symbol": "ZBTUSDT",
-      "base": "ZBT",
-      "price_change_24h": 15.45,
-      "score": 4,
-      "listing_days": 192,
-      "price": 0.21011
-    },
-    {
-      "symbol": "MUSDT",
-      "base": "M",
-      "price_change_24h": -15.4,
-      "score": 4,
-      "listing_days": 294,
-      "price": 3.5536
+      "listing_days": 507,
+      "price": 1.543
     },
     {
       "symbol": "TACUSDT",
       "base": "TAC",
-      "price_change_24h": 15.01,
+      "price_change_24h": 21.95,
       "score": 4,
       "listing_days": 286,
-      "price": 0.010353
+      "price": 0.011108
+    },
+    {
+      "symbol": "GWEIUSDT",
+      "base": "GWEI",
+      "price_change_24h": -20.61,
+      "score": 4,
+      "listing_days": 89,
+      "price": 0.09227
+    },
+    {
+      "symbol": "AIOTUSDT",
+      "base": "AIOT",
+      "price_change_24h": 20.55,
+      "score": 4,
+      "listing_days": 362,
+      "price": 0.08786
+    },
+    {
+      "symbol": "ZBTUSDT",
+      "base": "ZBT",
+      "price_change_24h": 19.3,
+      "score": 4,
+      "listing_days": 192,
+      "price": 0.21032
+    },
+    {
+      "symbol": "1000LUNCUSDT",
+      "base": "1000LUNC",
+      "price_change_24h": 17.24,
+      "score": 4,
+      "listing_days": 1328,
+      "price": 0.07051
+    },
+    {
+      "symbol": "MUSDT",
+      "base": "M",
+      "price_change_24h": -16.7,
+      "score": 4,
+      "listing_days": 294,
+      "price": 3.4987
     },
     {
       "symbol": "ZEREBROUSDT",
       "base": "ZEREBRO",
-      "price_change_24h": 13.56,
+      "price_change_24h": 14.14,
       "score": 3,
       "listing_days": 480,
-      "price": 0.018215
+      "price": 0.018376
     },
     {
-      "symbol": "AVAAIUSDT",
-      "base": "AVAAI",
-      "price_change_24h": 12.49,
+      "symbol": "MYXUSDT",
+      "base": "MYX",
+      "price_change_24h": 14.14,
       "score": 3,
-      "listing_days": 465,
-      "price": 0.008952
+      "listing_days": 313,
+      "price": 0.2793
+    },
+    {
+      "symbol": "VINEUSDT",
+      "base": "VINE",
+      "price_change_24h": 12.97,
+      "score": 3,
+      "listing_days": 458,
+      "price": 0.01716
+    },
+    {
+      "symbol": "TAKEUSDT",
+      "base": "TAKE",
+      "price_change_24h": 12.38,
+      "score": 3,
+      "listing_days": 236,
+      "price": 0.03177
+    },
+    {
+      "symbol": "TURTLEUSDT",
+      "base": "TURTLE",
+      "price_change_24h": 12.25,
+      "score": 3,
+      "listing_days": 187,
+      "price": 0.05817
+    },
+    {
+      "symbol": "IRUSDT",
+      "base": "IR",
+      "price_change_24h": -12.19,
+      "score": 3,
+      "listing_days": 127,
+      "price": 0.02686
+    },
+    {
+      "symbol": "SKYAIUSDT",
+      "base": "SKYAI",
+      "price_change_24h": -12.17,
+      "score": 3,
+      "listing_days": 349,
+      "price": 0.15905
     },
     {
       "symbol": "HEMIUSDT",
       "base": "HEMI",
-      "price_change_24h": -12.18,
+      "price_change_24h": -11.76,
       "score": 3,
       "listing_days": 242,
-      "price": 0.007841
+      "price": 0.007816
     }
   ],
-  "oi_anomaly": [
-    {
-      "symbol": "VINEUSDT",
-      "base": "VINE",
-      "price_change_24h": 16.26,
-      "score": 4,
-      "listing_days": 458,
-      "price": 0.01766,
-      "spot_price": 0.01766,
-      "tf": {
-        "1h": {
-          "oi_pct": 25.82,
-          "price_pct": 8.53,
-          "ratio": 3.03
-        },
-        "4h": {
-          "oi_pct": 11.59,
-          "price_pct": 6.19,
-          "ratio": 1.87
-        },
-        "12h": {
-          "oi_pct": -10.5,
-          "price_pct": -5.23,
-          "ratio": 2.01
-        },
-        "1d": {
-          "oi_pct": -18.74,
-          "price_pct": 6.07,
-          "ratio": 3.09
-        }
-      },
-      "tags": {
-        "1h": "⚪ 观望",
-        "4h": "⚪ 观望",
-        "12h": "⚪ 观望",
-        "1d": "⚪ 空头回补(D)"
-      },
-      "aggregate": "⚪ 信号冲突-观望",
-      "h1": {
-        "level": "watch",
-        "tag": "真观望",
-        "margin_u": 0,
-        "leverage": 0,
-        "reason": "符号混乱 方向打架",
-        "should_trade": false
-      },
-      "funding": {
-        "lastFundingRate": 0.00138805,
-        "nextFundingTime": 1777363200000,
-        "markPrice": 0.01764102
-      }
-    }
-  ]
+  "oi_anomaly": []
 }
