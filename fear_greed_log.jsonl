@@ -121,3 +121,5 @@
 {"fetched_at": "2026-04-28T17:30:03.624001+00:00", "source": "binance_square_fear_greed", "current_value": 40, "yesterday_value": 43, "last_week_value": 57, "bullish_value": 2730, "bearish_value": 2445}
 {"fetched_at": "2026-04-28T18:00:03.950495+00:00", "source": "binance_square_fear_greed", "current_value": 40, "yesterday_value": 43, "last_week_value": 57, "bullish_value": 2721, "bearish_value": 2438}
 {"fetched_at": "2026-04-28T19:00:03.636099+00:00", "source": "binance_square_fear_greed", "current_value": 40, "yesterday_value": 43, "last_week_value": 57, "bullish_value": 2721, "bearish_value": 2421}
+{"fetched_at": "2026-04-28T20:00:03.920054+00:00", "source": "binance_square_fear_greed", "current_value": 40, "yesterday_value": 43, "last_week_value": 57, "bullish_value": 2723, "bearish_value": 2405}
+{"fetched_at": "2026-04-28T20:30:03.524249+00:00", "source": "binance_square_fear_greed", "current_value": 41, "yesterday_value": 43, "last_week_value": 57, "bullish_value": 2725, "bearish_value": 2394}
