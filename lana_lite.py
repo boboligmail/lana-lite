@@ -56,17 +56,28 @@ CG_API_KEY = os.getenv("COINGECKO_API_KEY", "")  # 可选 demo key
 
 
 # ========== 工具函数 ==========
-def tg_send(text: str):
-    if not TG_TOKEN or not TG_CHAT:
-        print("[WARN] Telegram 未配置,仅打印:\n", text)
+def tg_send(text: str, channel: str = "main"):
+    """v0.1.23 E.1: 多通道 TG 推送
+    - channel="main"   : 实战交易通道 (TG_TOKEN/TG_CHAT, 默认, 完全向后兼容)
+    - channel="social" : 社媒推送通道 (TELEGRAM_*_SOCIAL, 留空 fallback 到 main)
+    """
+    import os
+    if channel == "social":
+        token = os.getenv("TELEGRAM_BOT_TOKEN_SOCIAL", "").strip() or TG_TOKEN
+        chat = os.getenv("TELEGRAM_CHAT_ID_SOCIAL", "").strip() or TG_CHAT
+    else:
+        token = TG_TOKEN
+        chat = TG_CHAT
+    if not token or not chat:
+        print(f"[WARN] Telegram {channel} 未配置,仅打印:\n", text)
         return
-    url = "https://api.telegram.org/bot" + TG_TOKEN + "/sendMessage"
+    url = "https://api.telegram.org/bot" + token + "/sendMessage"
     try:
         requests.post(url, json={
-            "chat_id": TG_CHAT, "text": text, "parse_mode": "Markdown"
+            "chat_id": chat, "text": text, "parse_mode": "Markdown"
         }, timeout=10)
     except Exception as e:
-        print("[TG ERROR]", e)
+        print(f"[TG ERROR/{channel}]", e)
 
 
 def log(msg: str):
