@@ -1,166 +1,166 @@
 {
-  "timestamp": "2026-04-29T13:56:43.861674",
+  "timestamp": "2026-04-29T14:59:21.803879",
   "version": "v0.1.23",
   "top_heat": [
     {
-      "symbol": "BSBUSDT",
-      "base": "BSB",
-      "price_change_24h": 22.05,
+      "symbol": "BIOUSDT",
+      "base": "BIO",
+      "price_change_24h": 21.84,
       "score": 6,
-      "listing_days": 34,
-      "price": 0.89026
+      "listing_days": 480,
+      "price": 0.03409
     },
     {
-      "symbol": "OPGUSDT",
-      "base": "OPG",
-      "price_change_24h": 10.59,
+      "symbol": "AKTUSDT",
+      "base": "AKT",
+      "price_change_24h": 7.99,
       "score": 5,
-      "listing_days": 6,
-      "price": 0.308
-    },
-    {
-      "symbol": "PUMPUSDT",
-      "base": "PUMP",
-      "price_change_24h": 7.92,
-      "score": 5,
-      "listing_days": 292,
-      "price": 0.001921
+      "listing_days": 526,
+      "price": 0.512
     },
     {
       "symbol": "DAMUSDT",
       "base": "DAM",
-      "price_change_24h": -66.55,
+      "price_change_24h": -62.81,
       "score": 4,
       "listing_days": 253,
-      "price": 0.01666
+      "price": 0.01789
     },
     {
       "symbol": "SKYAIUSDT",
       "base": "SKYAI",
-      "price_change_24h": 40.96,
+      "price_change_24h": 41.73,
       "score": 4,
       "listing_days": 350,
-      "price": 0.22879
-    },
-    {
-      "symbol": "TACUSDT",
-      "base": "TAC",
-      "price_change_24h": 28.11,
-      "score": 4,
-      "listing_days": 287,
-      "price": 0.013876
-    },
-    {
-      "symbol": "HUSDT",
-      "base": "H",
-      "price_change_24h": 25.91,
-      "score": 4,
-      "listing_days": 307,
-      "price": 0.1733
+      "price": 0.22812
     },
     {
       "symbol": "NOMUSDT",
       "base": "NOM",
-      "price_change_24h": 24.88,
+      "price_change_24h": 33.77,
       "score": 4,
       "listing_days": 209,
-      "price": 0.003222
+      "price": 0.003438
     },
     {
-      "symbol": "JCTUSDT",
-      "base": "JCT",
-      "price_change_24h": 24.24,
+      "symbol": "TACUSDT",
+      "base": "TAC",
+      "price_change_24h": 26.07,
       "score": 4,
-      "listing_days": 169,
-      "price": 0.003819
-    },
-    {
-      "symbol": "ZBTUSDT",
-      "base": "ZBT",
-      "price_change_24h": -24.16,
-      "score": 4,
-      "listing_days": 193,
-      "price": 0.17094
-    },
-    {
-      "symbol": "ZKJUSDT",
-      "base": "ZKJ",
-      "price_change_24h": -22.02,
-      "score": 4,
-      "listing_days": 350,
-      "price": 0.01441
-    },
-    {
-      "symbol": "UBUSDT",
-      "base": "UB",
-      "price_change_24h": 21.47,
-      "score": 4,
-      "listing_days": 228,
-      "price": 0.06042
-    },
-    {
-      "symbol": "AIOUSDT",
-      "base": "AIO",
-      "price_change_24h": 20.91,
-      "score": 4,
-      "listing_days": 258,
-      "price": 0.10477
-    },
-    {
-      "symbol": "BIOUSDT",
-      "base": "BIO",
-      "price_change_24h": 20.82,
-      "score": 4,
-      "listing_days": 480,
-      "price": 0.034
-    },
-    {
-      "symbol": "API3USDT",
-      "base": "API3",
-      "price_change_24h": 20.37,
-      "score": 4,
-      "listing_days": 1527,
-      "price": 0.4024
+      "listing_days": 287,
+      "price": 0.013974
     },
     {
       "symbol": "LYNUSDT",
       "base": "LYN",
-      "price_change_24h": 19.51,
+      "price_change_24h": 21.63,
       "score": 4,
       "listing_days": 204,
-      "price": 0.07603
-    },
-    {
-      "symbol": "PLAYUSDT",
-      "base": "PLAY",
-      "price_change_24h": -16.25,
-      "score": 4,
-      "listing_days": 271,
-      "price": 0.09613
-    },
-    {
-      "symbol": "ZKPUSDT",
-      "base": "ZKP",
-      "price_change_24h": 14.87,
-      "score": 3,
-      "listing_days": 128,
-      "price": 0.09612
+      "price": 0.07608
     },
     {
       "symbol": "NAORISUSDT",
       "base": "NAORIS",
-      "price_change_24h": 14.8,
-      "score": 3,
+      "price_change_24h": 21.55,
+      "score": 4,
       "listing_days": 271,
-      "price": 0.09914
+      "price": 0.09714
+    },
+    {
+      "symbol": "ZBTUSDT",
+      "base": "ZBT",
+      "price_change_24h": -21.05,
+      "score": 4,
+      "listing_days": 193,
+      "price": 0.17125
+    },
+    {
+      "symbol": "JCTUSDT",
+      "base": "JCT",
+      "price_change_24h": 19.93,
+      "score": 4,
+      "listing_days": 169,
+      "price": 0.003677
+    },
+    {
+      "symbol": "AIOUSDT",
+      "base": "AIO",
+      "price_change_24h": 19.61,
+      "score": 4,
+      "listing_days": 258,
+      "price": 0.10301
+    },
+    {
+      "symbol": "BSBUSDT",
+      "base": "BSB",
+      "price_change_24h": 18.18,
+      "score": 4,
+      "listing_days": 34,
+      "price": 0.85192
+    },
+    {
+      "symbol": "HUSDT",
+      "base": "H",
+      "price_change_24h": 17.51,
+      "score": 4,
+      "listing_days": 307,
+      "price": 0.17237
+    },
+    {
+      "symbol": "PLAYUSDT",
+      "base": "PLAY",
+      "price_change_24h": -16.56,
+      "score": 4,
+      "listing_days": 271,
+      "price": 0.09341
+    },
+    {
+      "symbol": "API3USDT",
+      "base": "API3",
+      "price_change_24h": 16.51,
+      "score": 4,
+      "listing_days": 1527,
+      "price": 0.4093
+    },
+    {
+      "symbol": "UBUSDT",
+      "base": "UB",
+      "price_change_24h": 16.41,
+      "score": 4,
+      "listing_days": 228,
+      "price": 0.0583
+    },
+    {
+      "symbol": "ZEREBROUSDT",
+      "base": "ZEREBRO",
+      "price_change_24h": 15.68,
+      "score": 4,
+      "listing_days": 481,
+      "price": 0.021162
+    },
+    {
+      "symbol": "CTSIUSDT",
+      "base": "CTSI",
+      "price_change_24h": 14.78,
+      "score": 3,
+      "listing_days": 1646,
+      "price": 0.0365
     },
     {
       "symbol": "BROCCOLI714USDT",
       "base": "BROCCOLI714",
-      "price_change_24h": 14.4,
+      "price_change_24h": 14.62,
       "score": 3,
       "listing_days": 403,
-      "price": 0.01867
+      "price": 0.0185
+    },
+    {
+      "symbol": "SWARMSUSDT",
+      "base": "SWARMS",
+      "price_change_24h": -13.68,
+      "score": 3,
+      "listing_days": 476,
+      "price": 0.020353
     }
   ],
   "oi_anomaly": []
